@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/premios.css' %}" />
+{% endblock %}
+
+{% block content %}
+<main>
+    {% include "home/premios.html" %}
+</main>
+{% endblock %}

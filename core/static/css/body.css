@@ -1,0 +1,34 @@
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: none;
+  background-color: var(--pr-white);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .bev-display-4 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .bev-section-title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+  }
+
+  .bev-lead {
+    font-size: 1rem;
+  }
+}
