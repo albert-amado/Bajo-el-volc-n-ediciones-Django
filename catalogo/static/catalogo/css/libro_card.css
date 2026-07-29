@@ -1,0 +1,149 @@
+.libro-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.libro-card__cover {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 2 / 3;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  transition: box-shadow 0.3s ease;
+}
+
+.libro-card:hover .libro-card__cover {
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.24);
+}
+
+.libro-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.libro-card:hover .libro-card__cover img {
+  transform: scale(1.05);
+  filter: brightness(0.45);
+}
+
+.libro-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.libro-card:hover .libro-card__overlay {
+  opacity: 1;
+}
+
+.libro-card__overlay-btn {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.libro-card__overlay-btn--carrito {
+  background: var(--pr-gray-900);
+  color: var(--pr-white);
+}
+
+.libro-card__overlay-btn--carrito:hover {
+  background: var(--pr-white);
+  color: var(--pr-gray-900);
+}
+
+.libro-card__overlay-btn--detalle {
+  background: transparent;
+  color: var(--pr-white);
+  border: 1px solid var(--pr-white);
+}
+
+.libro-card__overlay-btn--detalle:hover {
+  background: var(--pr-white);
+  color: var(--pr-gray-900);
+}
+
+.libro-card__etiqueta {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  z-index: 3;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.libro-card__etiqueta--nuevo     { background: var(--pr-black-1100); color: var(--pr-white); }
+.libro-card__etiqueta--destacado { background: var(--pr-black); color: var(--pr-white); }
+.libro-card__etiqueta--preventa  { background: var(--status-error-text); color: var(--pr-white); }
+.libro-card__etiqueta--descuento { background: var(--discount-green); color: var(--pr-white); }
+
+.libro-card__titulo {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--pr-gray-900);
+  margin: 0.65rem 0 0;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (hover: none), (max-width: 767px) {
+  .libro-card__cover img {
+    transform: none;
+    filter: none;
+  }
+
+  .libro-card:hover .libro-card__cover img {
+    transform: none;
+    filter: none;
+  }
+
+  .libro-card__overlay {
+    opacity: 1;
+    justify-content: flex-end;
+    padding-bottom: 0.85rem;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 10%,
+      rgba(0, 0, 0, 0.62) 100%
+    );
+  }
+
+  .libro-card__overlay-btn {
+    font-size: 0.7rem;
+    padding: 8px 10px;
+  }
+
+  .libro-card__titulo {
+    margin-top: 0.55rem;
+    font-size: 0.95rem;
+  }
+}

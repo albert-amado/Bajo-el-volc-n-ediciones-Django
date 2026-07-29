@@ -1,0 +1,63 @@
+:root {
+  --pr-white:        #FFFFFF;
+  --pr-gray-50:      #e6e6e6;
+  --pr-gray-100:     #b6b6b6;
+  --pr-gray-200:     #E5E5E5;
+  --pr-gray-400:     #F4F4F4;
+  --pr-gray-700:     #000000;
+  --pr-gray-900:     #000000;
+  --pr-gray-1000:     #F2F2F2;
+  --pr-gray-1200: #F23838;
+  --pr-gray-1400: #BBD679;
+  --pr-gray-1500:#182B3A;
+  --pr-black: #000000;
+  --pr-black-1100: #111111;
+
+  --pr-glass-dark:   rgba(0, 0, 0, 0.05);
+  --pr-glass-light-08: rgba(255, 255, 255, 0.08);
+  --pr-glass-light-70: rgba(255, 255, 255, 0.7);
+  --pr-glass-light-25: rgba(255, 255, 255, 0.25);
+  --pr-glass-dark-08: rgba(0, 0, 0, 0.08);
+  --pr-glass-dark-12: rgba(0, 0, 0, 0.12);
+  --pr-glass-dark-15: rgba(0, 0, 0, 0.15);
+  --pr-glass-dark-28: rgba(0, 0, 0, 0.28);
+  --pr-glass-dark-90: rgba(0, 0, 0, 0.9);
+  --pr-glass-panel: rgba(255, 255, 255, 0.78);
+
+  --status-error-bg: #fff0f0;
+  --status-error-border: #ffcccc;
+  --status-error-text: #c0392b;
+
+  --wa-green: #25d366;
+  --wa-green-hover: #20b958;
+  --wa-green-strong: #1faa53;
+  --wa-green-soft: #d4f5e2;
+  --wa-green-shadow: rgba(37, 211, 102, 0.4);
+  --discount-green: #27ae60;
+
+  --text-primary:     var(--pr-gray-700);
+  --shadow-md:        0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg-soft:   0 10px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl-soft:   0 18px 40px rgba(0, 0, 0, 0.08);
+  --shadow-2xl-soft:  0 20px 40px rgba(0, 0, 0, 0.15);
+  --shadow-strong:    0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-strong-md: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  --topbar-bg:        var(--pr-gray-1500);
+  --topbar-text:      var(--pr-white);
+  --topbar-muted:     var(--pr-gray-200);
+  --topbar-hover:     var(--pr-white);
+  --topbar-border:    var(--pr-gray-700);
+
+  --navbar-text:        var(--pr-gray-900);
+  --navbar-accent:      var(--pr-gray-900);
+  --navbar-logo-glow:   rgba(255,255,255,0.3);
+
+  --site-bg-image:          url("/assets/img/fondos/patron.png");
+  --site-bg-repeat:         repeat;
+  --site-bg-size:           950px;
+  --site-bg-position:       top left;
+
+  --font-display:           "Playfair Display", serif;
+  --font-body:              "Lato", sans-serif;
+}
