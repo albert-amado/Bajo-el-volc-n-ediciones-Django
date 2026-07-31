@@ -1,4 +1,4 @@
-
+{% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bev-navbar sticky-top">
   <div class="container-fluid bev-navbar-inner">
     <div
@@ -9,11 +9,11 @@
     </div>
 
     <a class="navbar-brand d-lg-none" href="/">
-      <img
-        src="/assets/img/ui/logo.webp"
-        alt="Bajo el Volcán"
-        class="bev-logo-mobile"
-      />
+        <img
+      src="{% static "assets/img/logo.webp" %}"
+      alt="Bajo el Volcán"
+      class="bev-logo-mobile"
+    />
     </a>
 
     <button
@@ -30,10 +30,10 @@
 
     <a class="navbar-brand mx-auto d-none d-lg-block" href="/nosotros">
       <img
-        src="/assets/img/ui/logo.webp"
-        alt="Bajo el Volcán"
-        class="bev-logo-desktop"
-      />
+    src="{% static "assets/img/logo.webp" %}"
+    alt="Bajo el Volcán"
+    class="bev-logo-mobile"
+    />
     </a>
 
     <div class="collapse navbar-collapse" id="navbarMenu">

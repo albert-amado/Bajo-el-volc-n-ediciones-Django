@@ -15,7 +15,7 @@
     <meta property="og:title" content="{{ page_title|default:'Bajo el Volcán Editorial Literaria' }}" />
     <meta property="og:description" content="{{ description|default:'Editorial literaria independiente. Descubre nuestro catálogo de novelas, cuentos y poesía. Autores colombianos y latinoamericanos.' }}" />
     <meta property="og:url" content="{{ canonical|default:'https://bajoelvolcanediciones.com' }}{{ request.path }}" />
-    <meta property="og:image" content="{{ image|default:static_logo }}" />
+    <meta property="og:image" content="{% if image %}{{ image }}{% else %}{% static 'assets/img/ui/logo.webp' %}{% endif %}" />
     <meta property="og:image:alt" content="{{ page_title|default:'Bajo el Volcán Editorial Literaria' }}" />
     <meta property="og:site_name" content="Bajo el Volcán Editorial Literaria" />
     <meta property="og:locale" content="es_CO" />
@@ -23,10 +23,10 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ page_title|default:'Bajo el Volcán Editorial Literaria' }}" />
     <meta name="twitter:description" content="{{ description|default:'Editorial literaria independiente. Descubre nuestro catálogo de novelas, cuentos y poesía. Autores colombianos y latinoamericanos.' }}" />
-    <meta name="twitter:image" content="{{ image|default:static_logo }}" />
+    <meta name="twitter:image" content="{% if image %}{{ image }}{% else %}{% static 'assets/img/ui/logo.webp' %}{% endif %}" />
 
-    <link rel="icon" type="image/webp" href="{% static 'img/ui/logo.webp' %}" />
-    <link rel="apple-touch-icon" href="{% static 'img/ui/logo.webp' %}" />
+    <link rel="icon" type="image/webp" href="{% static 'assets/img/logo.webp' %}" />
+    <link rel="apple-touch-icon" href="{% static 'assets/img/logo.webp' %}" />
 
     <script type="application/ld+json">
       {
@@ -34,7 +34,7 @@
         "@type": "Organization",
         "name": "Bajo el Volcán Editorial Literaria",
         "url": "https://bajoelvolcanediciones.com",
-        "logo": "https://bajoelvolcanediciones.com/static/img/ui/logo.webp",
+        "logo": "https://bajoelvolcanediciones.com/static/assets/img/logo.webp",
         "description": "Editorial literaria independiente especializada en narrativa colombiana y latinoamericana.",
         "sameAs": []
       }
@@ -44,12 +44,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 
-    <link rel="stylesheet" href="{% static 'css/var.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/body.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/topbar.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/components/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/var.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/body.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components/topbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components/footer.css' %}" />
 
     {% block extra_css %}{% endblock %}
 
