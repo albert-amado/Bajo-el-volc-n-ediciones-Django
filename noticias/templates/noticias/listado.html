@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}Noticias{% endblock %}
+{% block description %}Eventos, lanzamientos, convocatorias y todo lo que sucede en Bajo el Volcán Editorial Literaria.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'noticias/css/listado.css' %}" />
+{% endblock %}
+
+{% block content %}
+<main class="bev-noticias mt-5 pt-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <span class="bev-section-tag">Actualidad</span>
+        <h1 class="display-4 bev-display-4 fw-bold mt-3 mb-4">Noticias</h1>
+        <div class="bev-divider mx-auto mb-4"></div>
+        <p class="lead bev-lead">
+          Eventos, lanzamientos y todo lo que pasa en Bajo el Volcán.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-12 d-flex flex-wrap gap-2 justify-content-center">
+        <button class="bev-filtro active" data-filtro="todos">Todos</button>
+        {% for value, label in categorias %}
+          <button class="bev-filtro" data-filtro="{{ value }}">{{ label }}</button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="row g-4 mb-5" id="noticiasGrid">
+      {% for noticia in noticias %}
+        <div class="col-12 col-md-6 col-lg-4 bev-noticia-item" data-categoria="{{ noticia.categoria }}">
+          <a href="{% url 'noticias:detalle' noticia.slug %}" class="text-decoration-none d-block h-100">
+            <div class="bev-noticia-card h-100">
+              <div class="bev-noticia-img">
+                {% if noticia.imagen %}
+                  <img
+                    src="{{ noticia.imagen.url }}"
+                    alt="{{ noticia.titulo }}"
+                    loading="lazy"
+                  />
+                {% else %}
+                  <div class="bev-img-placeholder">
+                    <i class="bi bi-newspaper"></i>
+                  </div>
+                {% endif %}
+                <span class="bev-categoria-badge bev-cat-{{ noticia.categoria|lower }}">
+                  {{ noticia.get_categoria_display }}
+                </span>
+              </div>
+              <div class="bev-noticia-body">
+                <p class="bev-noticia-fecha mb-2">
+                  <i class="bi bi-calendar3 me-1"></i>
+                  {{ noticia.fecha }}
+                </p>
+                <h5 class="bev-noticia-titulo mb-2">
+                  {{ noticia.titulo|default:"Sin título" }}
+                </h5>
+                <p class="bev-noticia-resumen mb-0">
+                  {{ noticia.resumen|default:"Sin resumen disponible." }}
+                </p>
+                <p class="bev-noticia-cta mb-0 mt-3">
+                  Conoce mas <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+{% endblock %}
