@@ -2,30 +2,49 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'catalogo/css/carrusel_hero.css' %}" />
+<link rel="stylesheet" href="{% static 'home/css/carrusel_hero.css' %}" />
 <link rel="stylesheet" href="{% static 'home/css/premios.css' %}" />
 <link rel="stylesheet" href="{% static 'catalogo/css/libros_grid.css' %}" />
 <link rel="stylesheet" href="{% static 'catalogo/css/libro_card.css' %}" />
+<link rel="stylesheet" href="{% static 'includes/noticias/css/libros_noticias_lateral.css' %}" />
+<link rel="stylesheet" href="{% static 'home/css/panel_categorias.css' %}" />
 {% endblock %}
 
 {% block content %}
 <main>
     {% include "includes/carrusel_hero.html" %}
     {% include "home/premios.html" %}
-    {% include "noticias/libros_noticias_lateral.html" %}
+    {% include "home/panel_categorias.html" %}
 
-    <div class="libros-main">
-      <div class="libros-grid" id="librosGrid">
-        {% for libro in libros %}
-          <article class="libro-item">
-            <div class="libro-card">
-              <div class="libro-card__cover">
-                <img src="{{ libro.imagen.url }}" alt="{{ libro.titulo }}" loading="lazy" />
-              </div>
-              <h5 class="libro-card__titulo">{{ libro.titulo }}</h5>
-            </div>
-          </article>
-        {% endfor %}
+    <div class="container-fluid libros-main">
+      <div class="row">
+
+        <!-- COLUMNA CATEGORÍAS (izquierda) -->
+        <div class="col-12 col-lg-3 order-2 order-lg-1">
+          {# TODO: {% include "catalogo/categorias_panel.html" %} #}
+        </div>
+
+        <!-- COLUMNA PRINCIPAL (centro) -->
+        <div class="col-12 col-lg-6 order-1 order-lg-2">
+          <div class="libros-grid" id="librosGrid">
+            {% for libro in libros %}
+              <article class="libro-item">
+                <div class="libro-card">
+                  <div class="libro-card__cover">
+                    <img src="{{ libro.imagen.url }}" alt="{{ libro.titulo }}" loading="lazy" />
+                  </div>
+                  <h5 class="libro-card__titulo">{{ libro.titulo }}</h5>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- COLUMNA NOTICIAS (derecha) -->
+        <div class="col-12 col-lg-3 order-3">
+          {% include "noticias/libros_noticias_lateral.html" %}
+        </div>
+
       </div>
     </div>
 </main>

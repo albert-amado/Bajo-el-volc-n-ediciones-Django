@@ -1,13 +1,15 @@
-from django.shortcuts import render
-from catalogo.models import Libro
-from noticias.models import Noticia
+from django.shortcuts import render, get_object_or_404
+from .models import Noticia
 
 
-def index(request):
-    return render(request, "home/index.html", {
-        "page_title": "Bajo el Volcán Editorial Literaria",
-        "description": "Editorial literaria independiente. Descubre nuestro catálogo de novelas, cuentos y poesía de autores colombianos y latinoamericanos.",
-        "libros": Libro.objects.all(),
-        "slides": Libro.objects.exclude(imagen_hero="").exclude(imagen_hero__isnull=True),
+def lista(request):
+    return render(request, "noticias/lista.html", {
         "noticias": Noticia.objects.all().order_by('-fecha'),
+    })
+
+
+def detalle(request, slug):
+    noticia = get_object_or_404(Noticia, slug=slug)
+    return render(request, "noticias/detalle.html", {
+        "noticia": noticia,
     })

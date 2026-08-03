@@ -56,7 +56,6 @@ class Libro(models.Model):
     isbn = models.CharField(max_length=20, blank=True)
     paginas = models.PositiveSmallIntegerField()
     imagen = models.ImageField(upload_to="libros/")
-    imagen_hero = models.ImageField(upload_to="libros/hero/", blank=True, null=True)
     etiqueta = models.CharField(max_length=3, choices=Etiqueta.choices, blank=True)
     descripcion = models.TextField()
     frase = models.TextField(blank=True, help_text="Cita destacada del libro")

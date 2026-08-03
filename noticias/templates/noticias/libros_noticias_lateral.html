@@ -1,7 +1,7 @@
 {% load static %}
 
 <div class="bev-noticias-lateral">
-  <p class="bev-categorias-titulo">NOTICIAS</p>
+  <p class="bev-categorias-titulo">Noticias De tu interes</p>
   <div class="d-flex flex-column gap-3">
     {% for noticia in noticias %}
       <a href="{% url 'noticias:detalle' noticia.slug %}" class="text-decoration-none">
