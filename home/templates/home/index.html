@@ -1,12 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_css %}
+<!-- Estilos de Home -->
 <link rel="stylesheet" href="{% static 'home/css/premios.css' %}" />
-{% endblock %}
+<link rel="stylesheet" href="{% static 'home/css/carrusel_hero.css' %}" />
+<link rel="stylesheet" href="{% static 'home/css/panel_categorias.css' %}" />
+<link rel="stylesheet" href="{% static 'home/css/seccion_autores.css' %}" />
 
+<!-- Estilos de Catálogo -->
+<link rel="stylesheet" href="{% static 'catalogo/css/librosseccion.css' %}" />
+<link rel="stylesheet" href="{% static 'catalogo/css/libros_grid.css' %}" />
+<link rel="stylesheet" href="{% static 'catalogo/css/libro_card.css' %}" />
+<link rel="stylesheet" href="{% static 'catalogo/css/libros_contacto_form.css' %}" />
+
+<!-- Estilos de Noticias -->
+<link rel="stylesheet" href="{% static 'includes/noticias/css/libros_noticias_lateral.css' %}" />
+{% endblock %}
 {% block content %}
 <main>
     {% include "home/premios.html" %}
+    {% include "includes/carrusel_hero.html" %}
+    {% include "catalogo/includes/libros_seccion.html" %}
+    {% include "home/seccion_autores.html" %}
 </main>
 {% endblock %}

@@ -1,0 +1,46 @@
+{% load static %}
+
+<div class="bev-noticias-lateral">
+  <p class="bev-categorias-titulo">Noticias De tu interes</p>
+  <div class="d-flex flex-column gap-3">
+    {% for noticia in noticias %}
+      <a href="{% url 'noticias:detalle' noticia.slug %}" class="text-decoration-none">
+        <div class="bev-noticia-card-mini">
+          <div class="bev-noticia-img-mini">
+            {% if noticia.imagen %}
+              <img src="{{ noticia.imagen.url }}" alt="{{ noticia.titulo }}" loading="lazy">
+            {% else %}
+              <div class="bev-img-placeholder-mini">
+                <i class="bi bi-newspaper"></i>
+              </div>
+            {% endif %}
+
+            {% if noticia.categoria == 'EVENTO' %}
+              <span class="bev-categoria-badge-mini bev-cat-evento">{{ noticia.get_categoria_display }}</span>
+            {% elif noticia.categoria == 'PROXIMA_PUBLICACION' %}
+              <span class="bev-categoria-badge-mini bev-cat-proxima-publicacion">{{ noticia.get_categoria_display }}</span>
+            {% elif noticia.categoria == 'NUEVOS_AUTORES' %}
+              <span class="bev-categoria-badge-mini bev-cat-nuevos-autores">{{ noticia.get_categoria_display }}</span>
+            {% elif noticia.categoria == 'FERIA_LIBRO' %}
+              <span class="bev-categoria-badge-mini bev-cat-feria-libro">{{ noticia.get_categoria_display }}</span>
+            {% elif noticia.categoria == 'PRESENTACION_LIBROS' %}
+              <span class="bev-categoria-badge-mini bev-cat-presentacion-libros">{{ noticia.get_categoria_display }}</span>
+            {% elif noticia.categoria == 'PREMIO_NOVELA' %}
+              <span class="bev-categoria-badge-mini bev-cat-premio-novela">{{ noticia.get_categoria_display }}</span>
+            {% endif %}
+          </div>
+          <div class="bev-noticia-body-mini p-2">
+            <p class="bev-noticia-fecha-mini mb-1">
+              <i class="bi bi-calendar3 me-1"></i>
+              {{ noticia.fecha|date:"j \d\e F \d\e Y" }}
+            </p>
+            <p class="bev-noticia-titulo-mini mb-1">{{ noticia.titulo }}</p>
+            <p class="bev-noticia-resumen-mini">{{ noticia.resumen }}</p>
+          </div>
+        </div>
+      </a>
+    {% empty %}
+      <p class="bev-noticias-vacio">No hay noticias disponibles.</p>
+    {% endfor %}
+  </div>
+</div>

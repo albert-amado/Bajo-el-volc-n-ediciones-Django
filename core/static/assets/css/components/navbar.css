@@ -1,9 +1,9 @@
- .bev-navbar {
-    background-color: var(--pr-white);
-    border-bottom: 3px solid var(--pr-gray-200);
-    padding: 1.2rem 0;
-    backdrop-filter: blur(8px);
-  }
+.bev-navbar {
+  background-color: var(--bg-surface);
+  border-bottom: 3px solid var(--border-soft);
+  padding: 1.2rem 0;
+  backdrop-filter: blur(8px);
+}
 
   .bev-navbar-inner {
     display: flex;
@@ -15,14 +15,14 @@
     flex: 1;
   }
 
-  .bev-brand-main {
-    font-family: var(--font-body);
-    font-size: 1.55rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    color: var(--pr-gray-700);
-    line-height: 1.1;
-  }
+.bev-brand-main {
+  font-family: var(--font-body);
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--text-heading);
+  line-height: 1.1;
+}
 
   .bev-brand-sub {
     font-size: 1rem;
@@ -168,18 +168,22 @@
     }
   }
 
-  @media (max-width: 575px) {
-    .bev-navbar {
-      padding: 0.65rem 0;
-    }
-
-    .bev-navbar .nav-link {
-      letter-spacing: 0.08em;
-      padding: 0.6rem 1rem;
-    }
-
-    .bev-navbar .nav-link,
-    .bev-cart-btn {
-      text-align: left;
-    }
+@media (max-width: 991px) {
+  #navbarMenu {
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-soft);
+    margin-top: 0.75rem;
+    padding: 0.5rem 0 1rem;
+    max-height: calc(100vh - 5.5rem);
+    overflow-y: auto;
+    border-radius: 0 0 16px 16px;
   }
+
+  .bev-navbar .navbar-collapse.collapse.show {
+    background-color: var(--bg-surface);
+  }
+
+  .bev-navbar .nav-link {
+    border-bottom: 1px solid var(--border-soft);
+  }
+}

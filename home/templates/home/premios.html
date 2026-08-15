@@ -1,35 +1,39 @@
 {% load static %}
+{% if premio %}
 <div class="bev-premios">
-  <div class="bev-promo-wrapper text-center mx-auto">
+  <div class="bev-promo-wrapper text-center mx-auto" style="background-color: {{ premio.color_fondo }};">
     <p class="bev-promo-text">
-      Tu talento merece ser reconocido. Participa en el Primer Premio Nacional de Novela.
+      {{ premio.frase }}
     </p>
 
     <div class="bev-promo-img-wrapper">
       <img
-        src="{% static 'home/img/noticias/premio.webp' %}"
+        src="{{ premio.imagen.url }}"
         alt="Premio Nacional de Novela"
         class="bev-promo-img"
         loading="lazy"
       />
+      {% if premio.documento_pdf %}
       <div class="bev-btn-premio-wrap">
         <a class="btn bev-btn-premio"
-          href="/doc/bases.pdf"
+          href="{{ premio.documento_pdf.url }}"
           target="_blank"
           rel="noopener noreferrer">
-          Bases del premio
+          {{ premio.texto_boton_pdf }}
         </a>
       </div>
+      {% endif %}
     </div>
 
     <div class="bev-promo-contact">
-      <h3 class="bev-promo-contact-title">Envía aquí tu manuscrito:</h3>
-      <a href="mailto:bajoelvolcane@gmail.com"
+      <h3 class="bev-promo-contact-title">{{ premio.titulo_contacto }}</h3>
+      <a href="mailto:{{ premio.email_contacto }}"
         class="bev-footer-text bev-footer-link bev-promo-contact-link"
       >
-        bajoelvolcane@gmail.com
+        {{ premio.email_contacto }}
       </a>
     </div>
 
   </div>
 </div>
+{% endif %}

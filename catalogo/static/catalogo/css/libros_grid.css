@@ -34,7 +34,6 @@
   .libros-grid {
     grid-template-columns: 1fr;
   }
-
   .libro-card {
     max-width: 100%;
   }

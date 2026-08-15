@@ -1,0 +1,31 @@
+<aside class="libros-sidebar-left">
+  <div class="bev-categorias-container">
+    <p class="bev-categorias-titulo">CATEGORÍAS</p>
+    <ul class="bev-categorias-lista" id="listaCategorias">
+      <li class="bev-categoria-item {% if categoria_actual == 'todos' %}activo{% endif %}">
+        <a href="?categoria=todos">Todos</a>
+      </li>
+      <li class="bev-categoria-item {% if categoria_actual == 'NUE' %}activo{% endif %}">
+        <a href="?categoria=NUE">Nuevos</a>
+      </li>
+      <li class="bev-categoria-item {% if categoria_actual == 'DES' %}activo{% endif %}">
+        <a href="?categoria=DES">Destacados</a>
+      </li>
+      <li class="bev-categoria-item {% if categoria_actual == 'PRE' %}activo{% endif %}">
+        <a href="?categoria=PRE">Preventa</a>
+      </li>
+      <li class="bev-categoria-item {% if categoria_actual == 'MIS' %}activo{% endif %}">
+        <a href="?categoria=MIS">Misterio</a>
+      </li>
+      <li class="bev-categoria-item {% if categoria_actual == 'ROM' %}activo{% endif %}">
+        <a href="?categoria=ROM">Romance</a>
+      </li>
+      <li class="bev-categoria-item {% if categoria_actual == 'NOV' %}activo{% endif %}">
+        <a href="?categoria=NOV">Novela</a>
+      </li>
+      <li class="bev-categoria-item {% if categoria_actual == 'CRI' %}activo{% endif %}">
+        <a href="?categoria=CRI">Crimen</a>
+      </li>
+    </ul>
+  </div>
+</aside>

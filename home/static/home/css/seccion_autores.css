@@ -1,0 +1,35 @@
+.bev-section-dark {
+  background-image: var(--bg-patron-volcan);
+  background-repeat: repeat;
+  background-size: 950px;
+  background-position: top left;
+  background-color: transparent;
+  color: var(--text-body);
+}
+
+.bev-section-tag-light {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--pr-gray-700);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.bev-section-tag-left {
+  text-align: left;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  width: fit-content;
+}
+
+.bev-section-title {
+  font-family: var(--font-body);
+  font-size: 4rem;
+  color: var(--pr-gray-700);
+  font-weight: 700;
+  line-height: 1.1;
+}

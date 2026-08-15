@@ -1,29 +1,28 @@
 <article class="libro-card">
-  <div class="libro-card__cover" data-id="">
-    <!-- Aquí irá la imagen del libro -->
-    <img src="" alt="" loading="lazy" />
+  <div class="libro-card__cover" data-id="{{ libro.id }}">
+    <img src="{{ libro.imagen.url }}" alt="{{ libro.titulo }}" loading="lazy" />
 
-    <!-- Aquí irá la etiqueta (si existe) -->
-    <span class="libro-card__etiqueta libro-card__etiqueta--">
-      <!-- Aquí irá el texto de la etiqueta -->
-    </span>
+    {% if libro.etiqueta %}
+      <span class="libro-card__etiqueta libro-card__etiqueta--{{ libro.etiqueta|lower }}">
+        {{ libro.get_etiqueta_display }}
+      </span>
+    {% endif %}
 
     <div class="libro-card__overlay">
       <button class="libro-card__overlay-btn libro-card__overlay-btn--carrito js-btn-carrito"
-        data-id=""
-        data-titulo=""
-        data-precio=""
+        data-id="{{ libro.id }}"
+        data-titulo="{{ libro.titulo }}"
+        data-precio="{{ libro.precio }}"
       >
         <i class="bi bi-bag-plus"></i> Agregar al carrito
       </button>
       <a class="libro-card__overlay-btn libro-card__overlay-btn--detalle"
-        href=""
+        href="{% url 'detalle_libro' libro.slug %}"
       >
         <i class="bi bi-eye"></i> Ver detalle
       </a>
     </div>
   </div>
 
-  <!-- Aquí irá el título del libro -->
-  <h5 class="libro-card__titulo"></h5>
+  <h5 class="libro-card__titulo">{{ libro.titulo }}</h5>
 </article>

@@ -11,54 +11,6 @@
   font-weight: 600;
 }
 
-.bev-section-tag-light {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 1.35rem;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-  color: var(--pr-white);
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.bev-section-tag-left {
-  text-align: left;
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  width: fit-content;
-}
-
-.bev-section-title {
-  font-family: var(--font-body);
-  font-size: 4rem;
-  color: var(--pr-white);
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-.bev-section-title-left {
-  text-align: left;
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  margin-bottom: 0;
-  width: fit-content;
-}
-
-.bev-section-dark {
-  background-image: none;
-  background-color: var(--pr-white);
-  color: var(--pr-gray-900);
-}
-
-.bev-section-line {
-  width: min(100%, 900px);
-  border-top: 3px dotted var(--pr-gray-1200);
-  margin: 1rem 0 2.5rem 0;
-}
-
 /* Linea decorativa */
 .bev-divider {
   height: 4px;

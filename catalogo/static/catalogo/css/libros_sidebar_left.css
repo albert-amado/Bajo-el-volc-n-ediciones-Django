@@ -18,11 +18,11 @@
   font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 0.4em;
-  color: var(--pr-gray-900);
+  color: var(--text-heading); /* Variable semántica para el texto */
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--pr-gray-200);
+  border-bottom: 1px solid var(--border-soft); /* Variable semántica para el borde */
 }
 
 .bev-categorias-lista {

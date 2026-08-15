@@ -1,0 +1,71 @@
+{% load static %}
+<section class="pt-0 pb-4">
+  <div class="container-fluid px-0">
+    <div
+      id="heroCarousel"
+      class="carousel slide carousel-fade bev-carousel-custom"
+      data-bs-ride="carousel"
+      data-bs-interval="5000"
+    >
+      <div class="carousel-indicators">
+        {% for libro in slides %}
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="{{ forloop.counter0 }}"
+            class="{% if forloop.first %}active{% endif %}"
+            aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-label="Slide {{ forloop.counter }}"
+          ></button>
+        {% endfor %}
+      </div>
+
+      <div class="carousel-inner">
+        {% for libro in slides %}
+          <div class="carousel-item bev-slide{% if forloop.first %} active{% endif %}">
+            <img
+              src="{{ libro.imagen_hero.url }}"
+              alt="{{ libro.titulo }}"
+              class="bev-slide-bg"
+              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+              fetchpriority="{% if forloop.first %}high{% else %}auto{% endif %}"
+              decoding="{% if forloop.first %}sync{% else %}async{% endif %}"
+            />
+            <div class="bev-slide-overlay"></div>
+            <div class="container h-100">
+              <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-11 col-lg-10 bev-slide-content text-center mx-auto">
+                  {% if libro.etiqueta == "NUE" %}
+                    <span class="bev-hero-badge bev-etiqueta-nuevo">Nuevo</span>
+                  {% endif %}
+                  {% if libro.etiqueta == "PRE" %}
+                    <span class="bev-hero-badge bev-etiqueta-preventa">Próximo lanzamiento</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button
+        class="carousel-control-prev bev-hero-nav bev-hero-nav--prev"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="prev"
+        aria-label="Anterior"
+      >
+        <span class="bev-hero-arrow" aria-hidden="true"></span>
+      </button>
+      <button
+        class="carousel-control-next bev-hero-nav bev-hero-nav--next"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="next"
+        aria-label="Siguiente"
+      >
+        <span class="bev-hero-arrow" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</section>

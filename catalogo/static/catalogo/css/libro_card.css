@@ -67,24 +67,24 @@
 }
 
 .libro-card__overlay-btn--carrito {
-  background: var(--pr-gray-900);
-  color: var(--pr-white);
+  background: var(--bg-surface-alt);
+  color: var(--text-heading);
 }
 
 .libro-card__overlay-btn--carrito:hover {
-  background: var(--pr-white);
-  color: var(--pr-gray-900);
+  background: var(--bg-surface);
+  color: var(--text-heading);
 }
 
 .libro-card__overlay-btn--detalle {
   background: transparent;
-  color: var(--pr-white);
-  border: 1px solid var(--pr-white);
+  color: var(--text-heading);
+  border: 1px solid var(--border-soft);
 }
 
 .libro-card__overlay-btn--detalle:hover {
-  background: var(--pr-white);
-  color: var(--pr-gray-900);
+  background: var(--bg-surface);
+  color: var(--text-heading);
 }
 
 .libro-card__etiqueta {
@@ -99,17 +99,27 @@
   letter-spacing: 0.05em;
 }
 
-.libro-card__etiqueta--nuevo     { background: var(--pr-black-1100); color: var(--pr-white); }
-.libro-card__etiqueta--destacado { background: var(--pr-black); color: var(--pr-white); }
-.libro-card__etiqueta--preventa  { background: var(--status-error-text); color: var(--pr-white); }
-.libro-card__etiqueta--descuento { background: var(--discount-green); color: var(--pr-white); }
+.libro-card__etiqueta--nue {
+  background: var(--bg-surface-alt);
+  color: var(--text-heading);
+}
+
+.libro-card__etiqueta--des {
+  background: var(--bg-surface-alt);
+  color: var(--text-heading);
+}
+
+.libro-card__etiqueta--pre {
+  background: var(--bg-surface-alt);
+  color: var(--text-heading);
+}
 
 .libro-card__titulo {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.01em;
-  color: var(--pr-gray-900);
+  color: var(--text-heading);
   margin: 0.65rem 0 0;
   line-height: 1.25;
   text-align: center;

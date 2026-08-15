@@ -10,20 +10,20 @@
 }
 
 .bev-contact-form h5 {
-  color: var(--pr-gray-900);
+  color: var(--text-heading);
   font-family: var(--font-body);
 }
 
 .bev-contact-form small {
-  color: var(--pr-gray-900);
+  color: var(--text-body);
 }
 
 .bev-form-input {
   width: 100%;
-  background-color: var(--pr-white);
-  border: 1px solid var(--pr-gray-200);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-soft);
   border-radius: 8px;
-  color: var(--pr-gray-900);
+  color: var(--text-body);
   padding: 0.75rem 1rem;
   font-size: 0.88rem;
   outline: none;
@@ -32,17 +32,17 @@
 }
 
 .bev-form-input::placeholder {
-  color: var(--pr-gray-900);
-  opacity: 0.6;
+  color: var(--text-body);
+  opacity: 0.65;
 }
 
 .bev-form-input:focus {
-  border-color: var(--pr-gray-900);
+  border-color: var(--border-soft);
 }
 
 .bev-btn-submit {
-  background-color: var(--pr-black);
-  color: var(--pr-white);
+  background-color: var(--bg-surface-alt);
+  color: var(--text-body);
   border: none;
   padding: 0.8rem;
   border-radius: 8px;
@@ -67,26 +67,26 @@
 }
 
 .bev-feedback-ok {
-  background-color: var(--pr-white);
-  border: 1px solid var(--pr-gray-200);
-  color: var(--pr-gray-900);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  color: var(--text-body);
 }
 
 .bev-feedback-error {
-  background-color: var(--status-error-bg);
-  border: 1px solid var(--status-error-border);
-  color: var(--status-error-text);
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-soft);
+  color: var(--text-body);
 }
 
 .bev-contact-value {
-  color: var(--pr-gray-900);
+  color: var(--text-body);
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .bev-contact-value:hover {
-  color: var(--pr-gray-900);
+  color: var(--text-heading);
   opacity: 0.75;
 }
 
