@@ -1,0 +1,72 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'equipo/css/nosotros.css' %}" />
+{% endblock %}
+{% block title %}Nosotros{% endblock %}
+{% block meta_description %}Conoce el equipo detrás de Bajo el Volcán, editorial literaria independiente comprometida con la literatura colombiana y latinoamericana.{% endblock %}
+
+{% block content %}
+<main class="bev-nosotros mt-5 pt-5">
+  <div class="container">
+
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <span class="bev-section-tag">Quiénes somos</span>
+        <h1 class="display-4 bev-display-4 fw-bold mt-3 mb-4">Bajo el Volcán</h1>
+        <div class="bev-divider mx-auto mb-4"></div>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-5 justify-content-center">
+      <div class="col-12 col-md-8 col-lg-7">
+        <div class="bev-info-card h-100 p-5">
+          <div class="bev-info-sello" aria-hidden="true">
+            <img src="{% static 'assets/img/ui/logo.webp' %}" alt="">
+          </div>
+          <div class="bev-info-icon mb-3">
+            <i class="bi bi-book"></i>
+          </div>
+          <h4 class="fw-bold mb-3">¿Quiénes somos?</h4>
+          <p>
+            Somos una editorial literaria independiente. Apostamos por voces nuevas que se arriesgan a contar.
+            Creemos en el oficio editorial que recupera y revela obras que merecen ser leídas por su calidad literaria.
+            Publicamos clásicos, autores contemporáneos y narrativa, con la convicción de que los libros son la
+            herencia de las generaciones y naciones.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-5">
+
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="fw-bold mb-2">Equipo Bajo el Volcán Ediciones</h2>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center mb-5">
+      {% for persona in equipo %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="bev-team-card text-center p-4 h-100">
+          <div class="bev-team-sello" aria-hidden="true">
+            <img src="{% static 'assets/img/ui/logo.webp' %}" alt="">
+          </div>
+
+          <div class="bev-team-avatar mx-auto mb-4">
+            <img src="{{ persona.foto.url }}" alt="{{ persona.nombre }}" loading="lazy">
+          </div>
+
+          <h4 class="fw-bold mb-1">{{ persona.nombre }}</h4>
+          <p class="bev-team-cargo mb-3">{{ persona.cargo }}</p>
+          <div class="bev-team-divider mx-auto mb-3"></div>
+          {% if persona.bio %}<p class="bev-team-bio">{{ persona.bio }}</p>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</main>
+{% endblock %}

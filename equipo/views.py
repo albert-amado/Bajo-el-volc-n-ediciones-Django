@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import MiembroEquipo
 
-# Create your views here.
+
+def nosotros(request):
+    equipo = MiembroEquipo.objects.all()
+    return render(request, "equipo/nosotros.html", {"equipo": equipo})

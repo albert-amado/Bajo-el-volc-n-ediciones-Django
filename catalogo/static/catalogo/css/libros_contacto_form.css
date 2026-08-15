@@ -1,7 +1,7 @@
 .bev-contact-form {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
+  background-color: var(--pr-bg-card, transparent);
+  border: var(--pr-border-width, none);
+  border-radius: var(--pr-border-radius, 0);
   padding: 0;
 }
 

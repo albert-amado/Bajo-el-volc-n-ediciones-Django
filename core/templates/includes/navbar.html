@@ -1,21 +1,19 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bev-navbar sticky-top">
   <div class="container-fluid bev-navbar-inner">
-    <div
-      class="d-none d-lg-flex flex-column align-items-start bev-navbar-brand-text"
-    >
+    
+    <!-- Marca de escritorio (Texto) -->
+    <div class="d-none d-lg-flex flex-column align-items-start bev-navbar-brand-text">
       <span class="bev-brand-main">BAJO EL VOLCÁN</span>
       <span class="bev-brand-sub">Editorial Literaria</span>
     </div>
 
+    <!-- Logo para dispositivos móviles -->
     <a class="navbar-brand d-lg-none" href="/">
-        <img
-      src="{% static 'assets/img/logo.webp' %}"
-      alt="Bajo el Volcán"
-      class="bev-logo-mobile"
-    />
+      <img src="{% static 'assets/img/logo.webp' %}" alt="Bajo el Volcán" class="bev-logo-mobile" />
     </a>
 
+    <!-- Botón de menú responsive (Toggler) -->
     <button
       class="navbar-toggler ms-auto d-lg-none"
       type="button"
@@ -28,49 +26,52 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand mx-auto d-none d-lg-block" href="/nosotros">
-      <img
-    src="{% static 'assets/img/logo.webp' %}"
-    alt="Bajo el Volcán"
-    class="bev-logo-mobile"
-    />
+    <!-- Logo central para pantallas grandes -->
+    <a class="navbar-brand mx-auto d-none d-lg-block" href="{% url 'equipo:nosotros' %}">
+      <img src="{% static 'assets/img/logo.webp' %}" alt="Bajo el Volcán" class="bev-logo-mobile" />
     </a>
-    
+
+    <!-- Elementos del menú colapsables -->
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+        
+        <!-- Inicio -->
         <li class="nav-item bev-nav-item">
           <a class="nav-link" href="/">Inicio</a>
         </li>
+
+        <!-- Nosotros -->
         <li class="nav-item bev-nav-item">
-          <a class="nav-link" href="/nosotros">Nosotros</a>
+          <a class="nav-link" href="{% url 'equipo:nosotros' %}">Nosotros</a>
         </li>
+
+        <!-- Contáctanos -->
         <li class="nav-item bev-nav-item">
-          <a class="nav-link" href="/contacto">Contáctanos</a>
+          <a class="nav-link" href="/contacto">CONTÁCTENOS</a>
         </li>
+
+        <!-- Noticias -->
         <li class="nav-item bev-nav-item">
           <a class="nav-link" href="/noticias">Noticias</a>
         </li>
+
+        <!-- Premio nacional de novela -->
         <li class="nav-item bev-nav-item">
-          <a
-            class="nav-link"
-            href="/doc/bases.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="nav-link" href="/doc/bases.pdf" target="_blank" rel="noopener noreferrer">
             Premio nacional de novela
           </a>
         </li>
+
+        <!-- Carrito de compras -->
         <li class="nav-item ms-lg-2 bev-nav-item">
-          <a
-            class="nav-link bev-cart-btn position-relative"
-            href="/carrito"
-            aria-label="Carrito de compras"
-          >
+          <a class="nav-link bev-cart-btn position-relative" href="/carrito" aria-label="Carrito de compras">
             <i class="bi bi-bag fs-5"></i>
             <span class="bev-cart-badge" id="cartCount">0</span>
           </a>
         </li>
+
       </ul>
     </div>
+
   </div>
 </nav>

@@ -1,0 +1,190 @@
+/* ============================================================
+   equipo/static/equipo/css/nosotros.css
+   Sección "Nosotros" — Misión + Equipo editorial
+   ============================================================ */
+
+.bev-nosotros {
+  background-color: var(--pr-bg-main, transparent);
+  min-height: 100vh;
+  color: var(--pr-text-body, var(--text-body));
+}
+
+/* === Tarjeta de misión === */
+.bev-info-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bev-info-card:hover {
+  transform: translateY(-4px);
+}
+
+.bev-info-sello {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bev-info-sello img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bev-info-icon {
+  font-size: 2.5rem;
+  color: var(--pr-gray-1500);
+  position: relative;
+  z-index: 1;
+}
+
+.bev-info-card h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-heading);
+  position: relative;
+  z-index: 1;
+}
+
+.bev-info-card p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--text-body);
+  position: relative;
+  z-index: 1;
+}
+
+/* === Tarjeta de miembro del equipo === */
+.bev-team-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  border-left: 5px solid var(--pr-gray-1500);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bev-team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px var(--pr-glass-dark-12);
+  border-left-color: var(--pr-gray-400);
+}
+
+.bev-team-sello {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bev-team-sello img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bev-team-avatar {
+  width: clamp(90px, 12vw, 160px);
+  height: clamp(90px, 12vw, 160px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--pr-gray-1500);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 6px 20px var(--pr-glass-dark-15);
+}
+
+.bev-team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.bev-team-card h4 {
+  font-size: 1.1rem;
+  color: var(--text-heading);
+  position: relative;
+  z-index: 1;
+}
+
+.bev-team-cargo {
+  color: var(--text-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.bev-team-divider {
+  height: 2px;
+  width: 40px;
+  background-color: var(--pr-gray-1500);
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.bev-team-bio {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+/* === Responsive === */
+@media (max-width: 575px) {
+  .bev-info-card,
+  .bev-team-card {
+    padding: 1.25rem !important;
+  }
+
+  .bev-info-card h4 {
+    font-size: 1.4rem;
+  }
+
+  .bev-info-card p {
+    font-size: 1rem;
+  }
+
+  .bev-info-sello {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bev-team-sello {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bev-team-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bev-team-card h4 {
+    font-size: 1rem;
+  }
+}
