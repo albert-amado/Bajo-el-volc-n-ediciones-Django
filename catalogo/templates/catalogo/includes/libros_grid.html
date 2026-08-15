@@ -1,10 +1,13 @@
 <div class="libros-main">
   <div class="libros-grid" id="librosGrid">
-
-    <!-- Aquí irá el bucle de libros -->
-    <article class="libro-item" data-etiqueta="" data-genero="">
-      <!-- Aquí irá LibroCard -->
-    </article>
-
+    {% for libro in libros %}
+      <article
+        class="libro-item"
+        data-etiqueta="{{ libro.etiqueta|lower }}"
+        data-genero="{{ libro.genero|lower }}"
+      >
+        {% include "catalogo/includes/libro_card.html" %}
+      </article>
+    {% endfor %}
   </div>
 </div>

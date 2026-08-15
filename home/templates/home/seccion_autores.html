@@ -1,0 +1,43 @@
+<section class="py-5 bev-section bev-section-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="bev-section-tag-light bev-section-tag-left">Voces Bajo el Volcán</span>
+      <h2 class="bev-section-title bev-section-title-left">Nuestros autores</h2>
+
+      <div class="bev-section-line"></div>
+    </div>
+
+    <div class="bev-authors-grid">
+      <div class="row g-4 justify-content-center">
+        {% for autor in autores %}
+          <div class="col-6 col-md-4 col-lg-2 text-center bev-author-col">
+            <a href="{% url 'detalle_autor' autor.id %}" class="bev-author-link">
+              <div class="bev-author-avatar mx-auto">
+                {% if autor.foto %}
+                  <img
+                    src="{{ autor.foto.url }}"
+                    alt="{{ autor.nombre }}"
+                    loading="lazy"
+                  />
+                {% else %}
+                  <div class="bev-avatar-fallback">
+                    {{ autor.obtener_iniciales }}
+                  </div>
+                {% endif %}
+              </div>
+            </a>
+
+            <p class="bev-author-name mt-3">{{ autor.nombre }}</p>
+            <p class="bev-author-country">{{ autor.nacionalidad }}</p>
+
+            <div class="mt-3">
+              <a href="{% url 'detalle_autor' autor.id %}" class="btn bev-btn-autor">
+                <i class="bi bi-plus-circle me-1"></i> Ver sus obras
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

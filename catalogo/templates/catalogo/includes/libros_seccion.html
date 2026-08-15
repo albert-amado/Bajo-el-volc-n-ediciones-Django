@@ -1,3 +1,4 @@
+{% load static %}
 <section class="py-5 libros-seccion">
   <div class="bev-container">
     <div class="mb-5">
@@ -9,12 +10,12 @@
     </div>
 
     <div class="libros-layout">
-      <!-- Aquí irá LibrosSidebarLeft -->
-      <!-- Aquí irá LibrosGrid -->
+      {% include "includes/panel_categorias.html" %}
+      {% include "catalogo/includes/libros_grid.html" %}
 
       <aside class="libros-sidebar-right">
-        <!-- Aquí irá LibrosContactForm -->
-        <!-- Aquí irá LibrosNoticiasLateral -->
+        {% include "catalogo/includes/libros_contacto_form.html" %}
+        {% include "noticias/libros_noticias_lateral.html" %}
       </aside>
     </div>
   </div>

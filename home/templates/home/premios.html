@@ -8,7 +8,7 @@
 
     <div class="bev-promo-img-wrapper">
       <img
-        src="{{ premio.imagen.url }}"q
+        src="{{ premio.imagen.url }}"
         alt="Premio Nacional de Novela"
         class="bev-promo-img"
         loading="lazy"
@@ -19,7 +19,7 @@
           href="{{ premio.documento_pdf.url }}"
           target="_blank"
           rel="noopener noreferrer">
-          Bases del premio
+          {{ premio.texto_boton_pdf }}
         </a>
       </div>
       {% endif %}

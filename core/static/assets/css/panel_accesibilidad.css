@@ -1,0 +1,58 @@
+/* Botón flotante */
+.btn-accesibilidad-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1050;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--pr-gray-900);
+  color: var(--pr-white);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-strong);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-accesibilidad-float:hover {
+  transform: scale(1.08);
+}
+
+/* Botones del panel */
+.bev-btn-accesibilidad {
+  text-align: left;
+  border: 1px solid var(--pr-gray-200);
+  background: transparent;
+  color: var(--pr-gray-900);
+  padding: 0.6rem 1rem;
+}
+
+.bev-btn-restablecer {
+  border-color: var(--status-error-text);
+  color: var(--status-error-text);
+}
+
+/* Modo escala de grises (global) */
+.modo-grises {
+  filter: grayscale(100%);
+}
+
+/* Texto accesible (aumenta tamaño base) */
+.texto-accesible {
+  font-size: 120%;
+}
+
+@media (max-width: 576px) {
+  .btn-accesibilidad-float {
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+}

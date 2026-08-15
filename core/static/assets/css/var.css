@@ -1,4 +1,5 @@
 :root {
+  --bg-patron-volcan: url('/static/assets/fondos/patron.png');
   --pr-white:        #FFFFFF;
   --pr-gray-50:      #e6e6e6;
   --pr-gray-100:     #b6b6b6;
@@ -60,4 +61,35 @@
 
   --font-display:           "Playfair Display", serif;
   --font-body:              "Lato", sans-serif;
+
+  /* --- Variables SEMÁNTICAS (modo claro por defecto) --- */
+  --bg-body:          var(--pr-white);
+  --bg-surface:        var(--pr-white);
+  --bg-surface-alt:    var(--pr-gray-400);
+  --text-body:         var(--pr-gray-900);
+  --text-heading:      var(--pr-gray-900);
+  --border-soft:       var(--pr-gray-200);
+}
+
+/* --- MODO OSCURO --- */
+[data-bs-theme="dark"] {
+  --bg-body:          #121212;
+  --bg-surface:        #1a1a1a;
+  --bg-surface-alt:    #232323;
+  --text-body:         #e6e6e6;
+  --text-heading:      #f4f4f4;
+  --border-soft:       #2e2e2e;
+
+  --navbar-text:        var(--text-body);
+  --navbar-accent:      var(--text-heading);
+
+  --topbar-bg:        #0d0d0d;
+  --topbar-border:    #2e2e2e;
+}
+
+/* --- Base de la página --- */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

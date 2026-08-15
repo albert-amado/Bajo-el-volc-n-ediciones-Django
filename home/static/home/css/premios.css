@@ -1,8 +1,8 @@
 .bev-premios {
-  background-image: var(--site-bg-image);
-  background-repeat: var(--site-bg-repeat);
-  background-size: var(--site-bg-size);
-  background-position: var(--site-bg-position);
+  background-image: var(--bg-patron-volcan);
+  background-repeat: repeat;
+  background-size: 950px;
+  background-position: top left;
   background-color: var(--pr-white);
   border-bottom: 1px solid var(--pr-glass-light-25);
   padding: 5rem 0 3rem;
@@ -30,8 +30,9 @@
 
 .bev-promo-img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 3000%;
+  height: 500px;
+  object-fit: cover;
 }
 
 .bev-btn-premio-wrap {
@@ -66,6 +67,7 @@
   transform: scale(1.05);
 }
 
+/* --- Sección de contacto --- */
 .bev-promo-contact {
   padding: 1.5rem 2rem;
   display: flex;
@@ -74,6 +76,7 @@
   gap: 0.75rem;
   flex-wrap: wrap;
 }
+
 .bev-promo-contact-title {
   font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.6rem);
@@ -95,6 +98,7 @@
   color: var(--pr-white);
 }
 
+/* --- Responsive móvil --- */
 @media (max-width: 576px) {
   .bev-premios {
     padding: 3rem 0 2rem;

@@ -1,0 +1,39 @@
+{% load static %}
+<!-- Botón flotante de accesibilidad -->
+<button
+  class="btn-accesibilidad-float"
+  type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasAccesibilidad"
+  aria-controls="offcanvasAccesibilidad"
+  aria-label="Abrir panel de accesibilidad"
+>
+  <i class="bi bi-universal-access-circle"></i>
+</button>
+
+<!-- Offcanvas de accesibilidad -->
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasAccesibilidad"
+  aria-labelledby="offcanvasAccesibilidadLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasAccesibilidadLabel">Accesibilidad</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column gap-2">
+    <button class="btn bev-btn-accesibilidad" id="btnModoOscuro" type="button">
+      <i class="bi bi-moon-stars me-2"></i> Modo Oscuro/Claro
+    </button>
+    <button class="btn bev-btn-accesibilidad" id="btnModoGrises" type="button">
+      <i class="bi bi-circle-half me-2"></i> Escala de grises
+    </button>
+    <button class="btn bev-btn-accesibilidad" id="btnAgrandarTexto" type="button">
+      <i class="bi bi-type me-2"></i> Agrandar texto
+    </button>
+    <button class="btn bev-btn-accesibilidad bev-btn-restablecer" id="btnRestablecer" type="button">
+      <i class="bi bi-arrow-counterclockwise me-2"></i> Restablecer todo
+    </button>
+  </div>
+</div>

@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
 
-
 class Autor(models.Model):
     """Autor de la editorial. Relación 1:N con Libro (un autor, muchos libros)."""
     nombre = models.CharField(max_length=150)
@@ -17,7 +16,12 @@ class Autor(models.Model):
     def __str__(self):
         return self.nombre
 
-
+    @property
+    def obtener_iniciales(self):
+        if not self.nombre:
+            return ""
+        palabras = self.nombre.split()
+        return "".join(palabra[0] for palabra in palabras[:2]).upper()
 class Libro(models.Model):
     """
     Catálogo de libros. FK a Autor (M:1) porque el JSON original

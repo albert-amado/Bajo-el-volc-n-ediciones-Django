@@ -24,6 +24,7 @@ class AnuncioPremio(models.Model):
         default=True,
         help_text="Desmarcar para ocultar el anuncio sin borrarlo."
     )
+    texto_boton_pdf = models.CharField(max_length=50, default="Mas info aqui:")
 
     class Meta:
         verbose_name = "Anuncio de Premio"
