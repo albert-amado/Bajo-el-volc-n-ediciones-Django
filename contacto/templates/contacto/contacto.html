@@ -1,0 +1,141 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'contacto/css/contacto.css' %}" />
+{% endblock %}
+{% block title %}Contacto{% endblock %}
+{% block meta_description %}Contáctanos para consultas sobre nuestro catálogo, envíos o cualquier pregunta sobre Bajo el Volcán Editorial Literaria.{% endblock %}
+
+{% block content %}
+<main class="bev-contacto mt-5 pt-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <span class="bev-section-tag">Escríbenos</span>
+        <h1 class="display-4 bev-display-4 fw-bold mt-3 mb-4">Contacto</h1>
+        <div class="bev-divider mx-auto mb-4"></div>
+        <p class="lead bev-lead">¿Tienes dudas? Estamos aquí para escucharte.</p>
+      </div>
+    </div>
+
+    <div class="row g-5 mb-5">
+      <div class="col-12 col-lg-5">
+        <div class="bev-contact-info h-100 p-4">
+          <div class="text-center mb-4">
+            <img src="{% static 'assets/img/ui/logo.webp' %}" alt="Bajo el Volcán" class="bev-contact-logo">
+          </div>
+
+          <hr class="border-secondary mb-4">
+
+          <ul class="list-unstyled bev-contact-list">
+            <li class="d-flex align-items-start gap-3 mb-4">
+              <div class="bev-contact-icon">
+                <i class="bi bi-whatsapp"></i>
+              </div>
+              <div>
+                <p class="bev-contact-label">WhatsApp</p>
+                <a href="https://wa.me/573144559506" target="_blank" rel="noopener noreferrer" class="bev-contact-value">
+                  +57 314 455 9506
+                </a>
+              </div>
+            </li>
+
+            <li class="d-flex align-items-start gap-3 mb-4">
+              <div class="bev-contact-icon">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div>
+                <p class="bev-contact-label">Correo</p>
+                <a href="mailto:bajoelvolcane@gmail.com" class="bev-contact-value">
+                  bajoelvolcane@gmail.com
+                </a>
+              </div>
+            </li>
+
+            <li class="d-flex align-items-start gap-3 mb-4">
+              <div class="bev-contact-icon">
+                <i class="bi bi-instagram"></i>
+              </div>
+              <div>
+                <p class="bev-contact-label">Instagram</p>
+                <a href="https://www.instagram.com/bajoelvolcane" target="_blank" rel="noopener noreferrer" class="bev-contact-value">
+                  @bajoelvolcane
+                </a>
+              </div>
+            </li>
+
+            <li class="d-flex align-items-start gap-3 mb-4">
+              <div class="bev-contact-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <p class="bev-contact-label">Ubicación</p>
+                <p class="bev-contact-value mb-0">Duitama, Boyacá — Colombia</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-7">
+        <div class="bev-contact-form p-4 p-lg-5 h-100">
+          <h4 class="fw-bold mb-4">Déjanos tu mensaje</h4>
+
+          <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="bev-form-label" for="{{ form.nombre.id_for_label }}">Nombre</label>
+                {{ form.nombre }}
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="bev-form-label" for="{{ form.correo.id_for_label }}">Correo electrónico</label>
+                {{ form.correo }}
+              </div>
+
+              <div class="col-12">
+                <label class="bev-form-label" for="{{ form.asunto.id_for_label }}">Asunto</label>
+                {{ form.asunto }}
+              </div>
+
+              <div class="col-12">
+                <label class="bev-form-label" for="{{ form.mensaje.id_for_label }}">Mensaje</label>
+                {{ form.mensaje }}
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn bev-btn-submit w-100">
+                  <i class="bi bi-send me-2"></i>Enviar mensaje
+                </button>
+              </div>
+
+              <div class="col-12 text-center">
+                <a href="https://wa.me/573144559506" target="_blank" rel="noopener noreferrer" class="bev-contact-value">
+                  También puedes escribirnos por WhatsApp: +57 314 455 9506
+                </a>
+              </div>
+
+              {% if messages %}
+                <div class="col-12">
+                  {% for message in messages %}
+                    <div class="bev-form-feedback bev-feedback-ok">{{ message }}</div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% if form.errors %}
+                <div class="col-12">
+                  <div class="bev-form-feedback bev-feedback-error">
+                    Por favor completa los campos obligatorios correctamente.
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,147 @@
+/* ============================================================
+   contacto/static/contacto/css/contacto.css
+   ============================================================ */
+
+.bev-contacto {
+  background-color: transparent;
+  min-height: 100vh;
+  color: var(--text-body);
+}
+
+.bev-contact-info,
+.bev-contact-form {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+}
+
+.bev-contact-logo {
+  max-width: 140px;
+  height: auto;
+}
+
+.bev-contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--pr-gray-100);
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.bev-contact-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-body);
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.bev-contact-value {
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.bev-contact-value:hover {
+  opacity: 0.7;
+}
+
+.bev-form-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-body);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.bev-form-input {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  color: var(--text-heading);
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  resize: vertical;
+}
+
+.bev-form-input::placeholder {
+  color: var(--pr-gray-400);
+}
+
+.bev-form-input:focus {
+  border-color: var(--pr-gray-1500);
+  box-shadow: 0 0 0 2px var(--pr-glass-dark);
+}
+
+.bev-btn-submit {
+  background-color: var(--pr-gray-1500);
+  color: var(--pr-white);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.bev-btn-submit:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.bev-form-feedback {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.bev-feedback-ok {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-soft);
+  color: var(--text-heading);
+}
+
+.bev-feedback-error {
+  background-color: var(--status-error-bg);
+  border: 1px solid var(--status-error-border);
+  color: var(--status-error-text);
+}
+
+@media (max-width: 575px) {
+  .bev-contact-info,
+  .bev-contact-form {
+    padding: 1.25rem !important;
+  }
+
+  .bev-contact-logo {
+    max-width: 110px;
+  }
+
+  .bev-contact-value {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .bev-contact-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
+  .bev-form-input {
+    font-size: 0.92rem;
+  }
+}

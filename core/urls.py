@@ -9,4 +9,5 @@ urlpatterns = [
     path("noticias/", include("noticias.urls")), 
     path('catalogo/', include('catalogo.urls')),
     path("", include("equipo.urls")),
+    path("contacto/", include("contacto.urls")),
 ] + static_urls(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
