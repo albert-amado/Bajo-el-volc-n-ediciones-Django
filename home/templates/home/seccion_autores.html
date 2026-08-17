@@ -11,7 +11,7 @@
       <div class="row g-4 justify-content-center">
         {% for autor in autores %}
           <div class="col-6 col-md-4 col-lg-2 text-center bev-author-col">
-            <a href="{% url 'detalle_autor' autor.id %}" class="bev-author-link">
+            <a href="{% url 'catalogo:detalle_autor' autor.id %}" class="bev-author-link">
               <div class="bev-author-avatar mx-auto">
                 {% if autor.foto %}
                   <img
@@ -31,7 +31,7 @@
             <p class="bev-author-country">{{ autor.nacionalidad }}</p>
 
             <div class="mt-3">
-              <a href="{% url 'detalle_autor' autor.id %}" class="btn bev-btn-autor">
+              <a href="{% url 'catalogo:detalle_autor' autor.id %}" class="btn bev-btn-autor">
                 <i class="bi bi-plus-circle me-1"></i> Ver sus obras
               </a>
             </div>

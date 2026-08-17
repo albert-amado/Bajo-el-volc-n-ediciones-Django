@@ -1,6 +1,6 @@
-from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from .models import Autor, Libro
+
 
 def detalle_autor(request, pk):
     """Ficha de un autor con el listado de sus obras."""
@@ -24,8 +24,12 @@ def lista_libros(request):
 
 def detalle_libro(request, slug):
     """Ficha de un libro individual buscado por slug."""
-    libro = get_object_or_404(Libro.objects.select_related("autor"), slug=slug)
-
-    return render(request, "catalogo/detalle_libro.html", {
+    libro = get_object_or_404(
+        Libro.objects.select_related("autor"),
+        slug=slug,
+    )
+    context = {
         "libro": libro,
-    })
+        "autor": libro.autor,
+    }
+    return render(request, "catalogo/libro_detalle.html", context)

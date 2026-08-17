@@ -16,8 +16,9 @@
       >
         <i class="bi bi-bag-plus"></i> Agregar al carrito
       </button>
+      
       <a class="libro-card__overlay-btn libro-card__overlay-btn--detalle"
-        href="{% url 'detalle_libro' libro.slug %}"
+        href="{% url 'catalogo:detalle_libro' libro.slug %}"
       >
         <i class="bi bi-eye"></i> Ver detalle
       </a>
