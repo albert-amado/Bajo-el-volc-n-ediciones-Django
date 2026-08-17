@@ -1,69 +1,107 @@
 from django.db import models
-from django.utils.text import slugify
-
 
 class Noticia(models.Model):
-    """Sección Noticias/Eventos. 'galeria' del JSON se separa en ImagenGaleria (1:N)."""
-
     class Categoria(models.TextChoices):
-        EVENTO = "EVE", "Evento"
-        PROXIMA_PUBLICACION = "PRO", "Próximas publicaciones"
-        NUEVOS_AUTORES = "AUT", "Nuevos autores"
-        FERIA_LIBRO = "FER", "Feria del libro"
-        PRESENTACION_LIBROS = "PRE", "Presentación de libros"
-        PREMIO_NOVELA = "PRM", "Premio nacional de novela"
+        EVENTO = "evento", "Evento"
+        LANZAMIENTO = "lanzamiento", "Lanzamiento"
+        CONVOCATORIA = "convocatoria", "Convocatoria"
+        ENTREVISTA = "entrevista", "Entrevista"
+        PREMIO = "premio", "Premio"
 
     titulo = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=220, unique=True, blank=True)
-    resumen = models.TextField()
+    slug = models.SlugField(max_length=220, unique=True)
+    categoria = models.CharField(max_length=20, choices=Categoria.choices)
+    fecha = models.DateField()
+    resumen = models.CharField(max_length=300)
     contenido = models.TextField()
-    imagen = models.ImageField(upload_to="noticias/")
-    fecha = models.CharField(
-        max_length=50,
-        help_text="Texto libre en origen ('Pronto', fechas sueltas). "
-        "Migrar a DateField cuando el dato esté normalizado.",
+    imagen = models.ImageField(upload_to="noticias/portadas/", blank=True, null=True)
+    enlace_pdf = models.URLField(blank=True, null=True)
+    participantes = models.ManyToManyField(
+        "catalogo.Autor",
+        through="Participacion",
+        related_name="noticias_participadas",
+        blank=True,
     )
-    categoria = models.CharField(max_length=3, choices=Categoria.choices)
-    enlace_pdf = models.FileField(upload_to="noticias/pdf/", blank=True, null=True)
-    mostrar_participantes = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = "Noticia"
         verbose_name_plural = "Noticias"
-        ordering = ["-id"]
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.titulo)
-        super().save(*args, **kwargs)
+        ordering = ["-fecha"]
 
     def __str__(self):
         return self.titulo
 
 
-class ImagenGaleria(models.Model):
-    """
-    Imágenes de la galería de eventos dentro de una Noticia.
-    FK a Noticia (M:1) y FK opcional a Autor (relaciona la foto con el autor).
-    'catalogo.Autor' en string: evita import circular entre apps.
-    """
-    noticia = models.ForeignKey(
-        Noticia, on_delete=models.CASCADE, related_name="galeria"
-    )
-    autor = models.ForeignKey(
-        "catalogo.Autor", on_delete=models.SET_NULL, null=True, blank=True,
-        related_name="apariciones_galeria"
-    )
-    src = models.ImageField(upload_to="eventos/")
+class AlbumGaleria(models.Model):
+    """Agrupación explícita de multimedia por evento/tema dentro de una noticia."""
+    noticia = models.ForeignKey(Noticia, on_delete=models.CASCADE, related_name="albumes")
     titulo = models.CharField(max_length=200)
-    libro = models.CharField(
-        max_length=200, blank=True,
-        help_text="Referencia textual al libro mostrado en la foto"
+    libro = models.CharField(max_length=200, blank=True, null=True)
+    autor = models.ForeignKey("catalogo.Autor", on_delete=models.SET_NULL, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Álbum de galería"
+        verbose_name_plural = "Álbumes de galería"
+        ordering = ["id"]
+
+    def __str__(self):
+        return f"{self.titulo} ({self.noticia.titulo})"
+
+
+class MultimediaGaleria(models.Model):
+    class Tipo(models.TextChoices):
+        IMAGEN = "imagen", "Imagen"
+        VIDEO = "video", "Video"
+        DOCUMENTO = "documento", "Documento"
+
+    album = models.ForeignKey(AlbumGaleria, on_delete=models.CASCADE, related_name="multimedia")
+    tipo = models.CharField(max_length=15, choices=Tipo.choices)
+
+    imagen = models.ImageField(upload_to="noticias/galeria/imagenes/", blank=True, null=True)
+    video_archivo = models.FileField(upload_to="noticias/galeria/videos/", blank=True, null=True)
+    video_url = models.URLField(blank=True, null=True)
+    archivo_documento = models.FileField(upload_to="noticias/galeria/documentos/", blank=True, null=True)
+
+    titulo_o_descripcion = models.CharField(max_length=200, blank=True)
+    orden = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        verbose_name = "Elemento multimedia"
+        verbose_name_plural = "Elementos multimedia"
+        ordering = ["orden"]
+
+    def __str__(self):
+        return f"{self.get_tipo_display()} — {self.titulo_o_descripcion or self.album.titulo}"
+
+
+class EtiquetaRol(models.Model):
+    """Rol o etiqueta asignable a un participante en una noticia (ej. 'Invitado especial')."""
+    nombre = models.CharField(max_length=100, unique=True)
+    color_css = models.CharField(
+        max_length=30,
+        blank=True,
+        help_text="Nombre de variable CSS o clase para el color del badge (ej. 'bev-gray-1500').",
     )
 
     class Meta:
-        verbose_name = "Imagen de galería"
-        verbose_name_plural = "Imágenes de galería"
+        verbose_name = "Etiqueta de rol"
+        verbose_name_plural = "Etiquetas de rol"
+        ordering = ["nombre"]
 
     def __str__(self):
-        return f"{self.noticia.titulo} - {self.titulo}"
+        return self.nombre
+
+
+class Participacion(models.Model):
+    """Tabla puente: qué Autor participó en qué Noticia, con qué rol."""
+    noticia = models.ForeignKey(Noticia, on_delete=models.CASCADE)
+    autor = models.ForeignKey("catalogo.Autor", on_delete=models.CASCADE)
+    etiqueta = models.ForeignKey(EtiquetaRol, on_delete=models.SET_NULL, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Participación"
+        verbose_name_plural = "Participaciones"
+        unique_together = ["noticia", "autor"]
+
+    def __str__(self):
+        return f"{self.autor} en {self.noticia} ({self.etiqueta or 'sin rol'})"
