@@ -14,6 +14,12 @@
   --pr-black: #000000;
   --pr-black-1100: #111111;
 
+  /*-Colores de etiquetas de libros-*/
+  --pr-etiqueta-preventa:#F23838;
+  --pr-etiqueta-nuevo:#00a02b;
+  --pr-etiqueta-descuento: #bcbc08;
+  --pr-etiqueta-destacado: #014970;
+
   --pr-glass-dark:   rgba(0, 0, 0, 0.05);
   --pr-glass-light-08: rgba(255, 255, 255, 0.08);
   --pr-glass-light-70: rgba(255, 255, 255, 0.7);

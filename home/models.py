@@ -91,3 +91,24 @@ class FraseEditorial(models.Model):
 
     def __str__(self):
         return self.mensaje[:50]
+    
+from django.db import models
+
+
+class BannerCarrusel(models.Model):
+    titulo = models.CharField(max_length=200)
+    descripcion = models.TextField(blank=True)
+    imagen = models.ImageField(upload_to="carrusel/")
+    enlace_url = models.URLField(blank=True)
+    archivo_pdf = models.FileField(upload_to="carrusel/pdfs/", blank=True, null=True)
+    texto_boton = models.CharField(max_length=50, blank=True)
+    orden = models.PositiveSmallIntegerField(default=0)
+    activo = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = "Banner del carrusel"
+        verbose_name_plural = "Banners del carrusel"
+        ordering = ["orden", "-id"]
+
+    def __str__(self):
+        return f"{self.orden} - {self.titulo}"

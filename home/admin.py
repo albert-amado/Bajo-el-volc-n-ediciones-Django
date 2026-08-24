@@ -1,6 +1,9 @@
 from django import forms
 from django.contrib import admin
-from .models import AnuncioPremio, SlideHero, FraseEditorial
+from .models import AnuncioPremio
+from .models import SlideHero
+from .models import FraseEditorial
+from .models import BannerCarrusel
 
 
 class AnuncioPremioForm(forms.ModelForm):
@@ -21,3 +24,8 @@ class AnuncioPremioAdmin(admin.ModelAdmin):
 
 admin.site.register(SlideHero)
 admin.site.register(FraseEditorial)
+@admin.register(BannerCarrusel)
+class BannerCarruselAdmin(admin.ModelAdmin):
+    list_display = ("titulo", "orden", "activo")
+    list_editable = ("orden", "activo")
+    list_filter = ("activo",)
