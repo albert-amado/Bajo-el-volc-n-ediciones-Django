@@ -3,13 +3,13 @@ from .models import Autor, Libro
 
 
 def detalle_autor(request, pk):
-    """Ficha de un autor con el listado de sus obras."""
-    autor = get_object_or_404(Autor, pk=pk)
-    libros = Libro.objects.filter(autor=autor)
-
-    return render(request, "catalogo/detalle_autor.html", {
+    """Ficha de un autor con el listado de sus obras, en una sola consulta."""
+    autor = get_object_or_404(
+        Autor.objects.prefetch_related("libros"),
+        pk=pk,
+    )
+    return render(request, "catalogo/autor_detalle.html", {
         "autor": autor,
-        "libros": libros,
     })
 
 

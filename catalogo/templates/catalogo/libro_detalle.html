@@ -139,18 +139,20 @@
               <p class="bev-author-meta mb-2">{{ autor.nacionalidad }}</p>
               <p class="bev-author-bio mb-0">{{ autor.bio }}</p>
 
+              {% if autor.instagram_url %}
               <div class="bev-author-social mt-4">
                 <p class="bev-detail-label mb-2">No te pierdas nada del autor:</p>
-                
-                  href="https://www.instagram.com/bajoelvolcane"
+                <a
+                  href="{{ autor.instagram_url }}"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="bev-author-instagram"
                 >
                   <i class="bi bi-instagram"></i>
-                  <span>@bajoelvolcane</span>
+                  <span>@{{ autor.instagram_username }}</span>
                 </a>
               </div>
+              {% endif %}
             </div>
           </div>
         </section>
