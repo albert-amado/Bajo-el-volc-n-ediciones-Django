@@ -5,7 +5,23 @@
     box-shadow: none;
     border-radius: 0;
   }
+.bev-hero-title,
+.bev-hero-description {
+  background-color: var(--pr-glass-dark-28, rgba(0, 0, 0, 0.5));
+  backdrop-filter: blur(4px);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: var(--pr-white, #ffffff);
+  width: fit-content;
+  margin: 0 auto 0.75rem auto; 
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
 
+.bev-hero-description {
+  margin-bottom: 0;
+}
   .bev-slide {
     height: clamp(280px, 32vw, 500px);
     min-height: 280px;

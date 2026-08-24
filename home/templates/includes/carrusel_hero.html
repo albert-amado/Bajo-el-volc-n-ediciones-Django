@@ -8,7 +8,7 @@
       data-bs-interval="5000"
     >
       <div class="carousel-indicators">
-        {% for libro in slides %}
+        {% for banner in banners %}
           <button
             type="button"
             data-bs-target="#heroCarousel"
@@ -21,11 +21,11 @@
       </div>
 
       <div class="carousel-inner">
-        {% for libro in slides %}
+        {% for banner in banners %}
           <div class="carousel-item bev-slide{% if forloop.first %} active{% endif %}">
             <img
-              src="{{ libro.imagen_hero.url }}"
-              alt="{{ libro.titulo }}"
+              src="{{ banner.imagen.url }}"
+              alt="{{ banner.titulo }}"
               class="bev-slide-bg"
               loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
               fetchpriority="{% if forloop.first %}high{% else %}auto{% endif %}"
@@ -35,11 +35,20 @@
             <div class="container h-100">
               <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-11 col-lg-10 bev-slide-content text-center mx-auto">
-                  {% if libro.etiqueta == "NUE" %}
-                    <span class="bev-hero-badge bev-etiqueta-nuevo">Nuevo</span>
+                  <h2 class="bev-hero-title">{{ banner.titulo }}</h2>
+                  {% if banner.descripcion %}
+                    <p class="bev-hero-description">{{ banner.descripcion }}</p>
                   {% endif %}
-                  {% if libro.etiqueta == "PRE" %}
-                    <span class="bev-hero-badge bev-etiqueta-preventa">Próximo lanzamiento</span>
+                  {% if banner.texto_boton %}
+                    {% if banner.archivo_pdf %}
+                      <a href="{{ banner.archivo_pdf.url }}" class="btn bev-btn-gold" download>
+                        {{ banner.texto_boton }}
+                      </a>
+                    {% elif banner.enlace_url %}
+                      <a href="{{ banner.enlace_url }}" class="btn bev-btn-gold">
+                        {{ banner.texto_boton }}
+                      </a>
+                    {% endif %}
                   {% endif %}
                 </div>
               </div>
