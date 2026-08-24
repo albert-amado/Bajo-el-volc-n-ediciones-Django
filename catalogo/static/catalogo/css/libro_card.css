@@ -1,4 +1,5 @@
 .libro-card {
+  position: relative; /* nuevo contexto para etiqueta */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -89,29 +90,42 @@
 
 .libro-card__etiqueta {
   position: absolute;
-  top: 8px;
-  left: 0;
+  top: -12px; /* sobresale por encima del cover */
+  left: 12px;
   z-index: 3;
-  font-size: 0.6rem;
-  font-weight: 700;
-  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 8px 20px 8px 14px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
 }
 
-.libro-card__etiqueta--nue {
-  background: var(--bg-surface-alt);
-  color: var(--text-heading);
-}
-
-.libro-card__etiqueta--des {
-  background: var(--bg-surface-alt);
-  color: var(--text-heading);
+.libro-card__etiqueta i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 0.6rem;
 }
 
 .libro-card__etiqueta--pre {
-  background: var(--bg-surface-alt);
-  color: var(--text-heading);
+  background: var( --pr-etiqueta-preventa);
+}
+
+.libro-card__etiqueta--nue {
+  background: var( --pr-etiqueta-nuevo);
+}
+
+.libro-card__etiqueta--des {
+  background: var(--pr-etiqueta-destacado);
 }
 
 .libro-card__titulo {
