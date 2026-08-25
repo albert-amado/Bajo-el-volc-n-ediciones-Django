@@ -35,21 +35,25 @@
             <div class="container h-100">
               <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-11 col-lg-10 bev-slide-content text-center mx-auto">
-                  <h2 class="bev-hero-title">{{ banner.titulo }}</h2>
-                  {% if banner.descripcion %}
-                    <p class="bev-hero-description">{{ banner.descripcion }}</p>
-                  {% endif %}
-                  {% if banner.texto_boton %}
-                    {% if banner.archivo_pdf %}
-                      <a href="{{ banner.archivo_pdf.url }}" class="btn bev-btn-gold" download>
-                        {{ banner.texto_boton }}
-                      </a>
-                    {% elif banner.enlace_url %}
-                      <a href="{{ banner.enlace_url }}" class="btn bev-btn-gold">
-                        {{ banner.texto_boton }}
-                      </a>
+                  <div class="bev-text-container">
+                    <h2 class="bev-hero-title">{{ banner.titulo }}</h2>
+                    {% if banner.descripcion %}
+                      <p class="bev-hero-description">{{ banner.descripcion }}</p>
                     {% endif %}
-                  {% endif %}
+                  </div>
+                  <div class="bev-action-container mt-4">
+                    {% if banner.texto_boton %}
+                      {% if banner.archivo_pdf %}
+                        <a href="{{ banner.archivo_pdf.url }}" class="btn bev-btn-gold" download>
+                          {{ banner.texto_boton }}
+                        </a>
+                      {% elif banner.enlace_url %}
+                        <a href="{{ banner.enlace_url }}" class="btn bev-btn-gold">
+                          {{ banner.texto_boton }}
+                        </a>
+                      {% endif %}
+                    {% endif %}
+                  </div>
                 </div>
               </div>
             </div>
