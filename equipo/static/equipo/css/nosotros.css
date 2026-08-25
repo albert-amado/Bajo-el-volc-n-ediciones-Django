@@ -19,8 +19,36 @@
   overflow: hidden;
 }
 
-.bev-info-card:hover {
-  transform: translateY(-4px);
+.bev-social-section {
+  background-color: transparent;
+  border-left: 2px solid var(--pr-gray-1200);
+  padding: 1.5rem 2rem;
+  margin-top: 1.5rem;
+  border-radius: 2px;
+}
+
+.bev-social-section p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--pr-gray-1200);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.bev-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--pr-gray-1200);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, opacity 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.bev-instagram-link:hover {
+  border-bottom-color: var(--pr-gray-1200);
+  opacity: 0.85;
 }
 
 .bev-info-sello {
