@@ -7,11 +7,10 @@
   }
 .bev-hero-title,
 .bev-hero-description {
-  background-color: var(--pr-glass-dark-28, rgba(0, 0, 0, 0.5));
-  backdrop-filter: blur(4px);
+  background-color: var(--pr-white);
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  color: var(--pr-white, #ffffff);
+  color: var(--pr-gray-900, #000000);
   width: fit-content;
   margin: 0 auto 0.75rem auto; 
   display: grid;
