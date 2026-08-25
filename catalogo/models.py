@@ -27,7 +27,7 @@ class Autor(models.Model):
     def instagram_username(self):
         if not self.instagram_url:
             return ""
-        return self.instagram_url.rstrip("/").split("/")[-1]
+        return self.instagram_url.rstrip("/").split("/")[-1].split("?")[0]
 
 class Libro(models.Model):
     """
