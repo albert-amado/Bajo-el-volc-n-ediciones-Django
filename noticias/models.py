@@ -123,4 +123,5 @@ class Participacion(models.Model):
         unique_together = ["noticia", "autor"]
 
     def __str__(self):
-        return f"{self.autor} en {self.noticia} ({self.etiqueta or 'sin rol'})"
+        return f"{self.autor} en {self.noticia} ({self.etiqueta or 'sin rol'
+    })"
