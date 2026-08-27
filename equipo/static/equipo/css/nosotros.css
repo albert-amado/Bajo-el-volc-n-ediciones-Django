@@ -4,7 +4,7 @@
    ============================================================ */
 
 .bev-nosotros {
-  background-color: var(--pr-bg-main, transparent);
+  background-image: var(--bg-patron-volcan);
   min-height: 100vh;
   color: var(--pr-text-body, var(--text-body));
 }

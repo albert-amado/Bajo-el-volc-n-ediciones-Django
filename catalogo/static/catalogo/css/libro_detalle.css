@@ -1,6 +1,6 @@
 .bev-book-detail {
+  background-image: var(--bg-patron-volcan);
   min-height: 100vh;
-  background-color: transparent;
   color: var(--pr-gray-900);
 }
 
