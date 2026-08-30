@@ -1,5 +1,5 @@
 .libros-seccion {
-  background-color: transparent;
+    background-image: var(--navbar-bg-image-book);
 }
 
 .libros-seccion__tag {

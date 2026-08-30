@@ -7,8 +7,8 @@
   }
 
   .bev-slide {
-    height: clamp(280px, 32vw, 500px);
-    min-height: 280px;
+    height: clamp(380px, 32vw, 500px);
+    min-height: 480px;
     position: relative;
     background-color: var(--pr-white);
     display: flex;
@@ -181,7 +181,7 @@
 
   @media (max-width: 360px) {
     .bev-slide {
-      height: clamp(200px, 62vw, 250px);
+      height: clamp(380px, 62vw, 250px);
       min-height: 200px;
     }
 
