@@ -3,7 +3,6 @@
    ============================================ */
 :root {
   /*Variables de fondos para componentes*/
-  --navbar-bg-image-book: url("/static/assets/img/fondos/chevron.png");
   --pr-white:         #FFFFFF;
   --pr-gray-50:       #e6e6e6;
   --pr-gray-100:      #b6b6b6;
@@ -69,51 +68,69 @@
   --site-bg-repeat:   repeat;
   --site-bg-size:     950px;
   --site-bg-position: top left;
+}
 
-  /* ============================================
-     4. VARIABLES SEMÁNTICAS — MODO CLARO (default)
-     ============================================ */
-  --bg-body:       var(--pr-white);
-  --bg-surface:    var(--pr-white);
-  --bg-surface-alt:var(--pr-gray-400);
-  --text-primary:  var(--pr-black);
-  --text-body:     var(--pr-black);
-  --text-heading:  var(--pr-black);
-  --border-soft:   var(--pr-gray-200);
+/* ============================================
+   4. VARIABLES SEMÁNTICAS — MODO CLARO (default)
+   ============================================ */
+:root,
+[data-bs-theme="light"] {
+  /* --- FONDOS --- */
+   --navbar-bg-image-book: var(--pr-white);
+  --bg-body:          var(--pr-white);
+  --bg-surface:       var(--pr-white);
+  --bg-surface-alt:   var(--pr-gray-400);
+  --site-bg-image:    url("/static/assets/img/fondos/patron_claro.png");
+  --bg-patron-volcan: url("/static/assets/img/fondos/patron_claro.png");
 
+  /* --- TEXTOS --- */
+  --text-primary: var(--pr-black);
+  --text-body:    var(--pr-black);
+  --text-heading: var(--pr-black);
+  --border-soft:  var(--pr-gray-200);
+
+  /* --- TOPBAR --- */
   --topbar-bg:     var(--pr-gray-1500);
   --topbar-text:   var(--pr-white);
   --topbar-muted:  var(--pr-gray-200);
   --topbar-hover:  var(--pr-white);
   --topbar-border: var(--pr-black);
 
+  /* --- NAVBAR --- */
   --navbar-text:      var(--pr-black);
   --navbar-accent:    var(--pr-black);
-  --navbar-logo-glow: rgba(255,255,255,0.3);
-
-  --site-bg-image: url("/static/assets/img/fondos/patron_claro.png");
-  --bg-patron-volcan: url("/static/assets/img/fondos/patron_claro.png");
+  --navbar-logo-glow: rgba(255, 255, 255, 0.3);
 }
 
 /* ============================================
    5. VARIABLES SEMÁNTICAS — MODO OSCURO
    ============================================ */
 [data-bs-theme="dark"] {
-  --bg-body:        #121212;
-  --bg-surface:     #1a1a1a;
-  --bg-surface-alt: #232323;
-  --text-body:      #e6e6e6;
-  --text-heading:   #f4f4f4;
-  --border-soft:    #2e2e2e;
+  /* --- FONDOS --- */
+  --navbar-bg-image-book: var(--pr-black);
+  --bg-body:          #121212;
+  --bg-surface:       #1a1a1a;
+  --bg-surface-alt:   #232323;
+  --site-bg-image:    url("/static/assets/img/fondos/fondo_oscuro.png");
+  --bg-patron-volcan: url("/static/assets/img/fondos/fondo_oscuro.png");
 
-  --navbar-text:   var(--text-body);
-  --navbar-accent: var(--text-heading);
+  /* --- TEXTOS --- */
+  --text-primary: #f4f4f4; /* añadida para simetría: faltaba en oscuro */
+  --text-body:    #e6e6e6;
+  --text-heading: #f4f4f4;
+  --border-soft:  #2e2e2e;
 
+  /* --- TOPBAR --- */
   --topbar-bg:     #0d0d0d;
+  --topbar-text:   #f4f4f4;      /* añadida para simetría: faltaba en oscuro */
+  --topbar-muted:  #a0a0a0;      /* añadida para simetría: faltaba en oscuro */
+  --topbar-hover:  #f4f4f4;      /* añadida para simetría: faltaba en oscuro */
   --topbar-border: #2e2e2e;
 
-  --site-bg-image: url("/static/assets/img/fondos/fondo_oscuro.png");
-  --bg-patron-volcan: url("/static/assets/img/fondos/fondo_oscuro.png");
+  /* --- NAVBAR --- */
+  --navbar-text:      var(--text-body);
+  --navbar-accent:    var(--text-heading);
+  --navbar-logo-glow: rgba(255, 255, 255, 0.15); /* añadida para simetría: faltaba en oscuro */
 }
 
 /* --- Base de la página --- */

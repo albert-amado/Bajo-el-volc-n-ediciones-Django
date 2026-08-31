@@ -88,7 +88,7 @@
 
 .bev-noticia-resumen-mini {
   font-size: 0.75rem;
-  color: var(--text-body); /* Variable semántica para modo claro y oscuro */
+  color: var(--text-body); /* Variable semántica: adaptable a modo oscuro */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;

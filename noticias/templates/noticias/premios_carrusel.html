@@ -1,0 +1,45 @@
+<section class="bev-premios-carrusel">
+  <div id="carouselPremios" class="carousel slide bev-premios-carrusel__wrapper rounded-3 overflow-hidden" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      {% for premio in premios %}
+        <button type="button" data-bs-target="#carouselPremios" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" {% if forloop.first %}aria-current="true"{% endif %} aria-label="Slide {{ forloop.counter }}"></button>
+      {% endfor %}
+    </div>
+
+    <div class="carousel-inner">
+      {% for premio in premios %}
+        <div class="carousel-item bev-premios-carrusel__item {% if forloop.first %}active{% endif %}">
+          <img src="{{ premio.imagen.url }}" class="bev-premios-carrusel__img" alt="{{ premio.titulo }}">
+
+          <div class="carousel-caption bev-premios-carrusel__caption d-none d-md-flex flex-column justify-content-center align-items-center h-100 top-0 p-4">
+            <h3 class="bev-premios-carrusel__title mb-3">{{ premio.titulo }}</h3>
+            {% if premio.descripcion %}
+              <p class="bev-premios-carrusel__desc mb-3">{{ premio.descripcion }}</p>
+            {% endif %}
+
+            {% if premio.enlace_url or premio.archivo_pdf %}
+              <a href="{% if premio.archivo_pdf %}{{ premio.archivo_pdf.url }}{% else %}{{ premio.enlace_url }}{% endif %}" {% if premio.archivo_pdf %}target="_blank"{% endif %} class="bev-premios-carrusel__btn">
+                {{ premio.texto_boton|default:"Más información" }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% empty %}
+        <div class="carousel-item bev-premios-carrusel__item active">
+          <div class="bev-premios-carrusel__empty d-flex justify-content-center align-items-center">
+            <p>No hay premios activos en este momento.</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPremios" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselPremios" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</section>

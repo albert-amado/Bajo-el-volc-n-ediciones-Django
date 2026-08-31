@@ -1,5 +1,5 @@
 .libros-seccion {
-    background-image: var(--navbar-bg-image-book);
+    background: var(--navbar-bg-image-book);
 }
 
 .libros-seccion__tag {

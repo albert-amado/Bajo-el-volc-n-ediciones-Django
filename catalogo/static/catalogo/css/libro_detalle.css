@@ -45,7 +45,7 @@
 }
 
 .bev-book-detail-left {
-  background: var(--pr-gray-400);
+  background: var(--navbar-bg-image-book);
   padding: clamp(1rem, 2vw, 1.5rem);
   display: flex;
   flex-direction: column;
@@ -69,17 +69,17 @@
 
 .bev-detail-block--under-cover {
   margin-bottom: 0;
-  background: var(--pr-glass-panel);
+  background: var(--navbar-bg-image-book);
 }
 
 .bev-tech-sheet {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  background: var(--pr-white);
-  border: 1px solid var(--pr-gray-200);
-  border-radius: 12px;
-  overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg-surface); /* <-- CAMBIO PRINCIPAL AQUÍ */
+    border: 1px solid var(--border-soft); /* Ajustado para que el borde también se adapte */
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .bev-tech-row {
@@ -88,7 +88,7 @@
   gap: 0.5rem;
   align-items: start;
   padding: 0.42rem 0.7rem;
-  border-bottom: 1px solid var(--pr-gray-200);
+  border-bottom: 1px solid var(--navbar-bg-image-book);
   font-size: 0.76rem;
   line-height: 1.2;
 }
@@ -124,7 +124,7 @@
 }
 
 .bev-book-detail-content {
-  background: var(--pr-gray-400);
+  background: var(--navbar-bg-image-book);
   padding: clamp(1.25rem, 3vw, 2.5rem);
 }
 
@@ -137,7 +137,7 @@
 }
 
 .bev-detail-block {
-  background: var(--pr-white);
+  background: var(--navbar-bg-image-book);
   border: 1px solid var(--pr-gray-200);
   border-radius: 12px;
   padding: 1rem;
@@ -209,7 +209,7 @@
 .bev-author-name {
   font-family: var(--font-display);
   font-size: 1.15rem;
-  color: var(--pr-gray-900);
+  color: var(--pr-gray-900); /* Intencional: fondo blanco fijo en .bev-detail-block requiere texto oscuro */
   line-height: 1.1;
 }
 

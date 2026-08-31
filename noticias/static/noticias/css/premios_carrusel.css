@@ -1,0 +1,230 @@
+/* Añadir a vars.css si no existe */
+:root {
+  --pr-premio-green: #B7D76D;
+  --pr-premio-green-40: rgba(183, 215, 109, 0.40);
+  --pr-premio-green-60: rgba(183, 215, 109, 0.60);
+}
+
+.bev-premios-carrusel {
+  background-image: var(--site-bg-image);
+  background-repeat: repeat;
+  background-size: 950px;
+  background-color: var(--pr-white);
+  padding: 5rem 1rem 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.bev-premios-carrusel__card {
+  width: 100%;
+  max-width: 863px;
+  aspect-ratio: 863 / 617;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.20);
+  background: var(--pr-white);
+}
+
+/* --- Header --- */
+.bev-premios-carrusel__header {
+  flex: 0 0 25%;
+  background-color: var(--pr-premio-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+}
+
+.bev-premios-carrusel__header-text {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  color: var(--pr-white);
+  text-align: center;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* --- Body / carousel --- */
+.bev-premios-carrusel__body {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.bev-premios-carrusel__item,
+.carousel-inner {
+  height: 100%;
+}
+
+.bev-premios-carrusel__row {
+  display: flex;
+  height: 100%;
+}
+
+/* --- Columna izquierda --- */
+.bev-premios-carrusel__info {
+  flex: 0 0 56%;
+  background-color: var(--pr-gray-50, #f4f4f2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.bev-premios-carrusel__title {
+  font-family: var(--font-serif, Georgia, serif);
+  font-weight: 700;
+  color: var(--pr-gray-1500, #182B3A);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+}
+
+.bev-premios-carrusel__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem;
+}
+
+.bev-premios-carrusel__divider {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.bev-premios-carrusel__divider-line {
+  width: 60px;
+  height: 2px;
+  background-color: var(--pr-premio-green);
+}
+
+.bev-premios-carrusel__divider-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--pr-premio-green);
+}
+
+.bev-premios-carrusel__logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+
+.bev-premios-carrusel__btn {
+  align-self: flex-start;
+  margin-left: 0.5rem;
+  background-color: var(--pr-premio-green);
+  color: var(--pr-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.bev-premios-carrusel__btn:hover {
+  color: var(--pr-white);
+  opacity: 0.9;
+}
+
+/* --- Columna derecha (foto) --- */
+.bev-premios-carrusel__photo-wrap {
+  flex: 0 0 44%;
+  position: relative;
+  overflow: hidden;
+}
+
+.bev-premios-carrusel__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.05);
+  display: block;
+}
+
+.bev-premios-carrusel__circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--pr-premio-green-60);
+  pointer-events: none;
+}
+
+.bev-premios-carrusel__circle--lg {
+  width: 195px;
+  height: 195px;
+  left: 15%;
+  bottom: 8%;
+}
+
+.bev-premios-carrusel__circle--sm-top {
+  width: 34px;
+  height: 34px;
+  top: 12%;
+  left: 20%;
+  background-color: var(--pr-premio-green-40);
+}
+
+.bev-premios-carrusel__circle--sm-bottom {
+  width: 40px;
+  height: 40px;
+  bottom: 6%;
+  right: 12%;
+}
+
+/* --- Footer --- */
+.bev-premios-carrusel__footer {
+  flex: 0 0 62px;
+  background-color: var(--pr-premio-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+}
+
+.bev-premios-carrusel__footer-label {
+  font-weight: 700;
+  color: var(--pr-gray-1500, #182B3A);
+  font-size: 0.95rem;
+}
+
+.bev-premios-carrusel__footer-link {
+  color: var(--pr-white);
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.bev-premios-carrusel__footer-link:hover {
+  color: var(--pr-white);
+  opacity: 0.8;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .bev-premios-carrusel__row {
+    flex-direction: column;
+  }
+  .bev-premios-carrusel__info,
+  .bev-premios-carrusel__photo-wrap {
+    flex: 1 1 50%;
+  }
+  .bev-premios-carrusel__card {
+    aspect-ratio: auto;
+  }
+  .bev-premios-carrusel__header-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bev-premios-carrusel__circle--lg { width: 140px; height: 140px; }
+}

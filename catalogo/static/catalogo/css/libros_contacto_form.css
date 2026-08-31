@@ -79,14 +79,14 @@
 }
 
 .bev-contact-value {
-  color: var(--text-body);
+  color: var(--text-body); /* Variable semántica para contraste en ambos modos */
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .bev-contact-value:hover {
-  color: var(--text-heading);
+  color: var(--text-heading); /* Enfatiza el valor al interactuar */
   opacity: 0.75;
 }
 

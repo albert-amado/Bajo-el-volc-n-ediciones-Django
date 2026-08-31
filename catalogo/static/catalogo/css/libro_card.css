@@ -133,7 +133,7 @@
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.01em;
-  color: var(--text-heading);
+  color: var(--text-heading); /* Ajuste semántico para modo oscuro: contrasta con fondos del sitio */
   margin: 0.65rem 0 0;
   line-height: 1.25;
   text-align: center;

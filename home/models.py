@@ -1,67 +1,30 @@
+# models.py
 from django.db import models
 
-class AnuncioPremio(models.Model):
-    frase = models.CharField(
-        max_length=255,
-        help_text="Frase principal del recuadro de premio o anuncio."
-    )
-    color_fondo = models.CharField(
-        max_length=7,
-        default="#000000",
-        help_text="Código hexadecimal del color de fondo. Ej: #FF5733"
-    )
-    imagen = models.ImageField(
-        upload_to="home/premios/",
-        help_text="Imagen obligatoria del anuncio."
-    )
-    documento_pdf = models.FileField(
-        upload_to="home/premios/pdf/",
-        blank=True,
-        null=True,
-        help_text="Archivo PDF opcional adjunto al anuncio."
-    )
-    activo = models.BooleanField(
-        default=True,
-        help_text="Desmarcar para ocultar el anuncio sin borrarlo."
-    )
-    texto_boton_pdf = models.CharField(max_length=50, default="Mas info aqui:")
+class PremiosCarrusel(models.Model):
+    titulo = models.CharField(max_length=200)
+    descripcion = models.TextField(blank=True)
+    imagen = models.ImageField(upload_to="premios_carrusel/")
+    enlace_url = models.URLField(blank=True)
+    archivo_pdf = models.FileField(upload_to="premios_carrusel/pdfs/", blank=True, null=True)
+    texto_boton = models.CharField(max_length=50, blank=True)
+    orden = models.PositiveSmallIntegerField(default=0)
+    activo = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Anuncio de Premio"
-        verbose_name_plural = "Anuncios de Premios"
+        verbose_name = "Banner de Premios Carrusel"
+        verbose_name_plural = "Banners de Premios Carrusel"
+        ordering = ["orden", "-id"]
 
     def __str__(self):
-        return self.frase
-
+        return f"{self.orden} - {self.titulo}"
 class SlideHero(models.Model):
-    titulo_interno = models.CharField(
-        max_length=100, 
-        help_text="Solo para identificar el slide en el panel de administración. No se mostrará en la web."
-    )
-    imagen_fondo = models.ImageField(
-        upload_to="home/hero/",
-        help_text="Imagen de fondo obligatoria del slide."
-    )
-    documento_descarga = models.FileField(
-        upload_to="home/hero/documentos/",
-        blank=True,
-        null=True,
-        help_text="Archivo o documento opcional para descarga."
-    )
-    etiqueta = models.CharField(
-        max_length=50,
-        blank=True,
-        null=True,
-        help_text="Texto corto opcional sobre la imagen. Ej: Nuevo, Preventa, Evento."
-    )
-    orden = models.PositiveIntegerField(
-        default=0,
-        help_text="Número que define el orden de aparición en el carrusel. Menor número aparece primero."
-    )
-    activo = models.BooleanField(
-        default=True,
-        help_text="Desmarcar para ocultar el slide sin borrarlo."
-    )
+    titulo_interno = models.CharField(max_length=100)
+    imagen_fondo = models.ImageField(upload_to="home/hero/")
+    documento_descarga = models.FileField(upload_to="home/hero/documentos/", blank=True, null=True)
+    etiqueta = models.CharField(max_length=50, blank=True, null=True)
+    orden = models.PositiveIntegerField(default=0)
+    activo = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = "Slide del Carrusel Hero"
@@ -70,20 +33,11 @@ class SlideHero(models.Model):
 
     def __str__(self):
         return self.titulo_interno    
+
 class FraseEditorial(models.Model):
-    mensaje = models.TextField(
-        help_text="Mensaje o frase inspiradora de la editorial."
-    )
-    autor = models.CharField(
-        max_length=150,
-        blank=True,
-        null=True,
-        help_text="Nombre de quién firma la frase. Opcional."
-    )
-    activo = models.BooleanField(
-        default=True,
-        help_text="Desmarcar para ocultar la frase sin borrarla."
-    )
+    mensaje = models.TextField()
+    autor = models.CharField(max_length=150, blank=True, null=True)
+    activo = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = "Frase Editorial"
@@ -91,9 +45,6 @@ class FraseEditorial(models.Model):
 
     def __str__(self):
         return self.mensaje[:50]
-    
-from django.db import models
-
 
 class BannerCarrusel(models.Model):
     titulo = models.CharField(max_length=200)

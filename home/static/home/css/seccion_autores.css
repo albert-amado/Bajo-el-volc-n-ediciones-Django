@@ -62,17 +62,24 @@
 }
 
 .bev-author-name {
-  background-color: var(--pr-white);
+  /* Bloqueamos la variable de texto general de Bootstrap para este párrafo */
+  --bs-body-color: var(--pr-gray-700);
+  
+  background-color: var(--pr-white); /* Fondo blanco fijo por diseño */
+  color: var(--pr-gray-700); /* Intencional: texto oscuro sobre fondo blanco */
   display: inline-block;
   padding: 0.25rem 1rem;
   border-radius: 20px;
-  color: var(--pr-gray-700);
 }
-
 .bev-btn-autor {
+  /* Sobrescribimos el comportamiento de Bootstrap usando tus variables primitivas */
+  --bs-btn-color: var(--pr-gray-700, var(--pr-black));
+  --bs-btn-hover-color: var(--pr-black);
+  
+  /* Tus estilos estructurales */
   background-color: var(--pr-white);
-  color: var(--pr-gray-700);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
+  transition: all 0.3s ease;
 }

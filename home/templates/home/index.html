@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{% static 'home/css/carrusel_hero.css' %}" />
 <link rel="stylesheet" href="{% static 'home/css/panel_categorias.css' %}" />
 <link rel="stylesheet" href="{% static 'home/css/seccion_autores.css' %}" />
+<link rel="stylesheet" href="{% static 'noticias/css/premios_carrusel.css' %}" />
 
 <!-- Estilos de Catálogo -->
 <link rel="stylesheet" href="{% static 'catalogo/css/librosseccion.css' %}" />
@@ -18,7 +19,7 @@
 {% endblock %}
 {% block content %}
 <main>
-    {% include "home/premios.html" %}
+    {% include "noticias/premios_carrusel.html" %}
     {% include "includes/carrusel_hero.html" %}
     {% include "catalogo/includes/libros_seccion.html" %}
     {% include "home/seccion_autores.html" %}
