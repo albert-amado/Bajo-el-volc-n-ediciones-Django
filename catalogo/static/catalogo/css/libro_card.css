@@ -129,14 +129,14 @@
 }
 
 .libro-card__titulo {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  color: var(--text-heading); /* Ajuste semántico para modo oscuro: contrasta con fondos del sitio */
-  margin: 0.65rem 0 0;
-  line-height: 1.25;
-  text-align: center;
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+    margin: 0.65rem 0 0;
+    line-height: 1.75;
+    text-align: center;
 }
 
 @media (hover: none), (max-width: 767px) {
@@ -170,4 +170,12 @@
     margin-top: 0.55rem;
     font-size: 0.95rem;
   }
+}
+.libro-card__precio {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--pr-gray-1200);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
