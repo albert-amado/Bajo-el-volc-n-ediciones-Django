@@ -18,43 +18,43 @@
     </div>
 
     <div class="row align-items-center mb-5">
-      <div class="col-lg-4 text-center mb-4 mb-lg-0">
-        <div class="bev-author-detail-avatar mx-auto">
-          {% if autor.foto %}
-            <img
-              src="{{ autor.foto.url }}"
-              alt="{{ autor.nombre }}"
-              class="img-fluid shadow-lg"
-            />
-          {% else %}
-            <div class="bev-avatar-fallback-large">
-              {{ autor.obtener_iniciales }}
-            </div>
-          {% endif %}
+  <!-- Avatar (queda por encima gracias al z-index) -->
+  <div class="col-lg-4 text-center mb-4 mb-lg-0">
+    <div class="bev-author-detail-avatar mx-auto">
+      {% if autor.foto %}
+        <img
+          src="{{ autor.foto.url }}"
+          alt="{{ autor.nombre }}"
+          class="img-fluid"
+        />
+      {% else %}
+        <div class="bev-avatar-fallback-large">
+          {{ autor.obtener_iniciales }}
         </div>
-      </div>
-
-      <div class="col-lg-8">
-        <span class="bev-section-tag">{{ autor.nacionalidad }}</span>
-        <h1 class="display-4 fw-bold mb-3">{{ autor.nombre }}</h1>
-        <div class="bev-divider mb-4"></div>
-        <p class="bev-author-bio">{{ autor.bio }}</p>
-      </div>
+      {% endif %}
     </div>
+  </div>
 
+  <!-- Tarjeta de información (se solapa hacia la izquierda) -->
+  <div class="col-lg-8 autor-info-card">
+    <span class="bev-section-tag">{{ autor.nacionalidad }}</span>
+    <h1 class="display-5 fw-bold mb-3">{{ autor.nombre }}</h1>
+    <div class="bev-divider mb-4"></div>
+    <p class="bev-author-bio mb-0">{{ autor.bio }}</p>
+  </div>
+</div>
     <hr class="my-5" />
 
     <div class="row">
       <div class="col-12 mb-4">
-        <h3 class="fw-bold">Obras publicadas</h3>
-        <p class="bev-author-subtext">
+        <p class="bev-author-subtext fs-4 fw-bold mb-2">
           Explora los títulos de {{ autor.nombre }} en nuestra editorial.
         </p>
+        <h3 class="fw-bold bev-badge-pill fs-6 mb-0">Obras publicadas</h3>
       </div>
-
       {% for libro in autor.libros.all %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <ahref="{% url 'catalogo:detalle_libro' libro.slug %}"
+          <a href="{% url 'catalogo:detalle_libro' libro.slug %}"
             class="card h-100 bev-book-card-v2 text-decoration-none d-block"
           >
             <div class="bev-book-cover-v2">
