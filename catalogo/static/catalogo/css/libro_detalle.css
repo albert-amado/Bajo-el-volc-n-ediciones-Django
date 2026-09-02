@@ -1,7 +1,7 @@
 .bev-book-detail {
   background-image: var(--bg-patron-volcan);
   min-height: 100vh;
-  color: var(--pr-gray-900);
+  color: var(--text-body);
 }
 
 .bev-book-hero {
@@ -12,7 +12,7 @@
   font-size: 0.82rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--pr-gray-1200);
+  color: var(--text-body);
   font-weight: 700;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .bev-back-link {
-  color: var(--pr-gray-900);
+  color: var(--text-body);
   text-decoration: none;
   font-weight: 600;
 }
@@ -148,7 +148,7 @@
 .bev-detail-description {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--pr-gray-900);
+  color: var(--text-body);
   margin: 0;
 }
 
@@ -209,7 +209,7 @@
 .bev-author-name {
   font-family: var(--font-display);
   font-size: 1.15rem;
-  color: var(--pr-gray-900); /* Intencional: fondo blanco fijo en .bev-detail-block requiere texto oscuro */
+  color: var(--text-heading);
   line-height: 1.1;
 }
 
@@ -221,7 +221,7 @@
 }
 
 .bev-author-bio {
-  color: var(--pr-gray-900);
+  color: var(--text-body);
   line-height: 1.45;
   font-size: 0.95rem;
 }

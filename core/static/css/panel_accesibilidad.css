@@ -1,4 +1,3 @@
-/* Botón flotante */
 .btn-accesibilidad-float {
   position: fixed;
   bottom: 1.5rem;
@@ -8,8 +7,8 @@
   height: 56px;
   border-radius: 50%;
   border: none;
-  background-color: var(--pr-gray-900);
-  color: var(--pr-white);
+  background-color: var(--bg-surface);
+  color: var(--text-heading);
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -18,7 +17,6 @@
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
 .btn-accesibilidad-float:hover {
   transform: scale(1.08);
 }

@@ -9,7 +9,7 @@
   background-image: var(--site-bg-image);
   background-repeat: repeat;
   background-size: 950px;
-  background-color: var(--pr-white);
+  background-color: var(--bg-surface);
   padding: 5rem 1rem 3rem;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.20);
-  background: var(--pr-white);
+  background: var(--bg-surface);
 }
 
 /* --- Header --- */
@@ -41,7 +41,7 @@
   font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(1.1rem, 2.4vw, 1.6rem);
-  color: var(--pr-white);
+  color: var(--text-heading);
   text-align: center;
   line-height: 1.35;
   margin: 0;
@@ -66,7 +66,7 @@
 /* --- Columna izquierda --- */
 .bev-premios-carrusel__info {
   flex: 0 0 56%;
-  background-color: var(--pr-gray-50, #f4f4f2);
+  background-color: var(--bg-surface-alt);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,7 +79,7 @@
 .bev-premios-carrusel__title {
   font-family: var(--font-serif, Georgia, serif);
   font-weight: 700;
-  color: var(--pr-gray-1500, #182B3A);
+  color: var(--text-heading);
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   line-height: 1.3;
   margin: 0 0 0.5rem;
@@ -87,7 +87,7 @@
 
 .bev-premios-carrusel__desc {
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--text-body);
   margin: 0 0 0.75rem;
 }
 
@@ -193,18 +193,18 @@
 
 .bev-premios-carrusel__footer-label {
   font-weight: 700;
-  color: var(--pr-gray-1500, #182B3A);
+  color: var(--text-heading);
   font-size: 0.95rem;
 }
 
 .bev-premios-carrusel__footer-link {
-  color: var(--pr-white);
+  color: var(--text-heading);
   text-decoration: underline;
   font-size: 0.95rem;
 }
 
 .bev-premios-carrusel__footer-link:hover {
-  color: var(--pr-white);
+  color: var(--text-heading);
   opacity: 0.8;
 }
 

@@ -8,10 +8,10 @@
 
 .bev-hero-title,
 .bev-hero-description {
-  background-color: var(--pr-white);
+  background-color: var(--bg-surface);
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  color: var(--pr-gray-900, #000000);
+  color: var(--text-heading);
   width: fit-content;
   margin: 0 auto 0.75rem auto;
   display: grid;
@@ -27,14 +27,14 @@
   height: clamp(420px, 36vw, 560px);   /* ↑ un poco más alto en desktop */
   min-height: 420px;
   position: relative;
-  background-color: var(--pr-white);
+  background-color: var(--bg-surface);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carousel-item.bev-slide.active {
-  background-color: var(--pr-white);
+  background-color: var(--bg-surface);
 }
 
 .bev-slide-bg {
@@ -89,8 +89,8 @@
 
 @media (min-width: 769px) {
   .bev-hero-nav .bev-hero-arrow {
-    border-top-color: var(--pr-gray-900);
-    border-right-color: var(--pr-gray-900);
+    border-top-color: var(--text-heading);
+    border-right-color: var(--text-heading);
     filter: drop-shadow(0 1px 2px var(--pr-glass-light-25));
   }
 }
