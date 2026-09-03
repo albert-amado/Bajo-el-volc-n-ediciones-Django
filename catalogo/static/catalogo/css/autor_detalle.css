@@ -5,14 +5,15 @@
 }
 
 .bev-back-link {
-  background-color: var(--pr-gray-400);
-  color: var(--text-primary);
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 500;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    display: inline-block;
+    padding: 9px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 900;
+    font-size: larger;
 }
 
 .bev-back-link:hover {
@@ -20,11 +21,18 @@
   opacity: 0.7;
 }
 
-/* ===== Avatar ===== */
+.bev-author-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
 .bev-author-detail-avatar {
   width: min(100%, 280px);
   height: min(100vw, 280px);
   max-height: 280px;
+  flex-shrink: 0;
   position: relative;
   z-index: 2;
 }
@@ -52,12 +60,13 @@
 .autor-info-card {
     background-color: var(--bg-body);
     color: var(--text-primary);
-    /* border-radius: 12px; */
-    padding: 40px 40px 40px 140px;
+    padding: 10px 40px 40px 140px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin-left: -200px;
+    margin-left: -140px;
     position: relative;
     z-index: 1;
+    flex: 1 1 400px;
+    min-width: 280px;
 }
 
 .autor-info-card h1 {
@@ -68,25 +77,27 @@
     color: var(--text-primary);
     line-height: 1.65;
     font-size: larger;
+    text-align: right;
+    font-weight: normal;
+    text-align: justify;
+    font-weight: lighter;
 }
-
 .autor-info-card .bev-divider {
-  /* background-color: ; */
-  height: 3px;
-  width: 48px;
+    height: 6px;
+    width: 60px;
+    background-color: var(--pr-gray-1200);
+    align-items: center;
 }
 
-/* ===== Badge genérico (píldora con fondo) ===== */
 .bev-badge-pill {
-  background-color: var(--pr-gray-400);
-  color: var(--text-primary);
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 20px;
-  margin-bottom: 0.5rem;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
 }
 
-/* ===== Resto de estilos ===== */
 h1,
 h3,
 h6 {
@@ -94,17 +105,18 @@ h6 {
 }
 
 .bev-author-bio {
-  color: var(--text-primary);
-  line-height: 1.6;
+    color: var(--text-body);
+    line-height: 1.90;
+    font-size: larger;
+    font-weight: normal;
 }
-
 .bev-author-subtext {
-  background-color: var(--pr-gray-400);
-  color: var(--text-primary);
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
 
 .bev-book-price {
@@ -120,22 +132,29 @@ h6 {
   border-radius: 2px;
 }
 
+
 .bev-section-tag {
     background-color: var(--text-primary);
-    color: var(--pr-gray-1000);
+    color: var(--bg-body);
     padding: 5px 15px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: smaller;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
+    /* letter-spacing: 1.5px; */
+    font-weight: 800;
+    text-align: -webkit-center;
 }
+
 hr {
   border-color: var(--border-soft);
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 991.98px) {
+  .bev-author-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .autor-info-card {
     margin-left: 0;
     padding: 28px 24px;
@@ -150,6 +169,10 @@ hr {
   .bev-author-detail-avatar {
     width: min(100%, 220px);
     height: min(72vw, 220px);
+  }
+
+  .autor-info-card {
+    margin-left: 0;
   }
 
   .bev-section-tag {

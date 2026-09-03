@@ -211,7 +211,8 @@
 .bev-display-4{
   background-color: var(--pr-gray-1500)
 }
-.fw-bold{
-  background-color: var(--pr-gray-1500);
-  color: var(--pr-gray-1500);
+.fw-bold {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-size: xxx-large;
 }

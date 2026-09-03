@@ -1,13 +1,13 @@
 .bev-categorias-titulo {
-  font-family: var(--font-body);
-  font-size: 1.2rem;
-  font-weight: 900;
-  letter-spacing: 0.4em;
-  color: var(--text-primary); /* Variable semántica para modo claro y oscuro */
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border-soft); /* Variable semántica para el borde */
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.4em;
+    color: var(--pr-gray-1400);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .bev-noticias-lateral {
@@ -74,27 +74,27 @@
 .bev-cat-premio { background-color: var(--pr-gray-200); color: var(--pr-gray-900); }
 
 .bev-noticia-fecha-mini {
-  font-size: 0.7rem;
-  color: var(--text-primary); /* Variable semántica para fechas en ambos modos */
+    font-size: larger;
+    color: var(--pr-gray-1400);
+    font-weight: bold;
 }
 
 .bev-noticia-titulo-mini {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text-primary); /* Variable semántica para títulos en ambos modos */
-  line-height: 1.3;
-  margin: 0;
+    font-size: larger;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin: 0;
 }
 
 .bev-noticia-resumen-mini {
-  font-size: 0.75rem;
-  color: var(--text-primary); /* Variable semántica: adaptable a modo oscuro */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin: 0;
+    font-size: medium;
+    color: var(--text-primary);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    font-weight: 300;
 }
 
 @media (max-width: 991px) {
