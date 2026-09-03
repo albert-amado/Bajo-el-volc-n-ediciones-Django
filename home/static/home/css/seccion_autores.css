@@ -4,35 +4,30 @@
   background-size: 950px;
   background-position: top left;
   background-color: transparent;
-  color: var(--text-body);
+  color: var(--text-primary);
 }
 
 .bev-section-tag-light {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 1.35rem;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-  color: var(--pr-gray-700);
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+    display: block;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    font-family: var(--font-body);
+    font-size: 2.3rem;
+    letter-spacing: 0.7em;
+    text-transform: uppercase;
+    color: var(--pr-white);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    background-color: var(--pr-black);
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 0;
 }
 
-.bev-section-tag-left {
-  text-align: left;
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  width: fit-content;
-}
-
-.bev-section-title {
-  font-family: var(--font-body);
-  font-size: 4rem;
-  color: var(--pr-gray-700);
-  font-weight: 700;
-  line-height: 1.1;
-}
 
 .bev-author-avatar {
   width: 150px;
@@ -63,21 +58,21 @@
 
 .bev-author-name {
   /* Bloqueamos la variable de texto general de Bootstrap para este párrafo */
-  --bs-body-color: var(--text-body);
+  --bs-body-color: var(--text-primary);
   
-  background-color: var(--bg-surface);
-  color: var(--text-heading);
+  background-color: var(--bg-body);
+  color: var(--text-primary);
   display: inline-block;
   padding: 0.25rem 1rem;
   border-radius: 20px;
 }
 .bev-btn-autor {
   /* Sobrescribimos el comportamiento de Bootstrap usando tus variables semánticas */
-  --bs-btn-color: var(--text-body);
-  --bs-btn-hover-color: var(--text-heading);
+  --bs-btn-color: var(--text-primary);
+  --bs-btn-hover-color: var(--text-primary);
   
   /* Tus estilos estructurales */
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;

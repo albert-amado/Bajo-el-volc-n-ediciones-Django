@@ -1,17 +1,12 @@
-/* ============================================================
-   equipo/static/equipo/css/nosotros.css
-   Sección "Nosotros" — Misión + Equipo editorial
-   ============================================================ */
-
 .bev-nosotros {
   background-image: var(--bg-patron-volcan);
   min-height: 100vh;
-  color: var(--pr-text-body, var(--text-body));
+  color: var(--text-primary);
 }
 
 /* === Tarjeta de misión === */
 .bev-info-card {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
   border-radius: 12px;
   transition: transform 0.3s ease;
@@ -80,7 +75,7 @@
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--text-heading);
+  color: var(--text-primary);
   position: relative;
   z-index: 1;
 }
@@ -89,14 +84,14 @@
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.7;
-  color: var(--text-body);
+  color: var(--text-primary);
   position: relative;
   z-index: 1;
 }
 
 /* === Tarjeta de miembro del equipo === */
 .bev-team-card {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
   border-radius: 16px;
   border-left: 5px solid var(--pr-gray-1500);
@@ -129,6 +124,12 @@
   object-fit: contain;
 }
 
+.bev-team-cargo {
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    font-size: larger;
+}
+
 .bev-team-avatar {
   width: clamp(90px, 12vw, 160px);
   height: clamp(90px, 12vw, 160px);
@@ -149,20 +150,11 @@
 
 .bev-team-card h4 {
   font-size: 1.1rem;
-  color: var(--text-heading);
+  color: var(--text-primary);
   position: relative;
   z-index: 1;
 }
 
-.bev-team-cargo {
-  color: var(--text-body);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
-}
 
 .bev-team-divider {
   height: 2px;
@@ -215,4 +207,11 @@
   .bev-team-card h4 {
     font-size: 1rem;
   }
+}
+.bev-display-4{
+  background-color: var(--pr-gray-1500)
+}
+.fw-bold{
+  background-color: var(--pr-gray-1500);
+  color: var(--pr-gray-1500);
 }

@@ -3,7 +3,7 @@
   background-repeat: repeat;
   background-size: 950px;
   background-position: top left;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border-bottom: 1px solid var(--border-soft);
   padding: 5rem 0 3rem;
 }
@@ -81,7 +81,7 @@
   font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.6rem);
   font-weight: 900;
-  color: var(--text-heading);
+  color: var(--text-primary);
   margin: 0;
 }
 

@@ -68,41 +68,42 @@
 }
 
 .libro-card__overlay-btn--carrito {
-  background: var(--bg-surface-alt);
-  color: var(--text-heading);
+  background: var(--bg-body);
+  color: var(--text-primary);
 }
 
 .libro-card__overlay-btn--carrito:hover {
-  background: var(--bg-surface);
-  color: var(--text-heading);
+  background: var(--bg-body);
+  color: var(--text-primary);
 }
 
 .libro-card__overlay-btn--detalle {
   background: transparent;
-  color: var(--text-heading);
+  color: var(--text-primary);
   border: 1px solid var(--border-soft);
 }
 
 .libro-card__overlay-btn--detalle:hover {
-  background: var(--bg-surface);
-  color: var(--text-heading);
+  background: var(--bg-body);
+  color: var(--text-primary);
 }
 
 .libro-card__etiqueta {
-  position: absolute;
-  top: -12px; /* sobresale por encima del cover */
-  left: 12px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  padding: 8px 20px 8px 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--pr-white);
-  clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
+    position: absolute;
+    top: -19px;
+    left: 0px;
+    z-index: 3;
+    display: flex
+;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 8px 83px 8px 1px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--pr-white);
+    clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
 }
 
 .libro-card__etiqueta i {

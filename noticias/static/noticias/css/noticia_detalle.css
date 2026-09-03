@@ -2,7 +2,7 @@
 .bev-noticias {
   background-color: transparent;
   min-height: 100vh;
-  color: var(--text-body);
+  color: var(--text-primary);
 }
 .bev-btn-noticia-pdf {
   display: inline-flex;
@@ -43,7 +43,7 @@
 }
 
 .bev-noticia-card {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
   border-radius: 12px;
   overflow: hidden;
@@ -59,7 +59,7 @@
   position: relative;
   height: 200px;
   overflow: hidden;
-  background-color: var(--bg-surface-alt);
+  background-color: var(--bg-body);
 }
 
 .bev-noticia-img img {
@@ -103,11 +103,11 @@
 
 .bev-noticia-fecha {
   font-size: 0.78rem;
-  color: var(--text-body);
+  color: var(--text-primary);
 }
 
 .bev-noticia-titulo {
-  color: var(--text-heading);
+  color: var(--text-primary);
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.4;
@@ -115,7 +115,7 @@
 
 .bev-noticia-resumen {
   font-size: 0.88rem;
-  color: var(--text-body);
+  color: var(--text-primary);
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -131,13 +131,13 @@
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--pr-gray-1500);
+  color: var(--text-primary);
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .bev-noticia-card:hover .bev-noticia-cta {
-  border-bottom-color: var(--pr-gray-1500);
+  border-bottom-color: var(--text-primary);
   transform: translateX(2px);
 }
 
@@ -152,14 +152,14 @@
 }
 
 .bev-noticia-card-detalle {
-  background: var(--bg-surface);
+  background: var(--bg-body);
   border: 1px solid var(--border-soft);
   border-radius: 14px;
   padding: clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .bev-back-link {
-  color: var(--text-body);
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
 }
@@ -182,7 +182,7 @@
 }
 
 .bev-noticia-contenido {
-  color: var(--text-body);
+  color: var(--text-primary);
   line-height: 1.8;
   white-space: pre-line;
 }
@@ -201,13 +201,13 @@
 
 /* === Galería: imagen (glightbox) === */
 .bev-noticia-galeria h5 {
-  color: var(--text-heading);
+  color: var(--text-primary);
 }
 
 /* === Galería: video (thumbnail con play) === */
 .bev-video-thumb {
   height: 500px;
-  background-color: var(--bg-surface-alt);
+  background-color: var(--bg-body);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,10 +226,10 @@
 
 /* === Galería: documento (tarjeta de descarga) === */
 .bev-documento-card {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
   border-left: 4px solid var(--pr-gray-1500);
-  color: var(--text-body);
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -238,7 +238,7 @@
 .bev-documento-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  color: var(--text-heading);
+  color: var(--text-primary);
 }
 
 .bev-documento-card i {
@@ -252,11 +252,11 @@
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--border-soft);
-  background-color: var(--bg-surface-alt);
+  background-color: var(--bg-body);
 }
 
 .bev-noticia-participantes h5 {
-  color: var(--text-heading);
+  color: var(--text-primary);
 }
 
 .bev-etiqueta-rol {

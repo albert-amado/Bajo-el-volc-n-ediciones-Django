@@ -128,14 +128,14 @@
   --topbar-border: #2e2e2e;
 
   /* --- NAVBAR --- */
-  --navbar-text:      var(--text-body);
-  --navbar-accent:    var(--text-heading);
+  --navbar-text:      var(--text-primary);
+  --navbar-accent:    var(--text-primary);
   --navbar-logo-glow: rgba(255, 255, 255, 0.15); /* añadida para simetría: faltaba en oscuro */
 }
 
 /* --- Base de la página --- */
 body {
   background-color: var(--bg-body);
-  color: var(--text-body);
+  color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }

@@ -1,12 +1,12 @@
 .bev-author-profile {
   background-image: var(--bg-patron-volcan);
   min-height: 100vh;
-  color: var(--text-body);
+  color: var(--text-primary);
 }
 
 .bev-back-link {
   background-color: var(--pr-gray-400);
-  color: var(--text-heading);
+  color: var(--text-primary);
   display: inline-block;
   padding: 6px 16px;
   border-radius: 20px;
@@ -46,28 +46,28 @@
   justify-content: center;
   font-size: 4rem;
   font-weight: bold;
-  color: var(--text-heading);
+  color: var(--text-primary);
 }
 
-/* ===== Tarjeta de información (con solapamiento) ===== */
 .autor-info-card {
-  background-color: var(--pr-gray-400);
-  color: var(--text-heading);
-  border-radius: 12px;
-  padding: 40px 40px 40px 140px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  margin-left: -120px;
-  position: relative;
-  z-index: 1;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    /* border-radius: 12px; */
+    padding: 40px 40px 40px 140px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-left: -200px;
+    position: relative;
+    z-index: 1;
 }
 
 .autor-info-card h1 {
-  color: var(--text-heading);
+  color: var(--text-primary);
 }
 
 .autor-info-card .bev-author-bio {
-  color: var(--text-heading);
-  line-height: 1.65;
+    color: var(--text-primary);
+    line-height: 1.65;
+    font-size: larger;
 }
 
 .autor-info-card .bev-divider {
@@ -79,7 +79,7 @@
 /* ===== Badge genérico (píldora con fondo) ===== */
 .bev-badge-pill {
   background-color: var(--pr-gray-400);
-  color: var(--text-heading);
+  color: var(--text-primary);
   display: inline-block;
   padding: 6px 16px;
   border-radius: 20px;
@@ -90,17 +90,17 @@
 h1,
 h3,
 h6 {
-  color: var(--text-heading);
+  color: var(--text-primary);
 }
 
 .bev-author-bio {
-  color: var(--text-heading);
+  color: var(--text-primary);
   line-height: 1.6;
 }
 
 .bev-author-subtext {
   background-color: var(--pr-gray-400);
-  color: var(--text-heading);
+  color: var(--text-primary);
   display: inline-block;
   padding: 6px 16px;
   border-radius: 20px;
@@ -108,7 +108,7 @@ h6 {
 }
 
 .bev-book-price {
-  color: var(--text-heading);
+  color: var(--text-primary);
   font-weight: 700;
   margin: 0;
 }
@@ -116,21 +116,20 @@ h6 {
 .bev-divider {
   height: 4px;
   width: 60px;
-  background-color: var(--text-heading);
+  background-color: var(--text-primary);
   border-radius: 2px;
 }
 
 .bev-section-tag {
-  background-color: var(--pr-gray-900);
-  color: var(--pr-gray-1000);
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 600;
+    background-color: var(--text-primary);
+    color: var(--pr-gray-1000);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
-
 hr {
   border-color: var(--border-soft);
 }

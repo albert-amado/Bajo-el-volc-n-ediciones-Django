@@ -10,14 +10,14 @@
     height: clamp(380px, 32vw, 500px);
     min-height: 480px;
     position: relative;
-    background-color: var(--bg-surface);
+    background-color: var(--bg-body);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .carousel-item.bev-slide.active {
-    background-color: var(--bg-surface);
+    background-color: var(--bg-body);
   }
 
   .bev-slide-bg {
@@ -72,8 +72,8 @@
 
   @media (min-width: 769px) {
     .bev-hero-nav .bev-hero-arrow {
-      border-top-color: var(--text-heading);
-      border-right-color: var(--text-heading);
+      border-top-color: var(--text-primary);
+      border-right-color: var(--text-primary);
       filter: drop-shadow(0 1px 2px var(--pr-glass-light-25));
     }
   }

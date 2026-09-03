@@ -1,30 +1,34 @@
 .bev-book-detail {
   background-image: var(--bg-patron-volcan);
   min-height: 100vh;
-  color: var(--text-body);
+  color: var(--text-primary);
 }
 
 .bev-book-hero {
   max-width: 920px;
 }
-
+.bev-eyebrow{
+  font-size: 0.82rem;
+  letter-spacing: 0.28em;
+}
 .bev-book-kicker {
   font-size: 0.82rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--text-body);
+  color: var(--text-primary);
   font-weight: 700;
 }
 
 .bev-book-page-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 4.4rem);
-  line-height: 1.02;
-  max-width: 12ch;
+    font-size: clamp(2.2rem, 5vw, 4.4rem);
+    line-height: 1.02;
+    max-width: 12ch;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
 }
 
 .bev-back-link {
-  color: var(--text-body);
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
 }
@@ -129,11 +133,11 @@
 }
 
 .bev-detail-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--pr-gray-700);
-  font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pr-gray-1200);
+    font-weight: 700;
 }
 
 .bev-detail-block {
@@ -144,12 +148,12 @@
   box-shadow: 0 1px 0 var(--pr-glass-dark-08);
 }
 
-.bev-detail-quote,
-.bev-detail-description {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-body);
-  margin: 0;
+.bev-detail-quote, .bev-detail-description {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: var(--text-body);
+    margin: 0;
+    font-weight: normal;
 }
 
 .bev-detail-quote {
@@ -188,17 +192,18 @@
 }
 
 .bev-author-instagram {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: fit-content;
-  padding: 0.65rem 0.9rem;
-  border-radius: 999px;
-  background: var(--pr-white);
-  border: 1px solid var(--pr-gray-200);
-  color: var(--pr-gray-900);
-  text-decoration: none;
-  font-weight: 700;
+    display: inline-flex
+;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    padding: 0.65rem 0.9rem;
+    border-radius: 999px;
+    background-color: var(--bg-body);
+    border: 1px solid var(--pr-gray-200);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 700;
 }
 
 .bev-author-instagram:hover {
@@ -207,11 +212,13 @@
 }
 
 .bev-author-name {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  color: var(--text-heading);
-  line-height: 1.1;
+    /* font-family: var(--font-display); */
+    /* font-size: 1.15rem; */
+    color: var(--text-primary);
+    /* line-height: 1.1; */
+    font-weight: bold;
 }
+
 
 .bev-author-meta {
   font-size: 0.72rem;
@@ -221,10 +228,12 @@
 }
 
 .bev-author-bio {
-  color: var(--text-body);
-  line-height: 1.45;
-  font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.90;
+    font-size: 0.95rem;
+    font-weight: normal;
 }
+
 
 @media (max-width: 991px) {
   .bev-book-detail-shell {

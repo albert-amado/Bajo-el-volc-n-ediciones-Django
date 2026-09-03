@@ -3,7 +3,7 @@
   font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 0.4em;
-  color: var(--text-heading); /* Variable semántica para modo claro y oscuro */
+  color: var(--text-primary); /* Variable semántica para modo claro y oscuro */
   text-transform: uppercase;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -75,20 +75,20 @@
 
 .bev-noticia-fecha-mini {
   font-size: 0.7rem;
-  color: var(--text-body); /* Variable semántica para fechas en ambos modos */
+  color: var(--text-primary); /* Variable semántica para fechas en ambos modos */
 }
 
 .bev-noticia-titulo-mini {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--text-heading); /* Variable semántica para títulos en ambos modos */
+  color: var(--text-primary); /* Variable semántica para títulos en ambos modos */
   line-height: 1.3;
   margin: 0;
 }
 
 .bev-noticia-resumen-mini {
   font-size: 0.75rem;
-  color: var(--text-body); /* Variable semántica: adaptable a modo oscuro */
+  color: var(--text-primary); /* Variable semántica: adaptable a modo oscuro */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;

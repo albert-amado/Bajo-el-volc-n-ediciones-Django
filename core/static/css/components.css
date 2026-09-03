@@ -1,17 +1,14 @@
-/* Seccion de encabezados */
 .bev-section-tag {
-  display: inline-block;
-  background-color: var(--pr-gray-900);
-  color: var(--pr-gray-1000);
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 600;
+    display: inline-block;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    border-radius: 20px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 100;
+    padding: 5px 20px;
 }
-
-/* Linea decorativa */
 .bev-divider {
   height: 4px;
   width: 60px;
@@ -100,6 +97,6 @@
 
 /* Utilidad de texto deshabilitado/secundario — Bootstrap override */
 .text-muted {
-  color: var(--text-body) !important; /* Variable semántica: adaptable a modo oscuro y claro */
+  color: var(--text-primary) !important; /* Variable semántica: adaptable a modo oscuro y claro */
   opacity: 0.8;
 }

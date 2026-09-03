@@ -1,21 +1,19 @@
 .libros-seccion {
     background: var(--navbar-bg-image-book);
 }
-
-.libros-seccion__tag {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--text-heading);
-  margin-bottom: 1rem;
-}
-
-.libros-seccion__titulo {
-  font-family: var(--font-body);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 400;
-  color: var(--text-heading);
+.bev-section-title {
+    font-family: var(--font-body);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    letter-spacing: 0.2em;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    padding: 0.2rem 1.5rem;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    background-color: var(--bg-body);
 }
 
 .bev-section-line {

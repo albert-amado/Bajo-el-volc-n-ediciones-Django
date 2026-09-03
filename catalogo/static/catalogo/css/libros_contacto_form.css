@@ -10,17 +10,17 @@
 }
 
 .bev-contact-form h5 {
-  color: var(--text-heading);
+  color: var(--text-primary);
   font-family: var(--font-body);
 }
 
 .bev-contact-form small {
-  color: var(--text-body);
+  color: var(--text-primary);
 }
 
 .bev-form-input {
   width: 100%;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
   border-radius: 8px;
   color: var(--text-body);
@@ -32,7 +32,7 @@
 }
 
 .bev-form-input::placeholder {
-  color: var(--text-body);
+  color: var(--text-primary);
   opacity: 0.65;
 }
 
@@ -41,8 +41,8 @@
 }
 
 .bev-btn-submit {
-  background-color: var(--bg-surface-alt);
-  color: var(--text-body);
+  background-color: var(--bg-body);
+  color: var(--text-primary);
   border: none;
   padding: 0.8rem;
   border-radius: 8px;
@@ -67,26 +67,26 @@
 }
 
 .bev-feedback-ok {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
-  color: var(--text-body);
+  color: var(--text-primary);
 }
 
 .bev-feedback-error {
-  background-color: var(--bg-surface-alt);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
-  color: var(--text-body);
+  color: var(--text-primary);
 }
 
 .bev-contact-value {
-  color: var(--text-body); /* Variable semántica para contraste en ambos modos */
+  color: var(--text-primary); /* Variable semántica para contraste en ambos modos */
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .bev-contact-value:hover {
-  color: var(--text-heading); /* Enfatiza el valor al interactuar */
+  color: var(--text-primary); /* Enfatiza el valor al interactuar */
   opacity: 0.75;
 }
 
