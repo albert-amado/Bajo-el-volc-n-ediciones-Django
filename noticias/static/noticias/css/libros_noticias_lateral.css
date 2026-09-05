@@ -3,7 +3,7 @@
     font-size: 1.2rem;
     font-weight: 900;
     letter-spacing: 0.4em;
-    color: var(--pr-gray-1400);
+    color: var(--text-primary);
     text-transform: uppercase;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -75,7 +75,7 @@
 
 .bev-noticia-fecha-mini {
     font-size: larger;
-    color: var(--pr-gray-1400);
+    color: var(--text-primary);
     font-weight: bold;
 }
 

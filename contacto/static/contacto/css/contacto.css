@@ -1,13 +1,18 @@
-/* ============================================================
-   contacto/static/contacto/css/contacto.css
-   ============================================================ */
-
 .bev-contacto {
   background-image: var(--bg-patron-volcan);
   min-height: 100vh;
   color: var(--text-primary);
 }
-
+.lead {
+    font-size: x-large;
+    font-weight: 700;
+    background-color: var(--bg-body);
+    color: var(--pr-gray-1200);
+}
+.fw-bold {
+    font-weight: 700 !important;
+    background-color: var(--bg-body);
+}
 .bev-contact-info,
 .bev-contact-form {
   background-color: var(--bg-body);
@@ -145,4 +150,8 @@
   .bev-form-input {
     font-size: 0.92rem;
   }
+}
+.text-center {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
 }

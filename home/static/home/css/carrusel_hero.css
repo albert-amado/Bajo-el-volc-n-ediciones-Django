@@ -6,21 +6,24 @@
   border-radius: 0;
 }
 
-.bev-hero-title,
-.bev-hero-description {
-  background-color: var(--bg-body);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  color: var(--text-primary);
-  width: fit-content;
-  margin: 0 auto 0.75rem auto;
-  display: grid;
-  place-items: center;
-  text-align: center;
+.bev-hero-title, .bev-hero-description {
+    background-color: var(--bg-body);
+    padding: 0.1rem 1rem;
+    color: var(--text-primary);
+    width: fit-content;
+    margin: 0 auto 0.75rem auto;
+    display: grid
+;
+    place-items: center;
+    text-align: center;
+    font-family: var(--font-serif, Georgia, serif);
 }
 
 .bev-hero-description {
-  margin-bottom: 0;
+    margin-bottom: 0;
+    font-family: var(--font-serif, Georgia, serif);
+    FONT-SIZE: larger;
+    font-weight: lighter;
 }
 
 .bev-slide {

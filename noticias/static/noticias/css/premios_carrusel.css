@@ -77,12 +77,13 @@
 }
 
 .bev-premios-carrusel__title {
-  font-family: var(--font-serif, Georgia, serif);
-  font-weight: 700;
-  color: var(--text-primary);
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  line-height: 1.3;
-  margin: 0 0 0.5rem;
+    font-family: var(--font-serif, Georgia, serif);
+    font-weight: 700;
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.3;
+    margin: 0 0 0.5rem;
 }
 
 .bev-premios-carrusel__desc {

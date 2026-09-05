@@ -95,8 +95,7 @@
   gap: 0.75rem;
 }
 
-/* Utilidad de texto deshabilitado/secundario — Bootstrap override */
 .text-muted {
-  color: var(--text-primary) !important; /* Variable semántica: adaptable a modo oscuro y claro */
-  opacity: 0.8;
+    color: var(--text-primary);
+    font-size: large;
 }

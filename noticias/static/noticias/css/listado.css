@@ -4,24 +4,23 @@
   color: var(--text-primary);
 }
 
-.bev-filtro {
-  background: transparent;
-  border: 1px solid var(--border-soft);
-  color: var(--text-primary);
-  padding: 6px 18px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+.bev-filtro.active {
+    background-color: var(--bg-body);
+    border: 1px solid var(--border-soft);
+    color: var(--text-primary);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: larger;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.bev-filtro:hover,
-.bev-filtro.active {
-  background-color: var(--pr-gray-900);
-  border-color: var(--pr-gray-900);
-  color: var(--pr-white);
+.lead {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-size: 1.1rem;
 }
 
 .bev-noticia-card {
@@ -66,15 +65,18 @@
 }
 
 .bev-categoria-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: medium;
+    letter-spacing: 1px;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
 }
 
 /* 6 clases nuevas, una por categoría de Noticia.Categoria */
@@ -104,15 +106,15 @@
 }
 
 .bev-noticia-fecha {
-  font-size: 0.78rem;
-  color: var(--text-primary);
+    font-size: x-large;
+    color: var(--text-primary);
 }
 
 .bev-noticia-titulo {
-  color: var(--text-primary);
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.4;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: x-large;
+    line-height: 1.4;
 }
 
 .bev-noticia-resumen {
@@ -128,16 +130,17 @@ line-clamp: 3;
 }
 
 .bev-noticia-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+    color: var(--pr-gray-1200);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    /* color: var(--text-primary); */
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .bev-noticia-card:hover .bev-noticia-cta {
