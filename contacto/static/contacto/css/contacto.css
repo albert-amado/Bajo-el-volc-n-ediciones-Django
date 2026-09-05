@@ -92,14 +92,14 @@
 }
 
 .bev-btn-submit {
-  background-color: var(--pr-gray-1500);
-  color: var(--pr-white);
-  border: none;
-  padding: 0.75rem;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: opacity 0.2s, transform 0.2s;
+    background-color: var(--pr-icono-whatsapp);
+    color: var(--pr-white);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s, transform 0.2s;
+    font-size: xx-large;
 }
 
 .bev-btn-submit:hover {

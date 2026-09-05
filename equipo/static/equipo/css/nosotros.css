@@ -72,12 +72,13 @@
 }
 
 .bev-info-card h4 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--text-primary);
-  position: relative;
-  z-index: 1;
+    font-size: xxx-large;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 1;
+    text-align: center;
 }
 
 .bev-info-card p {
@@ -166,12 +167,12 @@
 }
 
 .bev-team-bio {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  line-height: 1.65;
-  position: relative;
-  z-index: 1;
-  margin: 0;
+    font-size: larger;
+    color: var(--text-body);
+    line-height: 1.65;
+    position: relative;
+    z-index: 1;
+    margin: 0;
 }
 
 /* === Responsive === */

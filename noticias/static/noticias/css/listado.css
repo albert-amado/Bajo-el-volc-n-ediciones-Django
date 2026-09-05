@@ -4,7 +4,7 @@
   color: var(--text-primary);
 }
 
-.bev-filtro.active {
+.bev-filtro-active {
     background-color: var(--bg-body);
     border: 1px solid var(--border-soft);
     color: var(--text-primary);
