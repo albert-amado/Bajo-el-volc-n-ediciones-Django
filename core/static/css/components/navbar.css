@@ -52,13 +52,14 @@
 
   .bev-navbar .nav-link {
     position: relative;
-    color: var(--navbar-text);
+    color: var(--navbar);
     font-size: 1rem;
+    font-family: var(--font-heading);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0.6rem 0.9rem;
     transition: color 0.2s ease, opacity 0.2s ease;
-  }
+}
 
   .bev-navbar .nav-link:hover {
     color: var(--navbar-accent);

@@ -2,7 +2,7 @@
     background: var(--navbar-bg-image-book);
 }
 .bev-section-title {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     color: var(--text-primary);
     letter-spacing: 0.2em;

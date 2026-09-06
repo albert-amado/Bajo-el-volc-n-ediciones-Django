@@ -4,19 +4,6 @@
   color: var(--text-primary);
 }
 
-.bev-filtro-active {
-    background-color: var(--bg-body);
-    border: 1px solid var(--border-soft);
-    color: var(--text-primary);
-    padding: 6px 18px;
-    border-radius: 20px;
-    font-size: larger;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
 .lead {
   background-color: var(--bg-body);
   color: var(--text-primary);
@@ -142,7 +129,27 @@ line-clamp: 3;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
+/* 1. Estilos base para TODOS los botones de filtro */
+.bev-filtro {
+    background-color: var(--bg-body); /* Los inactivos quedan sin fondo sólido */
+    border: 1px solid var(--border-soft);
+    color: var(--text-primary);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: larger;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
 
+/* 2. Estilos para el botón activo y el hover */
+.bev-filtro.activo, 
+.bev-filtro:hover {
+    background-color: var(--text-primary); /* Se invierte el color para resaltar */
+    color: var(--bg-body);
+    border-color: var(--text-primary);
+}
 .bev-noticia-card:hover .bev-noticia-cta {
   border-bottom-color: var(--text-primary);
   transform: translateX(2px);

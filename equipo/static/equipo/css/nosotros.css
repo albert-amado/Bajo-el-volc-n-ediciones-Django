@@ -72,7 +72,7 @@
 }
 
 .bev-info-card h4 {
-    font-size: xxx-large;
+    font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
     color: var(--text-primary);
@@ -215,5 +215,10 @@
 .fw-bold {
     background-color: var(--bg-body);
     color: var(--text-primary);
-    font-size: xxx-large;
+    font-family: var(--font-heading);
+}
+.bev-quienes-text {
+    font-size: larger;
+    font-weight: 200;
+    color: var(--text-primary);
 }
