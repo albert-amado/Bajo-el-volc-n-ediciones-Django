@@ -1,9 +1,9 @@
 .bev-book-detail {
-  background-image: var(--bg-patron-volcan);
-  min-height: 100vh;
-  color: var(--text-primary);
+    /* background-image: var(--bg-patron-volcan); */
+    min-height: 100vh;
+    background-color: var(--bg-surface-alt);
+    color: var(--text-primary);
 }
-
 .bev-book-hero {
   max-width: 920px;
 }
@@ -16,17 +16,18 @@
     text-transform: uppercase;
     color: var(--text-primary);
     font-weight: bold;
-    background-color: var(--bg-body);
+    background-color: var(--bg-surface-alt);
 }
+
 .bev-book-page-title {
     font-size: xxx-large;
     line-height: 1.02;
     font-weight: lighter;
     max-width: 12ch;
-    background-color: var(--bg-body);
+    background-color: var(--bg-surface-alt);
     color: var(--text-primary);
+    font-family: var(--font-heading);
 }
-
 .bev-back-link {
     font-size: larger;
     color: var(--text-primary);
@@ -40,14 +41,13 @@
 }
 
 .bev-book-detail-shell {
-  display: grid;
-  grid-template-columns: minmax(280px, 390px) minmax(0, 1fr);
-  gap: 0;
-  background: var(--pr-white);
-  border: 1px solid var(--pr-gray-200);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: var(--shadow-xl-soft);
+    display: grid;
+    grid-template-columns: minmax(280px, 390px) minmax(0, 1fr);
+    gap: 0;
+    background-color: var(--bg-body);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl-soft);
 }
 
 .bev-book-detail-left {
@@ -130,12 +130,14 @@
 }
 
 .bev-detail-label {
-    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: small;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--pr-text-primary);
-    font-weight: 700;
+    font-weight: 900;
 }
+
 .bev-detail-block {
   background: var(--navbar-bg-image-book);
   border: 1px solid var(--pr-gray-200);
@@ -145,7 +147,7 @@
 }
 
 .bev-detail-quote, .bev-detail-description {
-    font-size: 1.4rem;
+    font-size: unset;
     line-height: 1.8;
     color: var(--text-body);
     margin: 0;
@@ -153,7 +155,9 @@
 }
 
 .bev-detail-quote {
-  font-style: italic;
+    font-style: italic;
+    font-weight: 100;
+    font-size: x-large;
 }
 
 .bev-detail-actions .btn {
@@ -212,7 +216,8 @@
     /* font-size: 1.15rem; */
     color: var(--text-primary);
     /* line-height: 1.1; */
-    font-weight: bold;
+    font-weight: 400;
+    font-size: x-large;
 }
 
 

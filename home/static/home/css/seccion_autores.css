@@ -1,10 +1,25 @@
 .bev-section-dark {
-  background-image: var(--bg-patron-volcan);
-  background-repeat: repeat;
-  background-size: 950px;
-  background-position: top left;
-  background-color: transparent;
-  color: var(--text-primary);
+    background-repeat: repeat;
+    background-color: var(--bg-surface-alt);
+    background-size: 950px;
+    background-position: top left;
+    color: var(--text-primary);
+}
+
+.bev-section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    letter-spacing: 0.2em;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    padding: 0.1rem 1.4rem;
+    margin-left: auto;
+    margin-top: 1rem;
+    display: block;
+    margin-right: auto;
+    background-color: var(--bg-surface-alt);
 }
 
 .bev-section-tag-light {
@@ -28,53 +43,118 @@
     border-radius: 0;
 }
 
+.bev-author-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-left: 10px;
+}
 
-.bev-author-avatar {
+.bev-author-img-container {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.bev-author-avatar img {
+.bev-author-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.bev-avatar-fallback {
+.bev-author-info-box {
+  background-color: #ffffff;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  margin-top: -2.5rem;
+  padding-top: 3.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  z-index: 1;
   width: 100%;
-  height: 100%;
-  background-color: var(--pr-gray-700);
-  color: var(--pr-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: 600;
+  text-align: center;
 }
 
-.bev-author-name {
-  /* Bloqueamos la variable de texto general de Bootstrap para este párrafo */
-  --bs-body-color: var(--text-primary);
-  
-  background-color: var(--bg-body);
-  color: var(--text-primary);
-  display: inline-block;
-  padding: 0.25rem 1rem;
-  border-radius: 20px;
+.bev-author-country-badge {
+    /* background-color: #000000; */
+    color: #ffffff;
+    background-color: var(--pr-gray-1500);
+    display: inline-block;
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
 }
+
+.bev-author-name-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 0;
+}
+.bev-avatar-fallback {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-body);
+    color: var(--pr-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
 .bev-btn-autor {
-  /* Sobrescribimos el comportamiento de Bootstrap usando tus variables semánticas */
-  --bs-btn-color: var(--text-primary);
-  --bs-btn-hover-color: var(--text-primary);
-  
-  /* Tus estilos estructurales */
-  background-color: var(--bg-body);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+    --bs-btn-color: var(--text-primary);
+    --bs-btn-hover-color: var(--text-primary);
+    background-color: var(--bg-surface-alt);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: x-large;
+    transition: all 0.3s ease;
+}
+/* --- Escritorio: horizontal con solapamiento --- */
+@media (min-width: 768px) {
+  .bev-author-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .bev-author-img-container {
+    width: 200px;
+    height: 200px;
+  }
+      .bev-author-info-box {
+        margin-top: 0;
+        background-color: var(--bg-body);
+        margin-left: -3rem;
+        padding: 1.5rem 1.5rem 1.4rem 6rem;
+        text-align: left;
+        width: auto;
+        flex-grow: 1;
+    }
+}
+
+
+/* --- Móvil pequeño --- */
+@media (max-width: 575px) {
+  .bev-author-img-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bev-author-info-box {
+    margin-top: -2rem;
+    padding-top: 3rem;
+  }
 }

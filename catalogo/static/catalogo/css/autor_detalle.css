@@ -1,7 +1,8 @@
 .bev-author-profile {
-  background-image: var(--bg-patron-volcan);
-  min-height: 100vh;
-  color: var(--text-primary);
+    /* background-image: var(--bg-patron-volcan); */
+    min-height: 100vh;
+    background-color: var(--bg-surface-alt);
+    color: var(--text-primary);
 }
 
 .bev-back-link {
@@ -70,7 +71,8 @@
 }
 
 .autor-info-card h1 {
-  color: var(--text-primary);
+    color: var(--text-primary);
+    font-family: var(--font-heading);
 }
 
 .autor-info-card .bev-author-bio {
@@ -111,18 +113,20 @@ h6 {
     font-weight: normal;
 }
 .bev-author-subtext {
-    background-color: var(--bg-body);
+    background-color: var(--bg-surface-alt);
     color: var(--text-primary);
     display: inline-block;
     padding: 6px 16px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: xx-large!important;
+    font-weight: 600!important;
 }
 
 .bev-book-price {
-  color: var(--text-primary);
-  font-weight: 700;
-  margin: 0;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin: 0;
+    font-size: larger;
 }
 
 .bev-divider {
@@ -192,4 +196,9 @@ hr {
   .autor-info-card {
     padding: 24px 20px;
   }
+}
+.mb-1 {
+    margin-bottom: .25rem !important;
+    font-size: x-large;
+    font-weight: unset;
 }

@@ -9,19 +9,6 @@
   border-radius: 0;
   border: none;
 }
-
-.bev-categorias-titulo {
-  font-family: var(--font-body);
-  font-size: 1.2rem;
-  font-weight: 900;
-  letter-spacing: 0.4em;
-  color: var(--text-primary); /* Variable semántica: destaca en fondos oscuros */
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border-soft); /* Variable semántica para borde adaptable */
-}
-
 .bev-categorias-lista {
   list-style: none;
   padding: 0;

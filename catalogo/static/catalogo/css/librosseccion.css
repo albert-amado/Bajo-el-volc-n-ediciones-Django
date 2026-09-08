@@ -1,21 +1,6 @@
 .libros-seccion {
     background: var(--navbar-bg-image-book);
 }
-.bev-section-title {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    letter-spacing: 0.2em;
-    text-align: center;
-    display: inline-block;
-    width: fit-content;
-    padding: 0.2rem 1.5rem;
-    margin-left: auto;
-    display: block;
-    margin-right: auto;
-    background-color: var(--bg-body);
-}
-
 .bev-section-line {
   width: min(100%, 900px);
 }
