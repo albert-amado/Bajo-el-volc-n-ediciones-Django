@@ -1,0 +1,168 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}{{ libro.titulo }} - Bajo el Volcán{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'catalogo/css/libro_detalle.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="bev-book-detail mt-0 pt-5">
+  <div class="container py-5">
+    <div class="bev-book-hero mb-4 mb-lg-5">
+      <p class="bev-book-kicker mb-2 mt-3">Detalle del libro</p>
+      <h1 class="bev-book-page-title mb-3">{{ libro.titulo }}</h1>
+    </div>
+
+    <div class="mb-4">
+      <a href="{% url 'home:inicio' %}" class="bev-back-link">
+        <i class="bi bi-arrow-left"></i> Volver al catálogo
+      </a>
+    </div>
+
+    <div class="bev-book-detail-shell">
+      <div class="bev-book-detail-left position-relative">
+        
+        {% if libro.etiqueta %}
+          <span class="bev-etiqueta bev-etiqueta-{{ libro.etiqueta|lower }}">{{ libro.get_etiqueta_display }}</span>
+        {% endif %}
+
+        <img
+          src="{{ libro.imagen.url }}"
+          alt="{{ libro.titulo }}"
+          loading="eager"
+          class="bev-book-detail-image"
+        />
+
+        <section class="bev-detail-block bev-detail-block--under-cover">
+          <p class="bev-detail-label mb-2">Ficha técnica</p>
+          <div class="bev-tech-sheet mb-0">
+            <div class="bev-tech-row">
+              <span>Autor</span>
+              <a href="{% url 'catalogo:detalle_autor' autor.pk %}" class="bev-tech-link">{{ autor.nombre }}</a>
+            </div>
+            <div class="bev-tech-row">
+              <span>Precio</span>
+              <strong>${{ libro.precio|intcomma }}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>ISBN</span>
+              <strong>{{ libro.isbn|default:"No disponible" }}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>Páginas</span>
+              <strong>{{ libro.paginas }} páginas</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>Etiqueta</span>
+              <strong>{{ libro.get_etiqueta_display|default:"—" }}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>Encuadernación</span>
+              <strong>Tapa blanda</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>¿Tiene separador?</span>
+              <strong>{% if libro.separador %}Sí{% else %}No{% endif %}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>Editorial</span>
+              <strong>{{ libro.editorial }}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>Formato</span>
+              <strong>{{ libro.get_formato_display }}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>Categoría</span>
+              <strong>{{ libro.get_genero_display }}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>Año</span>
+              <strong>{{ libro.anio }}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>Idioma</span>
+              <strong>{{ libro.idioma }}</strong>
+            </div>
+            <div class="bev-tech-row">
+              <span>N° páginas</span>
+              <strong>{{ libro.paginas }}</strong>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="bev-book-detail-content">
+        <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+          <span class="bev-eyebrow mb-0">Detalle del libro</span>
+        </div>
+
+        <section class="bev-detail-block mb-4">
+          <p class="bev-detail-label mb-2">Frase destacada</p>
+          <blockquote class="bev-detail-quote mb-0">{{ libro.frase }}</blockquote>
+        </section>
+
+        <section class="bev-detail-block mb-4">
+          <p class="bev-detail-label mb-2">Descripción</p>
+          <p class="bev-detail-description mb-0">{{ libro.descripcion }}</p>
+        </section>
+
+        <div class="bev-detail-actions d-flex flex-wrap gap-2 mb-4">
+          <button
+            id="addToCartBtn"
+            class="btn bev-btn-gold"
+            data-id="{{ libro.id }}"
+            data-titulo="{{ libro.titulo }}"
+            data-precio="{{ libro.precio }}"
+          >
+            <i class="bi bi-bag-plus me-2"></i>Agregar al carrito
+          </button>
+          <a href="{% url 'carrito:ver' %}" class="btn bev-btn-outline">
+            <i class="bi bi-bag me-2"></i>Ir al carrito
+          </a>
+        </div>
+
+        <section class="bev-author-box mt-4 pt-4">
+          <div class="d-flex align-items-start gap-4 flex-column flex-md-row">
+            {% if autor.foto %}
+              <img
+                src="{{ autor.foto.url }}"
+                alt="{{ autor.nombre }}"
+                class="bev-author-photo"
+              />
+            {% endif %}
+            <div class="flex-grow-1">
+              <p class="bev-detail-label mb-1">Autor</p>
+              <h2 class="bev-author-name mb-1">{{ autor.nombre }}</h2>
+              <p class="bev-author-meta mb-2">{{ autor.nacionalidad }}</p>
+              <p class="bev-author-bio mb-0">{{ autor.bio }}</p>
+
+              {% if autor.instagram_url %}
+              <div class="bev-author-social mt-4">
+                <p class="bev-detail-label mb-2">No te pierdas nada del autor:</p>
+                <a
+                  href="{{ autor.instagram_url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bev-author-instagram"
+                >
+                  <i class="bi bi-instagram"></i>
+                  <span>@{{ autor.instagram_username }}</span>
+                </a>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'catalogo/js/libro_detalle.js' %}"></script>
+{% endblock %}

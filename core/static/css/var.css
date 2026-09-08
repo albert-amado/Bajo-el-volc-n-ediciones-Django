@@ -1,0 +1,157 @@
+:root {
+  /* Variables de fondos para componentes */
+  --pr-white:         #FFFFFF; /* blanco puro */
+  --pr-gray-50:       #e6e6e6; /* gris muy claro */
+  --pr-gray-100:      #FAFAFA; /* gris casi blanco — usado en superficie alterna claro */
+  --pr-gray-200:      #E5E5E5; /* gris claro — bordes suaves */
+  --pr-gray-400:      #F2F2F2; /* gris claro (duplicado de gray-1000, revisar uso) */
+  --pr-gray-1000:     #F2F2F2; /* gris claro (duplicado de gray-400) */
+  --pr-gray-1200:     #F23838; /* rojo */
+  --pr-gray-1400:     #BBD679; /* verde lima */
+  --pr-gray-1500:     #182B3A; /* azul oscuro — usado en topbar claro */
+  --pr-black:         #000000; /* unifica: pr-gray-700, pr-gray-900, pr-black (mismo hex) */
+  --pr-black-1100:    #111111; /* negro suave */
+
+  /* Primitivos modo oscuro — escala de superficie */
+  --pr-dark-900:      #141414; /* fondo general oscuro, más oscuro que el central */
+  --pr-dark-800:      #19191A; /* tono central pedido — tarjetas/superficie alterna oscuro */
+  --pr-dark-700:      #313333; /* más claro — hover/elementos flotantes oscuro */
+
+  /* Variables de prueba — libres para iterar diseño */
+  --pr-test-red:      #F23545;
+  --pr-test-pink:     #EE05F2;
+  --pr-test-blue:     #0511F2;
+  --pr-test-red-2:    #F20505;
+  --pr-test-black:    #0D0D0D;
+
+  /* ============================================
+     2. COLORES DE ETIQUETAS DE LIBROS (Intocable)
+     ============================================ */
+  --pr-etiqueta-preventa:  #F23838; /* rojo */
+  --pr-etiqueta-nuevo:     #00a02b; /* verde */
+  --pr-etiqueta-descuento: #bcbc08; /* amarillo mostaza */
+  --pr-etiqueta-destacado: #014970; /* azul petróleo */
+
+  /* ============================================
+     3. COLORES DE Iconos (Intocable)
+     ============================================ */
+  --pr-icono-whatsapp:  #29D967; /* verde WhatsApp */
+  --pr-etiqueta-preventa:  #F23838;
+  --pr-etiqueta-preventa:  #F23838;
+
+  /* ============================================
+     3. SOMBRAS, TRANSPARENCIAS Y ESTÁTICAS
+     ============================================ */
+  --pr-glass-dark:      rgba(0, 0, 0, 0.05);
+  --pr-glass-light-08:  rgba(255, 255, 255, 0.08);
+  --pr-glass-light-70:  rgba(255, 255, 255, 0.7);
+  --pr-glass-light-25:  rgba(255, 255, 255, 0.25);
+  --pr-glass-dark-08:   rgba(0, 0, 0, 0.08);
+  --pr-glass-dark-12:   rgba(0, 0, 0, 0.12);
+  --pr-glass-dark-15:   rgba(0, 0, 0, 0.15);
+  --pr-glass-dark-28:   rgba(0, 0, 0, 0.28);
+  --pr-glass-dark-90:   rgba(0, 0, 0, 0.9);
+  --pr-glass-panel:     rgba(255, 255, 255, 0.78);
+
+  --status-error-bg:     #fff0f0; /* rojo muy claro */
+  --status-error-border: #ffcccc; /* rojo claro */
+  --status-error-text:   #c0392b; /* rojo oscuro */
+
+  --wa-green:        #25d366; /* verde WhatsApp brand */
+  --wa-green-hover:  #20b958;
+  --wa-green-strong: #1faa53;
+  --wa-green-soft:   #d4f5e2;
+  --wa-green-shadow: rgba(37, 211, 102, 0.4);
+  --discount-green:  #27ae60; /* verde descuento */
+
+  --shadow-md:        0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg-soft:   0 10px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl-soft:   0 18px 40px rgba(0, 0, 0, 0.08);
+  --shadow-2xl-soft:  0 20px 40px rgba(0, 0, 0, 0.15);
+  --shadow-strong:    0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-strong-md: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  --font-display: "Playfair Display", serif;
+  --font-body:    "Lato", sans-serif;
+  --font-heading: "Libre Baskerville", serif;
+
+  --site-bg-repeat:   repeat;
+  --site-bg-size:     950px;
+  --site-bg-position: top left;
+}
+
+/* ============================================
+   4. VARIABLES SEMÁNTICAS — MODO CLARO (default)
+   ============================================ */
+:root,
+[data-bs-theme="light"] {
+  /* --- FONDOS --- */
+  --navbar-bg-image-book: var(--pr-white);        /* #FFFFFF */
+  --bg-body:          var(--pr-white);             /* #FFFFFF — fondo general */
+  --bg-surface:       var(--pr-white);             /* #FFFFFF — superficie base */
+  --bg-surface-alt:   var(--pr-gray-100);          /* #FAFAFA — separación sutil de secciones */
+  --bg-surface-card:  var(--pr-white);             /* #FFFFFF — tarjetas */
+  --bg-elevated:      var(--pr-white);             /* #FFFFFF — modales/dropdowns */
+  --bg-hover:         var(--pr-gray-100);          /* #FAFAFA — hover elementos */
+  --site-bg-image:    url("/static/assets/img/fondos/patron_claro.png");
+  --bg-patron-volcan: url("/static/assets/img/fondos/patron_claro.png");
+
+  /* --- TEXTOS --- */
+  --text-primary: var(--pr-black);   /* #000000 */
+  --text-body:    var(--pr-black);   /* #000000 */
+  --text-heading: var(--pr-black);   /* #000000 */
+  --border-soft:  var(--pr-gray-200); /* #E5E5E5 */
+
+  /* --- TOPBAR --- */
+  --topbar-bg:     var(--pr-gray-1500); /* #182B3A */
+  --topbar-text:   var(--pr-white);     /* #FFFFFF */
+  --topbar-muted:  var(--pr-gray-200);  /* #E5E5E5 */
+  --topbar-hover:  var(--pr-white);     /* #FFFFFF */
+  --topbar-border: var(--pr-black);     /* #000000 */
+
+  /* --- NAVBAR --- */
+  --navbar-text:      var(--pr-black);  /* #000000 */
+  --navbar-accent:    var(--pr-black);  /* #000000 */
+  --navbar-logo-glow: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   5. VARIABLES SEMÁNTICAS — MODO OSCURO
+   ============================================ */
+[data-bs-theme="dark"] {
+  /* --- FONDOS --- */
+  --navbar-bg-image-book: var(--pr-black);       /* #000000 */
+  --bg-body:          var(--pr-dark-900);         /* #141414 — fondo general */
+  --bg-surface:       var(--pr-dark-900);         /* #141414 — superficie base */
+  --bg-surface-alt:   var(--pr-dark-800);         /* #252626 — tono central, separación de secciones */
+  --bg-surface-card:  var(--pr-dark-800);         /* #252626 — tarjetas */
+  --bg-elevated:      var(--pr-dark-700);         /* #313333 — modales/dropdowns */
+  --bg-hover:         var(--pr-dark-700);         /* #313333 — hover elementos */
+  --site-bg-image:    url("/static/assets/img/fondos/fondo_oscuro.png");
+  --bg-patron-volcan: url("/static/assets/img/fondos/fondo_oscuro.png");
+
+  /* --- TEXTOS --- */
+  --text-primary: #f4f4f4; /* gris casi blanco */
+  --text-body:    #e6e6e6; /* gris claro */
+  --text-heading: #f4f4f4; /* gris casi blanco */
+  --border-soft:  #2e2e2e; /* gris oscuro */
+
+  /* --- TOPBAR --- */
+  --topbar-bg:     #0d0d0d; /* negro suave */
+  --topbar-text:   #f4f4f4; /* gris casi blanco */
+  --topbar-muted:  #a0a0a0; /* gris medio */
+  --topbar-hover:  #f4f4f4; /* gris casi blanco */
+  --topbar-border: #2e2e2e; /* gris oscuro */
+
+  /* --- NAVBAR --- */
+  --navbar-text:      var(--text-primary); /* #f4f4f4 */
+  --navbar-accent:    var(--text-primary); /* #f4f4f4 */
+  --navbar-logo-glow: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Base de la página --- */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

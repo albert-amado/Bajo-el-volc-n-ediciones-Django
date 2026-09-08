@@ -1,23 +1,6 @@
 .libros-seccion {
-  background-color: transparent;
+    background: var(--navbar-bg-image-book);
 }
-
-.libros-seccion__tag {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--text-heading);
-  margin-bottom: 1rem;
-}
-
-.libros-seccion__titulo {
-  font-family: var(--font-body);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 400;
-  color: var(--text-heading);
-}
-
 .bev-section-line {
   width: min(100%, 900px);
 }

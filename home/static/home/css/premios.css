@@ -1,10 +1,10 @@
 .bev-premios {
-  background-image: var(--bg-patron-volcan);
+  background-image: var(--site-bg-image);
   background-repeat: repeat;
   background-size: 950px;
   background-position: top left;
-  background-color: var(--pr-white);
-  border-bottom: 1px solid var(--pr-glass-light-25);
+  background-color: var(--bg-body);
+  border-bottom: 1px solid var(--border-soft);
   padding: 5rem 0 3rem;
 }
 
@@ -81,7 +81,7 @@
   font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.6rem);
   font-weight: 900;
-  color: var(--pr-gray-900);
+  color: var(--text-primary);
   margin: 0;
 }
 

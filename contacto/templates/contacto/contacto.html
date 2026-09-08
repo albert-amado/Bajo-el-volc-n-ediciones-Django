@@ -1,20 +1,23 @@
 {% extends "core/base.html" %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'contacto/css/contacto.css' %}" />
 {% endblock %}
+
 {% block title %}Contacto{% endblock %}
+
 {% block meta_description %}Contáctanos para consultas sobre nuestro catálogo, envíos o cualquier pregunta sobre Bajo el Volcán Editorial Literaria.{% endblock %}
 
 {% block content %}
-<main class="bev-contacto mt-5 pt-5">
+<main class="bev-contacto mt-0 pt-5">
   <div class="container">
     <div class="row mb-5">
       <div class="col-lg-8 mx-auto text-center">
-        <span class="bev-section-tag">Escríbenos</span>
-        <h1 class="display-4 bev-display-4 fw-bold mt-3 mb-4">Contacto</h1>
         <div class="bev-divider mx-auto mb-4"></div>
-        <p class="lead bev-lead">¿Tienes dudas? Estamos aquí para escucharte.</p>
+        <p class="lead bev-lead">
+          ¿Tienes dudas? Estamos aquí para escucharte.
+        </p>
       </div>
     </div>
 
@@ -22,10 +25,14 @@
       <div class="col-12 col-lg-5">
         <div class="bev-contact-info h-100 p-4">
           <div class="text-center mb-4">
-            <img src="{% static 'assets/img/ui/logo.webp' %}" alt="Bajo el Volcán" class="bev-contact-logo">
+            <img
+              src="{% static 'assets/img/ui/logo.webp' %}"
+              alt="Bajo el Volcán"
+              class="bev-contact-logo"
+            />
           </div>
 
-          <hr class="border-secondary mb-4">
+          <hr class="border-secondary mb-4" />
 
           <ul class="list-unstyled bev-contact-list">
             <li class="d-flex align-items-start gap-3 mb-4">
@@ -34,7 +41,12 @@
               </div>
               <div>
                 <p class="bev-contact-label">WhatsApp</p>
-                <a href="https://wa.me/573144559506" target="_blank" rel="noopener noreferrer" class="bev-contact-value">
+                <a
+                  href="https://wa.me/573144559506"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bev-contact-value"
+                >
                   +57 314 455 9506
                 </a>
               </div>
@@ -46,18 +58,18 @@
               </div>
               <div>
                 <p class="bev-contact-label">Correo</p>
-                <a href="mailto:bajoelvolcane@gmail.com" class="bev-contact-value">
+                <a
+                  href="mailto:bajoelvolcane@gmail.com"
+                  class="bev-contact-value"
+                >
                   bajoelvolcane@gmail.com
                 </a>
               </div>
             </li>
 
-            <li class="d-flex align-items-start gap-3 mb-4">
-              <div class="bev-contact-icon">
-                <i class="bi bi-instagram"></i>
-              </div>
-              <div>
-                <p class="bev-contact-label">Instagram</p>
+            <li>
+              <div class="bev-contact-item">
+                <span class="bev-contact-label">Instagram</span>
                 <a href="https://www.instagram.com/bajoelvolcane" target="_blank" rel="noopener noreferrer" class="bev-contact-value">
                   @bajoelvolcane
                 </a>
@@ -85,22 +97,38 @@
             {% csrf_token %}
             <div class="row g-3">
               <div class="col-12 col-md-6">
-                <label class="bev-form-label" for="{{ form.nombre.id_for_label }}">Nombre</label>
+                <label
+                  class="bev-form-label"
+                  for="{{ form.nombre.id_for_label }}"
+                  >Nombre</label
+                >
                 {{ form.nombre }}
               </div>
 
               <div class="col-12 col-md-6">
-                <label class="bev-form-label" for="{{ form.correo.id_for_label }}">Correo electrónico</label>
+                <label
+                  class="bev-form-label"
+                  for="{{ form.correo.id_for_label }}"
+                  >Correo electrónico</label
+                >
                 {{ form.correo }}
               </div>
 
               <div class="col-12">
-                <label class="bev-form-label" for="{{ form.asunto.id_for_label }}">Asunto</label>
+                <label
+                  class="bev-form-label"
+                  for="{{ form.asunto.id_for_label }}"
+                  >Asunto</label
+                >
                 {{ form.asunto }}
               </div>
 
               <div class="col-12">
-                <label class="bev-form-label" for="{{ form.mensaje.id_for_label }}">Mensaje</label>
+                <label
+                  class="bev-form-label"
+                  for="{{ form.mensaje.id_for_label }}"
+                  >Mensaje</label
+                >
                 {{ form.mensaje }}
               </div>
 
@@ -111,25 +139,30 @@
               </div>
 
               <div class="col-12 text-center">
-                <a href="https://wa.me/573144559506" target="_blank" rel="noopener noreferrer" class="bev-contact-value">
+                <a
+                  href="https://wa.me/573144559506"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bev-contact-value"
+                >
                   También puedes escribirnos por WhatsApp: +57 314 455 9506
                 </a>
               </div>
 
               {% if messages %}
-                <div class="col-12">
-                  {% for message in messages %}
-                    <div class="bev-form-feedback bev-feedback-ok">{{ message }}</div>
-                  {% endfor %}
+              <div class="col-12">
+                {% for message in messages %}
+                <div class="bev-form-feedback bev-feedback-ok">
+                  {{ message }}
                 </div>
-              {% endif %}
-
-              {% if form.errors %}
-                <div class="col-12">
-                  <div class="bev-form-feedback bev-feedback-error">
-                    Por favor completa los campos obligatorios correctamente.
-                  </div>
+                {% endfor %}
+              </div>
+              {% endif %} {% if form.errors %}
+              <div class="col-12">
+                <div class="bev-form-feedback bev-feedback-error">
+                  Por favor completa los campos obligatorios correctamente.
                 </div>
+              </div>
               {% endif %}
             </div>
           </form>

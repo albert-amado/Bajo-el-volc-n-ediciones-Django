@@ -1,12 +1,14 @@
+{% load humanize %}
+
 <article class="libro-card">
+  {% if libro.etiqueta %}
+    <span class="libro-card__etiqueta libro-card__etiqueta--{{ libro.etiqueta|lower }}">
+      {{ libro.get_etiqueta_display }}
+    </span>
+  {% endif %}
+
   <div class="libro-card__cover" data-id="{{ libro.id }}">
     <img src="{{ libro.imagen.url }}" alt="{{ libro.titulo }}" loading="lazy" />
-
-    {% if libro.etiqueta %}
-      <span class="libro-card__etiqueta libro-card__etiqueta--{{ libro.etiqueta|lower }}">
-        {{ libro.get_etiqueta_display }}
-      </span>
-    {% endif %}
 
     <div class="libro-card__overlay">
       <button class="libro-card__overlay-btn libro-card__overlay-btn--carrito js-btn-carrito"
@@ -16,8 +18,9 @@
       >
         <i class="bi bi-bag-plus"></i> Agregar al carrito
       </button>
+
       <a class="libro-card__overlay-btn libro-card__overlay-btn--detalle"
-        href="{% url 'detalle_libro' libro.slug %}"
+        href="{% url 'catalogo:detalle_libro' libro.slug %}"
       >
         <i class="bi bi-eye"></i> Ver detalle
       </a>
@@ -25,4 +28,5 @@
   </div>
 
   <h5 class="libro-card__titulo">{{ libro.titulo }}</h5>
+  <span class="libro-card__precio">${{ libro.precio|intcomma }} COP</span>
 </article>

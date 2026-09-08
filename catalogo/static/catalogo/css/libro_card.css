@@ -1,4 +1,5 @@
 .libro-card {
+  position: relative; /* nuevo contexto para etiqueta */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -67,62 +68,76 @@
 }
 
 .libro-card__overlay-btn--carrito {
-  background: var(--bg-surface-alt);
-  color: var(--text-heading);
+  background: var(--bg-body);
+  color: var(--text-primary);
 }
 
 .libro-card__overlay-btn--carrito:hover {
-  background: var(--bg-surface);
-  color: var(--text-heading);
+  background: var(--bg-body);
+  color: var(--text-primary);
 }
 
 .libro-card__overlay-btn--detalle {
   background: transparent;
-  color: var(--text-heading);
+  color: var(--text-primary);
   border: 1px solid var(--border-soft);
 }
 
 .libro-card__overlay-btn--detalle:hover {
-  background: var(--bg-surface);
-  color: var(--text-heading);
+  background: var(--bg-body);
+  color: var(--text-primary);
 }
 
 .libro-card__etiqueta {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  z-index: 3;
+    position: absolute;
+    top: -19px;
+    left: 0px;
+    z-index: 3;
+    display: flex
+;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 8px 83px 8px 1px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--pr-white);
+    clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
+}
+
+.libro-card__etiqueta i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
   font-size: 0.6rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.libro-card__etiqueta--nue {
-  background: var(--bg-surface-alt);
-  color: var(--text-heading);
-}
-
-.libro-card__etiqueta--des {
-  background: var(--bg-surface-alt);
-  color: var(--text-heading);
 }
 
 .libro-card__etiqueta--pre {
-  background: var(--bg-surface-alt);
-  color: var(--text-heading);
+  background: var( --pr-etiqueta-preventa);
+}
+
+.libro-card__etiqueta--nue {
+  background: var( --pr-etiqueta-nuevo);
+}
+
+.libro-card__etiqueta--des {
+  background: var(--pr-etiqueta-destacado);
 }
 
 .libro-card__titulo {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  color: var(--text-heading);
-  margin: 0.65rem 0 0;
-  line-height: 1.25;
-  text-align: center;
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+    margin: 0.65rem 0 0;
+    line-height: 1.75;
+    text-align: center;
 }
 
 @media (hover: none), (max-width: 767px) {
@@ -156,4 +171,12 @@
     margin-top: 0.55rem;
     font-size: 0.95rem;
   }
+}
+.libro-card__precio {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--pr-gray-1200);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }

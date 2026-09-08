@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 class Noticia(models.Model):
     class Categoria(models.TextChoices):
@@ -47,7 +48,6 @@ class AlbumGaleria(models.Model):
     def __str__(self):
         return f"{self.titulo} ({self.noticia.titulo})"
 
-
 class MultimediaGaleria(models.Model):
     class Tipo(models.TextChoices):
         IMAGEN = "imagen", "Imagen"
@@ -73,7 +73,26 @@ class MultimediaGaleria(models.Model):
     def __str__(self):
         return f"{self.get_tipo_display()} — {self.titulo_o_descripcion or self.album.titulo}"
 
+    def clean(self):
+        if self.tipo == self.Tipo.IMAGEN:
+            if not self.imagen:
+                raise ValidationError({"imagen": "Debes subir una imagen para el tipo 'Imagen'."})
+            self.video_archivo = None
+            self.video_url = ""
+            self.archivo_documento = None
 
+        elif self.tipo == self.Tipo.VIDEO:
+            if not self.video_archivo and not self.video_url:
+                raise ValidationError("Debes subir un archivo de video o proporcionar una URL para el tipo 'Video'.")
+            self.imagen = None
+            self.archivo_documento = None
+
+        elif self.tipo == self.Tipo.DOCUMENTO:
+            if not self.archivo_documento:
+                raise ValidationError({"archivo_documento": "Debes subir un archivo para el tipo 'Documento'."})
+            self.imagen = None
+            self.video_archivo = None
+            self.video_url = ""
 class EtiquetaRol(models.Model):
     """Rol o etiqueta asignable a un participante en una noticia (ej. 'Invitado especial')."""
     nombre = models.CharField(max_length=100, unique=True)
@@ -104,4 +123,5 @@ class Participacion(models.Model):
         unique_together = ["noticia", "autor"]
 
     def __str__(self):
-        return f"{self.autor} en {self.noticia} ({self.etiqueta or 'sin rol'})"
+        return f"{self.autor} en {self.noticia} ({self.etiqueta or 'sin rol'
+    })"

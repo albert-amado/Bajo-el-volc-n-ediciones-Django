@@ -9,19 +9,6 @@
   border-radius: 0;
   border: none;
 }
-
-.bev-categorias-titulo {
-  font-family: var(--font-body);
-  font-size: 1.2rem;
-  font-weight: 900;
-  letter-spacing: 0.4em;
-  color: var(--text-heading);
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border-soft);
-}
-
 .bev-categorias-lista {
   list-style: none;
   padding: 0;
@@ -39,7 +26,7 @@
   display: block;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--text-body);
+  color: var(--text-primary); /* Variable semántica para contraste en ambos modos */
   background: transparent;
   padding: 0.45rem 0;
   border-radius: 0;
@@ -52,13 +39,13 @@
 }
 
 .bev-categoria-item a:hover {
-  color: var(--text-heading);
+  color: var(--text-primary); /* Enfatiza en hover */
   opacity: 0.75;
 }
 
 .bev-categoria-item.activo a {
   background: transparent;
-  color: var(--text-heading);
+  color: var(--text-primary); /* Estado activo destaca */
   font-weight: 700;
   border: none;
 }

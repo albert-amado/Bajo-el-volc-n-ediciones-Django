@@ -1,5 +1,16 @@
+# noticias/admin.py
 from django.contrib import admin
-from .models import Noticia, AlbumGaleria, MultimediaGaleria, EtiquetaRol, Participacion
+from django.contrib import messages
+from .models import Noticia
+from .models import AlbumGaleria
+from .models import MultimediaGaleria
+from .models import EtiquetaRol
+from .models import Participacion
+from .forms import AlbumAdminForm
+
+EXT_IMAGEN = (".jpg", ".jpeg", ".png", ".webp", ".gif")
+EXT_VIDEO = (".mp4", ".mov", ".avi", ".webm")
+EXT_DOCUMENTO = (".pdf", ".docx", ".doc", ".xlsx", ".pptx")
 
 
 class MultimediaGaleriaInline(admin.TabularInline):
@@ -32,9 +43,45 @@ class NoticiaAdmin(admin.ModelAdmin):
 
 @admin.register(AlbumGaleria)
 class AlbumGaleriaAdmin(admin.ModelAdmin):
+    form = AlbumAdminForm
     list_display = ("titulo", "noticia", "libro", "autor")
     list_filter = ("noticia",)
     inlines = [MultimediaGaleriaInline]
+
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
+
+        archivos = request.FILES.getlist("archivos_multiples")
+        for archivo in archivos:
+            nombre = archivo.name.lower()
+
+            if nombre.endswith(EXT_IMAGEN):
+                MultimediaGaleria.objects.create(
+                    album=obj,
+                    tipo=MultimediaGaleria.Tipo.IMAGEN,
+                    imagen=archivo,
+                    titulo_o_descripcion=archivo.name,
+                )
+            elif nombre.endswith(EXT_VIDEO):
+                MultimediaGaleria.objects.create(
+                    album=obj,
+                    tipo=MultimediaGaleria.Tipo.VIDEO,
+                    video_archivo=archivo,
+                    titulo_o_descripcion=archivo.name,
+                )
+            elif nombre.endswith(EXT_DOCUMENTO):
+                MultimediaGaleria.objects.create(
+                    album=obj,
+                    tipo=MultimediaGaleria.Tipo.DOCUMENTO,
+                    archivo_documento=archivo,
+                    titulo_o_descripcion=archivo.name,
+                )
+            else:
+                self.message_user(
+                    request,
+                    f"'{archivo.name}' no se subió: extensión no reconocida.",
+                    level=messages.WARNING,
+                )
 
 
 @admin.register(EtiquetaRol)

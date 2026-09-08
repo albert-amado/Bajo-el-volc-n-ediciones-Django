@@ -1,17 +1,12 @@
-/* ============================================================
-   equipo/static/equipo/css/nosotros.css
-   Sección "Nosotros" — Misión + Equipo editorial
-   ============================================================ */
-
 .bev-nosotros {
-  background-color: var(--pr-bg-main, transparent);
+  background-image: var(--bg-patron-volcan);
   min-height: 100vh;
-  color: var(--pr-text-body, var(--text-body));
+  color: var(--text-primary);
 }
 
 /* === Tarjeta de misión === */
 .bev-info-card {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
   border-radius: 12px;
   transition: transform 0.3s ease;
@@ -19,8 +14,36 @@
   overflow: hidden;
 }
 
-.bev-info-card:hover {
-  transform: translateY(-4px);
+.bev-social-section {
+  background-color: transparent;
+  border-left: 2px solid var(--pr-gray-1200);
+  padding: 1.5rem 2rem;
+  margin-top: 1.5rem;
+  border-radius: 2px;
+}
+
+.bev-social-section p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--pr-gray-1200);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.bev-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--pr-gray-1200);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, opacity 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.bev-instagram-link:hover {
+  border-bottom-color: var(--pr-gray-1200);
+  opacity: 0.85;
 }
 
 .bev-info-sello {
@@ -49,26 +72,27 @@
 }
 
 .bev-info-card h4 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--text-heading);
-  position: relative;
-  z-index: 1;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 1;
+    text-align: center;
 }
 
 .bev-info-card p {
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.7;
-  color: var(--text-body);
+  color: var(--text-primary);
   position: relative;
   z-index: 1;
 }
 
 /* === Tarjeta de miembro del equipo === */
 .bev-team-card {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border: 1px solid var(--border-soft);
   border-radius: 16px;
   border-left: 5px solid var(--pr-gray-1500);
@@ -101,6 +125,12 @@
   object-fit: contain;
 }
 
+.bev-team-cargo {
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    font-size: larger;
+}
+
 .bev-team-avatar {
   width: clamp(90px, 12vw, 160px);
   height: clamp(90px, 12vw, 160px);
@@ -121,20 +151,11 @@
 
 .bev-team-card h4 {
   font-size: 1.1rem;
-  color: var(--text-heading);
+  color: var(--text-primary);
   position: relative;
   z-index: 1;
 }
 
-.bev-team-cargo {
-  color: var(--text-body);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
-}
 
 .bev-team-divider {
   height: 2px;
@@ -146,12 +167,12 @@
 }
 
 .bev-team-bio {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  line-height: 1.65;
-  position: relative;
-  z-index: 1;
-  margin: 0;
+    font-size: larger;
+    color: var(--text-body);
+    line-height: 1.65;
+    position: relative;
+    z-index: 1;
+    margin: 0;
 }
 
 /* === Responsive === */
@@ -187,4 +208,17 @@
   .bev-team-card h4 {
     font-size: 1rem;
   }
+}
+.bev-display-4{
+  background-color: var(--pr-gray-1500)
+}
+.fw-bold {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+.bev-quienes-text {
+    font-size: larger;
+    font-weight: 200;
+    color: var(--text-primary);
 }

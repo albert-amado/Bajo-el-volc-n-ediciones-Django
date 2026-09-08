@@ -1,8 +1,6 @@
 from django.db import models
 
-
 class MiembroEquipo(models.Model):
-    """Equipo editorial (team.json). Entidad independiente, sin FKs."""
     nombre = models.CharField(max_length=150)
     cargo = models.CharField(max_length=150)
     foto = models.ImageField(upload_to="team/")

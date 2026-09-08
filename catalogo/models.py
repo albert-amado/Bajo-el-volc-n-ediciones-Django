@@ -2,11 +2,11 @@ from django.db import models
 from django.utils.text import slugify
 
 class Autor(models.Model):
-    """Autor de la editorial. Relación 1:N con Libro (un autor, muchos libros)."""
     nombre = models.CharField(max_length=150)
     nacionalidad = models.CharField(max_length=100)
     bio = models.TextField()
     foto = models.ImageField(upload_to="autores/", blank=True, null=True)
+    instagram_url = models.URLField(blank=True, null=True, help_text="URL completa del perfil de Instagram")
 
     class Meta:
         verbose_name = "Autor"
@@ -22,6 +22,13 @@ class Autor(models.Model):
             return ""
         palabras = self.nombre.split()
         return "".join(palabra[0] for palabra in palabras[:2]).upper()
+
+    @property
+    def instagram_username(self):
+        if not self.instagram_url:
+            return ""
+        return self.instagram_url.rstrip("/").split("/")[-1].split("?")[0]
+
 class Libro(models.Model):
     """
     Catálogo de libros. FK a Autor (M:1) porque el JSON original

@@ -1,0 +1,73 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}{{ autor.nombre }} - Bajo el Volcán{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'catalogo/css/autor_detalle.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="bev-author-profile mt-0 pt-5">
+  <div class="container">
+    <div class="mb-4">
+      <a href="{% url 'home:inicio' %}" class="bev-back-link">
+        <i class="bi bi-arrow-left"></i> Volver al inicio
+      </a>
+    </div>
+
+    <div class="bev-author-header mb-5">
+      <div class="bev-author-detail-avatar">
+        {% if autor.foto %}
+          <img
+            src="{{ autor.foto.url }}"
+            alt="{{ autor.nombre }}"
+            class="img-fluid"
+          />
+        {% else %}
+          <div class="bev-avatar-fallback-large">
+            {{ autor.obtener_iniciales }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="autor-info-card">
+        <span class="bev-section-tag">{{ autor.nacionalidad }}</span>
+        <h1 class="display-5 fw-bold mb-3">{{ autor.nombre }}</h1>
+        <div class="bev-divider mb-4"></div>
+        <p class="bev-author-bio mb-0">{{ autor.bio }}</p>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <div class="row">
+      <div class="col-12 mb-4">
+    <p class="bev-author-subtext fs-4 fw-bold mb-0">
+        Explora los títulos de {{ autor.nombre }} en nuestra editorial.
+    </p>
+</div>
+      {% for libro in autor.libros.all %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <a href="{% url 'catalogo:detalle_libro' libro.slug %}"
+            class="card h-100 bev-book-card-v2 text-decoration-none d-block"
+          >
+            <div class="bev-book-cover-v2">
+              <img
+                src="{{ libro.imagen.url }}"
+                alt="{{ libro.titulo }}"
+                class="card-img-top rounded shadow"
+              />
+            </div>
+            <div class="card-body px-0">
+              <h6 class="mb-1">{{ libro.titulo }}</h6>
+              <p class="bev-book-price">${{ libro.precio|intcomma }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+{% endblock %}

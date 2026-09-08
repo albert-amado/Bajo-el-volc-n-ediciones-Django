@@ -1,4 +1,3 @@
-/* Botón flotante */
 .btn-accesibilidad-float {
   position: fixed;
   bottom: 1.5rem;
@@ -8,8 +7,8 @@
   height: 56px;
   border-radius: 50%;
   border: none;
-  background-color: var(--pr-gray-900);
-  color: var(--pr-white);
+  background-color: var(--bg-body);
+  color: var(--text-primary);
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -18,11 +17,20 @@
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
 .btn-accesibilidad-float:hover {
   transform: scale(1.08);
 }
-
+.bev-categorias-titulo {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.4em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-soft);
+}
 /* Botones del panel */
 .bev-btn-accesibilidad {
   text-align: left;
@@ -46,7 +54,11 @@
 .texto-accesible {
   font-size: 120%;
 }
-
+.libros-sidebar-left {
+    position: static;
+    width: 100%;
+    background-color: var(--bg-surface-alt);
+}
 @media (max-width: 576px) {
   .btn-accesibilidad-float {
     bottom: 1rem;

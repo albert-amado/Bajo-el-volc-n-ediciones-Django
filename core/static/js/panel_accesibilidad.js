@@ -9,7 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Aplica el estado guardado al cargar la página
   function aplicarEstadoInicial() {
     const tema = localStorage.getItem("bev-tema");
-    if (tema) html.setAttribute("data-bs-theme", tema);
+    if (tema) {
+      html.setAttribute("data-bs-theme", tema);
+    } else {
+      // Fallback a preferencia del sistema si no hay localStorage
+      const prefiereOscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      html.setAttribute("data-bs-theme", prefiereOscuro ? "dark" : "light");
+    }
 
     if (localStorage.getItem("bev-grises") === "true") {
       html.classList.add("modo-grises");

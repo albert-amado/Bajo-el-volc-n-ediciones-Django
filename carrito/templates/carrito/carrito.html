@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Tu carrito - Bajo el Volcán{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'carrito/css/carrito.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="bev-carrito mt-5 pt-5">
+  <div class="container py-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+      <div>
+        <span class="bev-section-tag">Compra</span>
+        <h1 class="fw-bold mt-3 mb-1">Tu carrito</h1>
+        <p class="mb-0 text-muted">Revisa tus libros antes de finalizar.</p>
+      </div>
+      <a href="{% url 'home:inicio' %}" class="btn bev-btn-outline">
+        <i class="bi bi-arrow-left me-2"></i>Seguir comprando
+      </a>
+    </div>
+
+    <div class="bev-carrito-box p-4 p-lg-5">
+      {% if not items %}
+        <div class="text-center py-5">
+          <i class="bi bi-bag-x fs-1 d-block mb-3"></i>
+          <h3 class="fw-bold">Tu carrito está vacío</h3>
+          <p class="text-muted mb-4">Aún no has agregado libros.</p>
+          <a href="{% url 'home:inicio' %}" class="btn bev-btn-gold">Explorar catálogo</a>
+        </div>
+      {% else %}
+        <div class="table-responsive">
+          <table class="table align-middle bev-carrito-table">
+            <thead>
+              <tr>
+                <th scope="col">Libro</th>
+                <th scope="col" class="text-center">Cantidad</th>
+                <th scope="col" class="text-end">Precio</th>
+                <th scope="col" class="text-end">Subtotal</th>
+                <th scope="col" class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="cartRows">
+              {% for item in items %}
+                <tr>
+                  <td>{{ item.libro.titulo }}</td>
+                  <td class="text-center">{{ item.cantidad }}</td>
+                  <td class="text-end">${{ item.libro.precio|intcomma }}</td>
+                  <td class="text-end">${{ item.subtotal|intcomma }}</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm bev-btn-remove" data-id="{{ item.libro.id }}" aria-label="Eliminar {{ item.libro.titulo }}">
+                      <i class="bi bi-x-lg"></i>
+                    </button>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bev-checkout-layout mt-4 mb-2">
+          <div class="bev-checkout-actions d-flex flex-column gap-2">
+            <button id="buyWhatsApp" class="btn bev-btn-whatsapp">
+              <i class="bi bi-whatsapp me-2"></i>Enviar por WhatsApp
+            </button>
+            <button id="buyEmail" class="btn bev-btn-email">
+              <i class="bi bi-envelope me-2"></i>Enviar por Gmail
+            </button>
+            <a href="tel:+573144559506" class="btn bev-btn-help">
+              <i class="bi bi-telephone me-2"></i>¿Necesitas ayuda? Llámanos
+            </a>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-3">
+          <button id="clearCart" class="btn bev-btn-outline">
+            <i class="bi bi-trash me-2"></i>Vaciar carrito
+          </button>
+          <div class="text-end">
+            <p class="mb-1 text-muted" id="cartBooksCount">{{ total_libros }} {% if total_libros == 1 %}libro{% else %}libros{% endif %}</p>
+            <p class="bev-carrito-total mb-0" id="cartTotal">${{ total_valor|intcomma }}</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+  <script type="module" src="{% static 'carrito/js/carrito.js' %}"></script>
+{% endblock %}

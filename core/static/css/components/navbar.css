@@ -1,5 +1,5 @@
 .bev-navbar {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
   border-bottom: 3px solid var(--border-soft);
   padding: 1.2rem 0;
   backdrop-filter: blur(8px);
@@ -20,7 +20,7 @@
   font-size: 1.55rem;
   font-weight: 800;
   letter-spacing: 0.18em;
-  color: var(--text-heading);
+  color: var(--text-primary);
   line-height: 1.1;
 }
 
@@ -45,20 +45,21 @@
   }
 
   .bev-logo-mobile {
-    width: 55px;
-    height: 68px;
+    width: 95px;
+    height: 95px;
     object-fit: contain;
-  }
+}
 
   .bev-navbar .nav-link {
     position: relative;
-    color: var(--navbar-text);
+    color: var(--navbar);
     font-size: 1rem;
+    font-family: var(--font-heading);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0.6rem 0.9rem;
     transition: color 0.2s ease, opacity 0.2s ease;
-  }
+}
 
   .bev-navbar .nav-link:hover {
     color: var(--navbar-accent);
@@ -170,7 +171,7 @@
 
 @media (max-width: 991px) {
   #navbarMenu {
-    background-color: var(--bg-surface);
+    background-color: var(--bg-body);
     border-top: 1px solid var(--border-soft);
     margin-top: 0.75rem;
     padding: 0.5rem 0 1rem;
@@ -180,7 +181,7 @@
   }
 
   .bev-navbar .navbar-collapse.collapse.show {
-    background-color: var(--bg-surface);
+    background-color: var(--bg-body);
   }
 
   .bev-navbar .nav-link {

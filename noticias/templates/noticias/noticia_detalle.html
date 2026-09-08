@@ -4,10 +4,12 @@
 {% block title %}{{ noticia.titulo }} - Noticias | Bajo el Volcán{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'includes/noticias/css/noticia_detalle.css' %}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+<link rel="stylesheet" href="{% static 'noticias/css/noticia_detalle.css' %}" />
 {% endblock %}
 {% block content %}
-<main class="bev-noticia-detalle mt-5 pt-5">
+<main class="bev-noticia-detalle mt-0 pt-5">
   <article class="container py-5">
     <a href="{% url 'noticias:lista' %}" class="bev-back-link mb-4 d-inline-flex align-items-center gap-2">
       <i class="bi bi-arrow-left"></i> Volver a noticias
@@ -139,14 +141,7 @@
 
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const lightbox = GLightbox({
-      selector: ".glightbox",
-      touchNavigation: true,
-      loop: false,
-      autoplayVideos: true,
-    });
-  });
-</script>
+
+<!-- Tu lógica separada -->
+<script src="{% static 'noticias/js/noticia_detalle.js' %}"></script>
 {% endblock %}
