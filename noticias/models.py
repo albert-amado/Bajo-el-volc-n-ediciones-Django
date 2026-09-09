@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from cloudinary_storage.storage import RawMediaCloudinaryStorage
 
 class Noticia(models.Model):
     class Categoria(models.TextChoices):
@@ -58,10 +59,9 @@ class MultimediaGaleria(models.Model):
     tipo = models.CharField(max_length=15, choices=Tipo.choices)
 
     imagen = models.ImageField(upload_to="noticias/galeria/imagenes/", blank=True, null=True)
-    video_archivo = models.FileField(upload_to="noticias/galeria/videos/", blank=True, null=True)
+    video_archivo = models.FileField(upload_to="noticias/galeria/videos/", blank=True, null=True, storage=RawMediaCloudinaryStorage())
     video_url = models.URLField(blank=True, null=True)
-    archivo_documento = models.FileField(upload_to="noticias/galeria/documentos/", blank=True, null=True)
-
+    archivo_documento = models.FileField(upload_to="noticias/galeria/documentos/", blank=True, null=True, storage=RawMediaCloudinaryStorage())
     titulo_o_descripcion = models.CharField(max_length=200, blank=True)
     orden = models.PositiveIntegerField(default=0)
 
