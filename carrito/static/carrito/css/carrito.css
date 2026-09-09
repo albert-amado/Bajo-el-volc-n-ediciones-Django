@@ -1,0 +1,92 @@
+.bev-carrito {
+    min-height: 100vh;
+    background-color: transparent;
+}
+
+.bev-carrito-box {
+    background: var(--pr-white);
+    border: 1px solid var(--pr-gray-200);
+    border-radius: 14px;
+}
+
+.bev-carrito-table thead th {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--pr-gray-700);
+    border-bottom-width: 1px;
+}
+
+.bev-carrito-table td {
+    border-color: var(--pr-gray-200);
+    vertical-align: middle;
+}
+
+.bev-carrito-total {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--pr-gray-1200);
+}
+
+.bev-btn-remove {
+    color: var(--pr-gray-900);
+    border: 1px solid var(--pr-gray-200);
+    background: transparent;
+}
+
+.bev-btn-remove:hover {
+    background: var(--pr-gray-900);
+    color: var(--pr-white);
+}
+
+.bev-checkout-actions .btn {
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+}
+
+.bev-checkout-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.bev-btn-help {
+    background: transparent;
+    color: var(--pr-gray-900);
+    border: 1px solid var(--pr-gray-200);
+    font-weight: 600;
+}
+
+.bev-btn-help:hover {
+    background: var(--pr-gray-900);
+    color: var(--pr-white);
+}
+
+.bev-btn-whatsapp {
+    background: var(--wa-green);
+    color: var(--pr-white);
+    border: 1px solid var(--wa-green);
+}
+
+.bev-btn-whatsapp:hover {
+    background: var(--wa-green-strong);
+    color: var(--pr-white);
+}
+
+.bev-btn-email {
+    background: var(--pr-gray-900);
+    color: var(--pr-white);
+    border: 1px solid var(--pr-gray-900);
+}
+
+.bev-btn-email:hover {
+    background: transparent;
+    color: var(--pr-gray-900);
+}
+
+@media (max-width: 991px) {
+    .bev-checkout-layout {
+        grid-template-columns: 1fr;
+    }
+}

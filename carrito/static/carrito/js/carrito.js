@@ -1,40 +1,27 @@
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(";").shift();
-}
-
-export async function agregarAlCarrito(libroId) {
-  const response = await fetch("/carrito/agregar/", {
-    method: "POST",
-    headers: {
-      "X-CSRFToken": getCookie("csrftoken"),
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: `libro_id=${libroId}`,
-  });
-
-  const data = await response.json();
-
-  if (data.ok) {
-    actualizarContador(data.total_items);
-    mostrarToast(`"${data.titulo}" agregado al carrito`);
+export function agregarAlCarrito(id, titulo, precio) {
+  let carrito = JSON.parse(localStorage.getItem('bev_carrito') || '[]');
+  const existe = carrito.find(i => i.id === id);
+  if (existe) {
+    existe.cantidad += 1;
   } else {
-    mostrarToast("Error al agregar al carrito");
+    carrito.push({ id, titulo, precio, cantidad: 1 });
   }
-
-  return data;
+  localStorage.setItem('bev_carrito', JSON.stringify(carrito));
+  actualizarContador();
+  mostrarToast(`"${titulo}" agregado al carrito`);
 }
 
-export function actualizarContador(total) {
-  const el = document.getElementById("cartCount");
+export function actualizarContador() {
+  const carrito = JSON.parse(localStorage.getItem('bev_carrito') || '[]');
+  const total = carrito.reduce((sum, i) => sum + i.cantidad, 0);
+  const el = document.getElementById('cartCount');
   if (el) el.textContent = String(total);
 }
 
 export function mostrarToast(msg) {
-  const t = document.getElementById("bevToast");
+  const t = document.getElementById('bevToast');
   if (!t) return;
   t.textContent = msg;
-  t.classList.add("show");
-  setTimeout(() => t.classList.remove("show"), 2600);
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2600);
 }

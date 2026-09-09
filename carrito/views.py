@@ -61,3 +61,18 @@ def ver_carrito(request):
         "total_libros": total_libros,
     }
     return render(request, "carrito/carrito.html", context)
+
+@require_POST
+def eliminar_del_carrito(request):
+    libro_id = request.POST.get("libro_id")
+    carrito = request.session.get("carrito", {})
+    carrito.pop(str(libro_id), None)
+    request.session["carrito"] = carrito
+    request.session.modified = True
+    return JsonResponse({"ok": True, "total_items": sum(carrito.values())})
+
+@require_POST
+def vaciar_carrito(request):
+    request.session["carrito"] = {}
+    request.session.modified = True
+    return JsonResponse({"ok": True})
