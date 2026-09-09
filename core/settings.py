@@ -37,10 +37,17 @@ STORAGES = {
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost').split(',')
-
+ALLOWED_HOSTS = [
+    'bajoelvolcanediciones.com',
+    'www.bajoelvolcanediciones.com',
+    'bajo-el-volcan-ediciones-django.onrender.com',
+]
 
 # Application definition
+CSRF_TRUSTED_ORIGINS = [
+    'https://bajoelvolcanediciones.com',
+    'https://www.bajoelvolcanediciones.com',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
