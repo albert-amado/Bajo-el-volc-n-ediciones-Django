@@ -10,11 +10,11 @@ class Noticia(models.Model):
         ENTREVISTA = "entrevista", "Entrevista"
         PREMIO = "premio", "Premio"
 
-    titulo = models.CharField(max_length=200, blank=True, null=True)
+    titulo = models.CharField(max_length=200, default="Sin título", blank=False)
     slug = models.SlugField(max_length=220, unique=True)
     categoria = models.CharField(max_length=20, choices=Categoria.choices)
     fecha = models.DateField()
-    resumen = models.CharField(max_length=300, blank=True, null=True)
+    resumen = models.CharField(max_length=300, default="Sin resumen", blank=True)
     contenido = models.TextField()
     imagen = models.ImageField(upload_to="noticias/portadas/", blank=True, null=True)
     enlace_pdf = models.URLField(blank=True, null=True)

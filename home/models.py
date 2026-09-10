@@ -3,8 +3,8 @@ from django.db import models
 from cloudinary_storage.storage import RawMediaCloudinaryStorage
 
 class PremiosCarrusel(models.Model):
-    titulo = models.CharField(max_length=200)
-    descripcion = models.TextField(blank=True)
+    titulo = models.CharField(max_length=200, blank=True, null=True)
+    descripcion = models.TextField(blank=True, null=True)
     imagen = models.ImageField(upload_to="premios_carrusel/")
     enlace_url = models.URLField(blank=True)
     archivo_pdf = models.FileField(upload_to="premios_carrusel/pdfs/", blank=True, null=True, storage=RawMediaCloudinaryStorage())
@@ -48,8 +48,8 @@ class FraseEditorial(models.Model):
         return self.mensaje[:50]
 
 class BannerCarrusel(models.Model):
-    titulo = models.CharField(max_length=200)
-    descripcion = models.TextField(blank=True)
+    titulo = models.CharField(max_length=200, blank=True, null=True)
+    descripcion = models.TextField(blank=True, null=True)
     imagen = models.ImageField(upload_to="carrusel/")
     enlace_url = models.URLField(blank=True)
     archivo_pdf = models.FileField(upload_to="carrusel/pdfs/", blank=True, null=True, storage=RawMediaCloudinaryStorage())
