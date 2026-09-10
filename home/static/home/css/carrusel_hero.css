@@ -214,3 +214,10 @@
     width: calc(100% - 1rem);
   }
 }
+
+
+.px-0 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 5rem;
+}

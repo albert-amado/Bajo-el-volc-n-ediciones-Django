@@ -92,12 +92,25 @@
   text-decoration: underline;
   transition: opacity 0.2s ease;
 }
-
-.bev-promo-contact-link:hover {
-  opacity: 0.75;
-  color: var(--pr-white);
+.bev-premios-carrusel__btn {
+    text-decoration: none;
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: x-large;
 }
-
+.bev-premios-carrusel__title {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: xx-large;
+    font-weight: 800;
+}
+.bev-premios-carrusel__desc {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-size: larger;
+}
 /* --- Responsive móvil --- */
 @media (max-width: 576px) {
   .bev-premios {

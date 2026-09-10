@@ -26,6 +26,16 @@
     margin-right: auto;
     background-color: var(--bg-surface-alt);
 }
+.bev-section-line {
+    height: 3px;
+    width: 342px;
+    background-color: var(--pr-test-red);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+}
 .libros-sidebar-right {
   position: sticky;
   top: 5rem;

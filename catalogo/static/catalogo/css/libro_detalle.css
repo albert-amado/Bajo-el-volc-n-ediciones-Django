@@ -18,15 +18,23 @@
     font-weight: bold;
     background-color: var(--bg-surface-alt);
 }
-
 .bev-book-page-title {
     font-size: xxx-large;
-    line-height: 1.02;
+    line-height: 1.06;
     font-weight: lighter;
-    max-width: 12ch;
+    max-width: 14ch;
     background-color: var(--bg-surface-alt);
     color: var(--text-primary);
     font-family: var(--font-heading);
+}
+.bev-section-line {
+    height: 4px;
+    width: 255px;
+    background-color: var(--pr-test-red);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    border-radius: 2px;
 }
 .bev-back-link {
     font-size: larger;
