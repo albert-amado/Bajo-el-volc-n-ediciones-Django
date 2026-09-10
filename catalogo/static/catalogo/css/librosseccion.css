@@ -11,7 +11,21 @@
   gap: 1.25rem;
   align-items: start;
 }
-
+.bev-section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    letter-spacing: 0.2em;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    padding: 0.1rem 1.4rem;
+    margin-left: auto;
+    margin-top: 5rem;
+    display: block;
+    margin-right: auto;
+    background-color: var(--bg-surface-alt);
+}
 .libros-sidebar-right {
   position: sticky;
   top: 5rem;
@@ -71,4 +85,7 @@
     width: 110px;
     margin-bottom: 1.75rem;
   }
+}
+.mb-5 {
+    margin-bottom: 6rem !important;
 }
