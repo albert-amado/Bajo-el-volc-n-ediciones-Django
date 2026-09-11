@@ -1,27 +1,46 @@
-export function agregarAlCarrito(id, titulo, precio) {
-  let carrito = JSON.parse(localStorage.getItem('bev_carrito') || '[]');
-  const existe = carrito.find(i => i.id === id);
-  if (existe) {
-    existe.cantidad += 1;
-  } else {
-    carrito.push({ id, titulo, precio, cantidad: 1 });
-  }
-  localStorage.setItem('bev_carrito', JSON.stringify(carrito));
-  actualizarContador();
-  mostrarToast(`"${titulo}" agregado al carrito`);
+function getCookie(name) {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? decodeURIComponent(match[2]) : null;
 }
 
-export function actualizarContador() {
-  const carrito = JSON.parse(localStorage.getItem('bev_carrito') || '[]');
-  const total = carrito.reduce((sum, i) => sum + i.cantidad, 0);
+function getCsrfToken() {
+  const input = document.querySelector('[name=csrfmiddlewaretoken]');
+  return input ? input.value : getCookie('csrftoken');
+}
+
+async function agregarAlCarrito(id) {
+  const res = await fetch(window.CARRITO_URLS.agregar, {
+    method: 'POST',
+    headers: {
+      'X-CSRFToken': getCsrfToken(),
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `libro_id=${id}`,
+  });
+  const data = await res.json();
+  if (!data.ok) {
+    mostrarToast('Error al agregar el libro');
+    return;
+  }
+  actualizarContador(data.total_items);
+  mostrarToast(`"${data.titulo}" agregado al carrito`);
+}
+
+function actualizarContador(total) {
   const el = document.getElementById('cartCount');
   if (el) el.textContent = String(total);
 }
 
-export function mostrarToast(msg) {
+function mostrarToast(msg) {
   const t = document.getElementById('bevToast');
   if (!t) return;
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2600);
 }
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.js-btn-carrito');
+  if (!btn) return;
+  agregarAlCarrito(btn.dataset.id);
+});

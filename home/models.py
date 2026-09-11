@@ -19,6 +19,7 @@ class PremiosCarrusel(models.Model):
 
     def __str__(self):
         return f"{self.orden} - {self.titulo or 'Sin título'}"
+
 class SlideHero(models.Model):
     titulo_interno = models.CharField(max_length=100)
     imagen_fondo = models.ImageField(upload_to="home/hero/")

@@ -4,11 +4,16 @@
 }
 
 .bev-carrito-box {
-    background: var(--pr-white);
-    border: 1px solid var(--pr-gray-200);
+    border: 3px solid var(--pr-gray-200);
     border-radius: 14px;
+    background-color: var(--bg-body);
 }
-
+.text-muted {
+    color: var(--text-primary);
+    font-size: xxx-large;
+    font-weight: 800;
+    background-color: var(--bg-body);
+}
 .bev-carrito-table thead th {
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -20,10 +25,13 @@
 .bev-carrito-table td {
     border-color: var(--pr-gray-200);
     vertical-align: middle;
+    background-color: var(--pr-etiqueta-nuevo);
+    font-size: x-large;
 }
 
+
 .bev-carrito-total {
-    font-size: 1.75rem;
+    font-size: xxx-large;
     font-weight: 700;
     color: var(--pr-gray-1200);
 }
@@ -42,6 +50,8 @@
 .bev-checkout-actions .btn {
     font-weight: 600;
     padding: 0.6rem 1rem;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
 }
 
 .bev-checkout-layout {

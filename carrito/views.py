@@ -55,8 +55,12 @@ def ver_carrito(request):
             total_valor += subtotal
             total_libros += cantidad
 
-    context = {
+        context = {
         "items": items,
+        "items_json": [
+            {"id": i["libro"].id, "titulo": i["libro"].titulo, "cantidad": i["cantidad"], "precio": i["libro"].precio}
+            for i in items
+        ],
         "total_valor": total_valor,
         "total_libros": total_libros,
     }
@@ -76,3 +80,4 @@ def vaciar_carrito(request):
     request.session["carrito"] = {}
     request.session.modified = True
     return JsonResponse({"ok": True})
+    

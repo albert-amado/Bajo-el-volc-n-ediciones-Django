@@ -59,6 +59,7 @@
             </tbody>
           </table>
         </div>
+        {{ items_json|json_script:"cartData" }}
 
         <div class="bev-checkout-layout mt-4 mb-2">
           <div class="bev-checkout-actions d-flex flex-column gap-2">
@@ -88,7 +89,6 @@
   </div>
 </main>
 {% endblock %}
-
 {% block extra_js %}
-  <script type="module" src="{% static 'carrito/js/carrito.js' %}"></script>
+  <script type="module" src="{% static 'carrito/js/carritoPage.js' %}"></script>
 {% endblock %}
