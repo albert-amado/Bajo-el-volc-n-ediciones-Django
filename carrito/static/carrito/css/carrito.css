@@ -10,10 +10,11 @@
 }
 .text-muted {
     color: var(--text-primary);
-    font-size: xxx-large;
+    font-size: x-large;
     font-weight: 800;
     background-color: var(--bg-body);
 }
+
 .bev-carrito-table thead th {
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -99,4 +100,7 @@
     .bev-checkout-layout {
         grid-template-columns: 1fr;
     }
+}
+.bev-premios-carrusel{
+    margin-top: 5rem;
 }

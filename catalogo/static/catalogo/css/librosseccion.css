@@ -1,6 +1,8 @@
 .libros-seccion {
-    background: var(--navbar-bg-image-book);
+    background-color: var(--bg-body);
 }
+
+
 .bev-section-line {
   width: min(100%, 900px);
 }

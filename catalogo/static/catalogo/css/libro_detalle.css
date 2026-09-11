@@ -169,13 +169,22 @@
 }
 
 .bev-detail-actions .btn {
-  padding: 0.7rem 1.15rem;
-  font-weight: 600;
+    padding: 0.7rem 1.15rem;
+    font-weight: 600;
+    font-size: xx-large;
+    color: var(--pr-dark-900);
+    background-color: var(--pr-gray-400);
 }
 
 .bev-detail-actions .btn:first-child {
-  min-width: 190px;
+    min-width: 190px;
+    background-color: var(--pr-gray-1200);
+    color: var(--pr-white);
+    font-size: x-large;
+    font-weight: normal;
 }
+
+
 
 .bev-author-box {
   border-top: 1px solid var(--pr-glass-dark-08);
