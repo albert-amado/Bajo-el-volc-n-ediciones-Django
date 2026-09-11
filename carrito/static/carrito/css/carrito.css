@@ -104,3 +104,10 @@
 .bev-premios-carrusel{
     margin-top: 5rem;
 }
+.bev-checkout-actions .btn {
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    color: var(--pr-test-black);
+    font-size: x-large;
+    background-color: var(--pr-gray-200);
+}

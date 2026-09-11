@@ -55,7 +55,7 @@ def ver_carrito(request):
             total_valor += subtotal
             total_libros += cantidad
 
-        context = {
+    context = {
         "items": items,
         "items_json": [
             {"id": i["libro"].id, "titulo": i["libro"].titulo, "cantidad": i["cantidad"], "precio": i["libro"].precio}
