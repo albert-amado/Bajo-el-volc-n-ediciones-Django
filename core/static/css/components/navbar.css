@@ -108,21 +108,21 @@
     padding-left: 1rem;
   }
 
-  .bev-cart-badge {
+.bev-cart-badge {
     position: absolute;
     top: -6px;
     right: -10px;
-    background: var(--navbar-text);
-    color: var(--pr-white);
-    font-size: 0.7rem;
+    background-color: var(--pr-gray-1200);
+    color: var(--pr-w);
+    font-size: x-large;
     font-weight: 700;
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
   @media (max-width: 991px) {
     .bev-navbar {
