@@ -25,7 +25,7 @@
           <div class="carousel-item bev-slide{% if forloop.first %} active{% endif %}">
             <img
               src="{{ banner.imagen.url }}"
-              alt="{{ banner.titulo }}"
+              alt="{{ banner.titulo|default:'' }}"
               class="bev-slide-bg"
               loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
               fetchpriority="{% if forloop.first %}high{% else %}auto{% endif %}"
@@ -36,7 +36,9 @@
               <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-11 col-lg-10 bev-slide-content text-center mx-auto">
                   <div class="bev-text-container">
-                    <h2 class="bev-hero-title">{{ banner.titulo }}</h2>
+                    {% if banner.titulo %}
+                      <h2 class="bev-hero-title">{{ banner.titulo }}</h2>
+                    {% endif %}
                     {% if banner.descripcion %}
                       <p class="bev-hero-description">{{ banner.descripcion }}</p>
                     {% endif %}
