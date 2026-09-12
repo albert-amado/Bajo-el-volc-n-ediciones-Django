@@ -9,13 +9,6 @@
   gap: 1.5rem;
   width: 100%;
 }
-
-@media (max-width: 1199px) {
-  .libros-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (max-width: 991px) {
   .libros-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -26,7 +19,20 @@
 @media (max-width: 639px) {
   .libros-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.85rem;
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .libros-grid {
+    gap: 0.5rem;
+  }
+}
+
+/* Antes forzaba 1 columna aquí, dejando tarjetas gigantes. Se mantiene 2 columnas hasta el límite inferior real de usabilidad (~320px). */
+@media (max-width: 400px) {
+  .libros-grid {
+    gap: 0.5rem;
   }
 }
 

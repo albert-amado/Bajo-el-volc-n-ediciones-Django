@@ -102,3 +102,32 @@
     color: var(--text-primary);
     font-size: large;
 }
+@media (max-width: 767px) {
+  /* font-size: 3rem fijo + padding lateral 20px es candidato directo a overflow horizontal en el bev-container, sobre todo en tags largos. */
+  .bev-section-tag {
+    font-size: clamp(1.3rem, 6vw, 2rem);
+    padding: 4px 14px;
+  }
+
+  /* Offsets fijos (top:30px, left:25px) consumen proporcionalmente mucho más espacio en cards angostas de mobile. Se reducen sin tocar desktop. */
+  .bev-etiqueta {
+    top: 16px;
+    left: 14px;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+  }
+
+  /* Área táctil: btn-outline con padding 0.45rem vertical + font 0.82rem queda por debajo de 44px. Se sube el padding solo en mobile. */
+  .bev-btn-outline {
+    padding: 0.65rem 1.1rem;
+    font-size: 0.85rem;
+  }
+
+  .bev-btn-gold {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .bev-container {
+    padding: 0 1rem;
+  }
+}

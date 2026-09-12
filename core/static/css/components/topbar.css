@@ -46,3 +46,27 @@
 .bev-topbar-link:hover {
   color: var(--topbar-hover);
 }
+@media (max-width: 576px) {
+  .bev-topbar-marca {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+@media (max-width: 400px) {
+  /* En pantallas muy angostas, info + marca + link en una sola fila con gaps fijos generan overflow horizontal. Se reduce padding lateral y se permite wrap sin romper el layout de escritorio. */
+  .bev-topbar {
+    padding: 0.75rem 0.35rem;
+  }
+
+  .bev-topbar-info,
+  .bev-topbar-link {
+    gap: 4px;
+  }
+}
+
+/* Área táctil: info y link no tenían padding propio (tap area = solo altura del texto). */
+.bev-topbar-info,
+.bev-topbar-link {
+  padding: 0.3rem 0.15rem;
+}

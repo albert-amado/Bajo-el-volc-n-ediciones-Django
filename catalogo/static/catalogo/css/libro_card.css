@@ -154,7 +154,7 @@
   .libro-card__overlay {
     opacity: 1;
     justify-content: flex-end;
-    padding-bottom: 0.85rem;
+    padding-bottom: 0.6rem;
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.02) 10%,
@@ -163,13 +163,26 @@
   }
 
   .libro-card__overlay-btn {
-    font-size: 0.7rem;
-    padding: 8px 10px;
+    font-size: 0.62rem;
+    padding: 8px 6px;
+    gap: 4px;
   }
 
   .libro-card__titulo {
-    margin-top: 0.55rem;
-    font-size: 0.95rem;
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .libro-card__precio {
+    font-size: 1rem;
+  }
+
+  .libro-card__etiqueta {
+    top: -8px;
+    font-size: 0.62rem;
+    padding: 4px 30px 4px 1px;
+    letter-spacing: 0.06em;
   }
 }
 .libro-card__precio {
