@@ -67,17 +67,6 @@
   }
 }
 
-@media (max-width: 639px) {
-  .libros-seccion__titulo {
-    font-size: 1.8rem;
-  }
-  .libros-layout {
-    gap: 1.25rem;
-  }
-  .libros-sidebar-right {
-    margin-top: 0.5rem;
-  }
-}
 
 @media (max-width: 576px) {
   .bev-section-line {
@@ -91,13 +80,17 @@
     letter-spacing: 0.2em;
   }
   .libros-seccion__titulo {
-    font-size: clamp(1.6rem, 8vw, 2rem);
-  }
+      font-size: clamp(1.1rem, 0.1vw, 0.1rem);
+      gap: 0.5rem;
+    }
+}
+
+
   .bev-section-line {
     width: 110px;
     margin-bottom: 1.75rem;
   }
-}
+
 .mb-5 {
     margin-bottom: 6rem !important;
 }
