@@ -8,10 +8,10 @@
 }
 
 .libros-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 170px) minmax(0, 1fr) minmax(0, 260px);
-  gap: 1.25rem;
-  align-items: start;
+    /* display: grid; */
+    grid-template-columns: minmax(0, 170px) minmax(0, 1fr) minmax(0, 260px);
+    gap: 1.25rem;
+    align-items: start;
 }
 .bev-section-title {
     font-family: var(--font-heading);
