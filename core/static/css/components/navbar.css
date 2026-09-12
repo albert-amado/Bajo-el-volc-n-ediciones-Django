@@ -126,13 +126,15 @@
 }
 
 @media (max-width: 991px) {
-  .bev-navbar {
-    padding: 0.85rem 0;
+  /* Elimina los espacios laterales del contenedor interno del navbar */
+  .bev-navbar .container,
+  .bev-navbar .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+    max-width: 100%;
   }
-
-  .bev-navbar-inner {
-    gap: 0.5rem;
-  }
+}
 
   /* Proporción cuadrada real del asset (ver base 95x95). El 48x58 anterior deformaba el object-fit: contain. */
   .bev-logo-mobile {
@@ -170,4 +172,3 @@
   .bev-cart-btn {
     padding-left: 1.25rem;
   }
-}
