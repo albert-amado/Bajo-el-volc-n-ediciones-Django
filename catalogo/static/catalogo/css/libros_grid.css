@@ -29,18 +29,10 @@
   }
 }
 
-/* Antes forzaba 1 columna aquí, dejando tarjetas gigantes. Se mantiene 2 columnas hasta el límite inferior real de usabilidad (~320px). */
+
 @media (max-width: 400px) {
   .libros-grid {
     gap: 0.5rem;
   }
 }
 
-@media (max-width: 575px) {
-  .libros-grid {
-    grid-template-columns: 1fr;
-  }
-  .libro-card {
-    max-width: 100%;
-  }
-}
