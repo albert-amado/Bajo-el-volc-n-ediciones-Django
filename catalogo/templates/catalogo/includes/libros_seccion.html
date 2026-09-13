@@ -6,11 +6,15 @@
       <div class="bev-section-line"></div>
     </div>
 
-    <div class="libros-layout">
+    <div class="libros-layout row g-4">
+      <div class="col-12 col-lg-2">
       {% include "includes/panel_categorias.html" %}
+      </div>
+      <div class="col-12 col-lg-7">
       {% include "catalogo/includes/libros_grid.html" %}
-
-      <aside class="libros-sidebar-right">
+     </div>
+      <aside class="libros-sidebar-right col-12 col-lg-3">
+        
         {% include "catalogo/includes/libros_contacto_form.html" %}
         {% include "noticias/libros_noticias_lateral.html" %}
       </aside>
