@@ -5,17 +5,20 @@
 }
 
 .lead {
-  background-color: var(--bg-body);
-  color: var(--text-primary);
-  font-size: 1.1rem;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-size: xx-large;
+    font-weight: 700;
+    color: var(--pr-gray-1200);
+    font-family: var(--font-heading);
 }
 
 .bev-noticia-card {
-  background-color: var(--bg-body);
-  border: 1px solid var(--border-soft);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--bg-surface-alt);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bev-noticia-card:hover {

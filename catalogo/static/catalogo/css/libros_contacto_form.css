@@ -10,8 +10,9 @@
 }
 
 .bev-contact-form h5 {
-  color: var(--text-primary);
-  font-family: var(--font-body);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: x-large;
 }
 
 .bev-form-input {

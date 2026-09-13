@@ -4,14 +4,13 @@
   color: var(--text-primary);
 }
 
-/* === Tarjeta de misión === */
 .bev-info-card {
-  background-color: var(--bg-body);
-  border: 1px solid var(--border-soft);
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-  position: relative;
-  overflow: hidden;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-surface-alt);
 }
 
 .bev-social-section {
@@ -90,15 +89,14 @@
   z-index: 1;
 }
 
-/* === Tarjeta de miembro del equipo === */
 .bev-team-card {
-  background-color: var(--bg-body);
-  border: 1px solid var(--border-soft);
-  border-radius: 16px;
-  border-left: 5px solid var(--pr-gray-1500);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
+    background-color: var(--bg-surface-alt);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    border-left: 5px solid var(--pr-gray-1500);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .bev-team-card:hover {
@@ -174,7 +172,15 @@
     z-index: 1;
     margin: 0;
 }
-
+@media (min-width: 1200px) {
+    .h1, h1 {
+        font-size: xx-large;
+        font-weight: 700;
+        font-family: var(--font-heading);
+        background-color: var(--bg-body);
+        color: var(--pr-gray-1200);
+    }
+}
 /* === Responsive === */
 @media (max-width: 575px) {
   .bev-info-card,
@@ -213,7 +219,6 @@
   background-color: var(--pr-gray-1500)
 }
 .fw-bold {
-    background-color: var(--bg-body);
     color: var(--text-primary);
     font-family: var(--font-heading);
 }

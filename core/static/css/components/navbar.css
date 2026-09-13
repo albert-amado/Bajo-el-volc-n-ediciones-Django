@@ -16,21 +16,21 @@
   }
 
 .bev-brand-main {
-  font-family: var(--font-body);
-  font-size: 1.55rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  color: var(--text-primary);
-  line-height: 1.1;
+    font-family: var(--font-body);
+    font-size: larger;
+    font-weight: 800;
+    letter-spacing: 0.48em;
+    color: var(--text-primary);
+    line-height: 1.1;
 }
 
   .bev-brand-sub {
-    font-size: 1rem;
-    letter-spacing: 0.35em;
+    font-size: larger;
+    letter-spacing: 0.3rem;
     text-transform: uppercase;
     color: var(--pr-gray-1200);
     margin-top: -2px;
-  }
+}
 
   .bev-logo-desktop {
     width: 150px;
@@ -45,8 +45,8 @@
   }
 
   .bev-logo-mobile {
-    width: 95px;
-    height: 95px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 
