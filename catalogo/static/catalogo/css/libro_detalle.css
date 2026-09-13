@@ -129,7 +129,9 @@
     font-size: 0.96rem;
     color: var(--pr-gray-1200);
     font-weight: 600;
+    background-color: var(--pr-gray-200);
     font-size: large;
+    border-radius: 20px;
 }
 
 .bev-book-detail-content {

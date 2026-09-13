@@ -114,7 +114,7 @@
         <div class="bev-detail-actions d-flex flex-wrap gap-2 mb-4">
           <button
             id="addToCartBtn"
-            class="btn bev-btn-gold"
+            class="btn bev-btn-gold js-btn-carrito"
             data-id="{{ libro.id }}"
             data-titulo="{{ libro.titulo }}"
             data-precio="{{ libro.precio }}"
@@ -166,4 +166,5 @@
 
 {% block extra_js %}
   <script src="{% static 'catalogo/js/libro_detalle.js' %}"></script>
+  <script src="{% static 'carrito/js/carrito.js' %}"></script>
 {% endblock %}
