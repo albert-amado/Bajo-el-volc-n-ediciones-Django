@@ -153,50 +153,6 @@ hr {
   border-color: var(--border-soft);
 }
 
-@media (max-width: 991.98px) {
-  .bev-author-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .autor-info-card {
-    margin-left: 0;
-    padding: 28px 24px;
-  }
-
-  .bev-author-detail-avatar {
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 575px) {
-  .bev-author-detail-avatar {
-    width: min(100%, 220px);
-    height: min(72vw, 220px);
-  }
-
-  .autor-info-card {
-    margin-left: 0;
-  }
-
-  .bev-section-tag {
-    display: inline-flex;
-    width: auto;
-  }
-
-  .bev-divider {
-    width: 48px;
-  }
-
-  .bev-author-bio,
-  .bev-author-subtext {
-    font-size: 0.92rem;
-  }
-
-  .autor-info-card {
-    padding: 24px 20px;
-  }
-}
 .mb-1 {
     margin-bottom: .25rem !important;
     font-size: x-large;

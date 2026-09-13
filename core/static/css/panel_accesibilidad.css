@@ -59,12 +59,3 @@
     width: 100%;
     background-color: var(--bg-surface-alt);
 }
-@media (max-width: 576px) {
-  .btn-accesibilidad-float {
-    bottom: 1rem;
-    right: 1rem;
-    width: 48px;
-    height: 48px;
-    font-size: 1.25rem;
-  }
-}

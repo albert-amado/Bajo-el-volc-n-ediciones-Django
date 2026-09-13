@@ -19,11 +19,3 @@
   object-fit: cover;
   object-position: center;
 }
-
-/* --- 4. Ajuste para móviles (evita que la caja quede muy pequeña) --- */
-@media (max-width: 768px) {
-  .bev-premios-carrusel__wrapper {
-    aspect-ratio: 16 / 9;
-    max-height: none;
-  }
-}

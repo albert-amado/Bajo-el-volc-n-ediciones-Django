@@ -107,38 +107,3 @@
     font-size: x-large;
     transition: all 0.3s ease;
 }
-/* --- Escritorio: horizontal con solapamiento --- */
-@media (min-width: 768px) {
-  .bev-author-card {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .bev-author-img-container {
-    width: 200px;
-    height: 200px;
-  }
-      .bev-author-info-box {
-        margin-top: 0;
-        background-color: var(--bg-body);
-        margin-left: -3rem;
-        padding: 1.5rem 1.5rem 1.4rem 6rem;
-        text-align: left;
-        width: auto;
-        flex-grow: 1;
-    }
-}
-
-
-/* --- Móvil pequeño --- */
-@media (max-width: 575px) {
-  .bev-author-img-container {
-    width: 120px;
-    height: 120px;
-  }
-
-  .bev-author-info-box {
-    margin-top: -2rem;
-    padding-top: 3rem;
-  }
-}

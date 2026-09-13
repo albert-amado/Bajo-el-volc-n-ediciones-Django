@@ -159,27 +159,3 @@ line-clamp: 3;
   padding: 1.25rem;
 }
 
-@media (max-width: 767px) {
-  .bev-noticia-img {
-    height: 170px;
-  }
-
-  .bev-noticia-body {
-    padding: 1rem;
-  }
-
-  .bev-noticia-titulo {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 575px) {
-  .bev-filtro {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.72rem;
-  }
-
-  .bev-noticia-img {
-    height: 155px;
-  }
-}

@@ -60,23 +60,3 @@
   border: none;
 }
 
-@media (max-width: 991px) {
-  .libros-sidebar-left {
-    position: static;
-    margin-top: 0;
-    margin-left: 0;
-  }
-
-  .bev-categorias-container {
-    padding: 0;
-  }
-
-  .bev-categorias-lista {
-    gap: 0.25rem;
-  }
-
-  .bev-categoria-item {
-    font-size: 0.85rem;
-    padding: 0.35rem 0;
-  }
-}

@@ -49,36 +49,3 @@
   font-weight: 700;
   border: none;
 }
-@media (max-width: 991px) {
-  .bev-categorias-lista {
-    flex-direction: row; /* Pone los elementos en fila horizontal */
-    overflow-x: auto;    /* Permite deslizar horizontalmente si hay muchas categorías */
-    gap: 0.5rem;
-    padding-bottom: 0.5rem;
-    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
-  }
-
-  /* Ocultar barra de scroll en Chrome/Safari */
-  .bev-categorias-lista::-webkit-scrollbar {
-    display: none;
-  }
-
-  .bev-categoria-item {
-    width: auto;         /* Evita que cada categoría ocupe el 100% del ancho */
-    flex-shrink: 0;      /* Impide que las categorías se aplasten */
-  }
-
-  .bev-categoria-item a {
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
-    border-radius: 50rem; /* Les da forma de botón redondeado tipo píldora */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Un borde sutil para que parezcan botones */
-    text-align: center;
-  }
-
-  /* Si quieres que la categoría activa resalte más como botón sólido */
-  .bev-categoria-item.activo a {
-    background: var(--text-primary);
-    color: var(--bg-body, #000);
-  }
-}

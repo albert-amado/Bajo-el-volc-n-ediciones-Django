@@ -87,20 +87,3 @@
   opacity: 0.75;
 }
 
-@media (max-width: 639px) {
-  .bev-contact-form {
-    padding: 0;
-  }
-
-  .bev-contact-form.mb-4 {
-    margin-right: 0;
-  }
-
-  .bev-contact-form h5 {
-    font-size: 1rem;
-  }
-
-  .bev-contact-value {
-    word-break: break-word;
-  }
-}

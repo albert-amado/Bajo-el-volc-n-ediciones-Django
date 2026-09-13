@@ -9,30 +9,3 @@
   gap: 1.5rem;
   width: 100%;
 }
-@media (max-width: 991px) {
-  .libros-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 639px) {
-  .libros-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.6rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .libros-grid {
-    gap: 0.5rem;
-  }
-}
-
-
-@media (max-width: 400px) {
-  .libros-grid {
-    gap: 0.5rem;
-  }
-}
-

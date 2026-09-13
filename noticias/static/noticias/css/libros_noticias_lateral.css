@@ -85,27 +85,3 @@
     font-weight: 300;
 }
 
-@media (max-width: 991px) {
-  .bev-noticias-lateral {
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 575px) {
-  .bev-categorias-titulo {
-    font-size: 1rem;
-    letter-spacing: 0.25em;
-  }
-
-  .bev-noticia-img-mini {
-    height: 104px;
-  }
-
-  .bev-noticia-titulo-mini {
-    font-size: 0.8rem;
-  }
-
-  .bev-noticia-resumen-mini {
-    font-size: 0.72rem;
-  }
-}

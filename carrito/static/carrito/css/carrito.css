@@ -96,11 +96,7 @@
     color: var(--pr-gray-900);
 }
 
-@media (max-width: 991px) {
-    .bev-checkout-layout {
-        grid-template-columns: 1fr;
-    }
-}
+
 .bev-premios-carrusel{
     margin-top: 5rem;
 }

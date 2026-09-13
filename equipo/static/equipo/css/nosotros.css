@@ -175,40 +175,6 @@
     margin: 0;
 }
 
-/* === Responsive === */
-@media (max-width: 575px) {
-  .bev-info-card,
-  .bev-team-card {
-    padding: 1.25rem !important;
-  }
-
-  .bev-info-card h4 {
-    font-size: 1.4rem;
-  }
-
-  .bev-info-card p {
-    font-size: 1rem;
-  }
-
-  .bev-info-sello {
-    width: 150px;
-    height: 150px;
-  }
-
-  .bev-team-sello {
-    width: 120px;
-    height: 120px;
-  }
-
-  .bev-team-avatar {
-    width: 120px;
-    height: 120px;
-  }
-
-  .bev-team-card h4 {
-    font-size: 1rem;
-  }
-}
 .bev-display-4{
   background-color: var(--pr-gray-1500)
 }

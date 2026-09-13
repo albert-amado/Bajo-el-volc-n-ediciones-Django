@@ -41,26 +41,3 @@
     transition: color 0.2s;
     padding: 0.3rem 0.15rem;
 }
-
-/* MEDIA QUERIES UNIFICADOS */
-
-@media (max-width: 576px) {
-    .bev-topbar-marca {
-        font-size: 0.7rem;
-        letter-spacing: 0.15em;
-    }
-}
-
-@media (max-width: 400px) {
-    .bev-topbar {
-        padding: 0.75rem 0.35rem;
-        flex-wrap: wrap;             /* Ahora sí funcionará porque el padre es flex */
-        gap: 0.5rem;                /* Ajustado para que encaje bien a 400px */
-        justify-content: center;     /* Centra los elementos si hacen salto de línea */
-    }
-
-    .bev-topbar-info,
-    .bev-topbar-link {
-        gap: 4px;
-    }
-}

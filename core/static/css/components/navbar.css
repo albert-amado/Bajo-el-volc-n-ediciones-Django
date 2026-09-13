@@ -66,39 +66,6 @@
   color: var(--navbar-accent);
   opacity: 0.82;
 }
-
-@media (min-width: 992px) {
-  .bev-navbar .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 12%;
-    bottom: 6px;
-    width: 0%;
-    height: 2px;
-    background-color: var(--navbar-accent);
-    transition: width 0.22s ease;
-  }
-  .bev-navbar .nav-link:hover::after,
-  .bev-navbar .nav-link.active::after {
-    width: 70%;
-  }
-  .bev-nav-item {
-    position: relative;
-  }
-
-  .bev-nav-item:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: -2px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1.5px;
-    height: 20px;
-    background-color: var(--pr-gray-200);
-    opacity: 0.75;
-  }
-}
-
 .bev-navbar .nav-link:focus-visible {
   outline: 2px solid var(--navbar-accent);
   outline-offset: 3px;
@@ -125,18 +92,6 @@
   justify-content: center;
 }
 
-@media (max-width: 991px) {
-  /* Elimina los espacios laterales del contenedor interno del navbar */
-  .bev-navbar .container,
-  .bev-navbar .container-fluid {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-  /* Proporción cuadrada real del asset (ver base 95x95). El 48x58 anterior deformaba el object-fit: contain. */
   .bev-logo-mobile {
     width: 52px;
     height: 52px;
