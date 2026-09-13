@@ -1,8 +1,8 @@
 <div class="libros-main">
-  <div class="libros-grid" id="librosGrid">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 g-lg-4" id="librosGrid">
     {% for libro in libros %}
       <article
-        class="libro-item"
+        class="col libro-item"
         data-etiqueta="{{ libro.etiqueta|lower }}"
         data-genero="{{ libro.genero|lower }}"
       >
