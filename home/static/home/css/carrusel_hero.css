@@ -12,8 +12,7 @@
     color: var(--text-primary);
     width: fit-content;
     margin: 0 auto 0.75rem auto;
-    display: grid
-;
+    display: grid;
     place-items: center;
     text-align: center;
     font-family: var(--font-serif, Georgia, serif);
@@ -22,18 +21,22 @@
 .bev-hero-description {
     margin-bottom: 0;
     font-family: var(--font-serif, Georgia, serif);
-    FONT-SIZE: larger;
+    font-size: larger;
     font-weight: lighter;
 }
 
+/* 1. ESCRITORIO NORMAL: Altura automática basada en la proporción */
 .bev-slide {
-  height: clamp(420px, 36vw, 560px);   /* ↑ un poco más alto en desktop */
-  min-height: 420px;
   position: relative;
   background-color: var(--bg-body);
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  
+  aspect-ratio: 21 / 9; /* Formato panorámico ancho */
+  height: auto;
+  min-height: auto;
 }
 
 .carousel-item.bev-slide.active {
@@ -106,25 +109,18 @@
   transform: rotate(45deg);
 }
 
-/* Desktop grande */
-@media (min-width: 1200px) {
+/* 2. PANTALLAS GIGANTES */
+@media (min-width: 2200px) {
   .bev-carousel-custom {
-    width: min(100%, 1840px);           /* ↑ un poco más ancho */
+    width: min(100%, 1940px);
   }
 
   .bev-slide {
-    height: clamp(540px, 36vw, 620px);  /* ↑ más alto */
-    min-height: 340px;
+    aspect-ratio: 21 / 9; /* Mantiene la misma proporción */
   }
 
-  .bev-carousel-custom .carousel-control-prev {
-    left: 1.5rem;
-  }
-
-  .bev-carousel-custom .carousel-control-next {
-    right: 1.5rem;
-  }
-
+  .bev-carousel-custom .carousel-control-prev { left: 1.5rem; }
+  .bev-carousel-custom .carousel-control-next { right: 1.5rem; }
   .bev-hero-nav .bev-hero-arrow {
     width: 26px;
     height: 26px;
@@ -133,21 +129,19 @@
   }
 }
 
-/* Tablet / móvil mediano */
+/* 3. TABLETS: Ajuste intermedio */
 @media (max-width: 768px) {
   .bev-slide {
-    height: clamp(200px, 42vw, 300px);  /* un poco más alto que antes */
-    min-height: 200px;
+    aspect-ratio: 16 / 9; /* Proporción estándar de pantalla (menos ancha que 21/9) */
   }
 
   .bev-carousel-custom .carousel-control-prev,
   .bev-carousel-custom .carousel-control-next {
     width: 44px;
     height: 44px;
+    opacity: 0.95;
   }
 
-  .bev-carousel-custom .carousel-control-prev,
-  .bev-carousel-custom .carousel-control-next,
   .bev-carousel-custom .carousel-indicators {
     opacity: 0.95;
   }
@@ -160,11 +154,10 @@
   }
 }
 
-/* Teléfonos */
+/* 4. MÓVILES NORMALES: Evita el recorte horizontal */
 @media (max-width: 480px) {
   .bev-slide {
-    height: clamp(230px, 62vw, 340px);  /* ↑ más altura relativa en móvil */
-    min-height: 230px;
+    aspect-ratio: 16 / 9; /* Mantiene formato panorámico en vertical para no recortar los lados */
   }
 
   .bev-carousel-custom .carousel-control-prev,
@@ -181,31 +174,21 @@
     transform: scale(1.04);
   }
 
-  .bev-carousel-custom .carousel-control-prev {
-    left: 0.75rem;
-  }
-
-  .bev-carousel-custom .carousel-control-next {
-    right: 0.75rem;
-  }
-
+  .bev-carousel-custom .carousel-control-prev { left: 0.75rem; }
+  .bev-carousel-custom .carousel-control-next { right: 0.75rem; }
   .bev-hero-nav .bev-hero-arrow {
     width: 15px;
     height: 15px;
     border-top-width: 2.5px;
     border-right-width: 2.5px;
   }
-
-  .bev-carousel-custom .carousel-indicators {
-    margin-bottom: 0.5rem;
-  }
+  .bev-carousel-custom .carousel-indicators { margin-bottom: 0.5rem; }
 }
 
-/* Móviles muy pequeños */
+/* 5. MÓVILES PEQUEÑOS */
 @media (max-width: 360px) {
   .bev-slide {
-    height: clamp(210px, 65vw, 280px);
-    min-height: 210px;
+    aspect-ratio: 16 / 10;
   }
 }
 
@@ -214,7 +197,6 @@
     width: calc(100% - 1rem);
   }
 }
-
 
 .px-0 {
     padding-right: 0 !important;
