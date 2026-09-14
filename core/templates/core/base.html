@@ -2,6 +2,20 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KHGM44HC");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page_title|default:"Bajo el Volcán Editorial Literaria" }}</title>
@@ -114,7 +128,7 @@
     <link rel="stylesheet" href="{% static 'css/components/footer.css' %}" />
     <link rel="stylesheet" href="{% static 'css/panel_accesibilidad.css' %}" />
 
-    {% block extra_css %}{% endblock %} {% csrf_token %}
+    {% block extra_css %}{% endblock %}
     <script>
       window.CARRITO_URLS = {
         agregar: "{% url 'carrito:agregar' %}",
@@ -124,9 +138,24 @@
     </script>
   </head>
   <body>
-    {% include "includes/topbar.html" %} {% include "includes/navbar.html" %} {%
-    block content %}{% endblock %} {% include "includes/footer.html" %} {%
-    include "includes/panel_accesibilidad.html" %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KHGM44HC"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {% include "includes/topbar.html" %}
+    {% include "includes/navbar.html" %}
+
+    {% block content %}{% endblock %}
+
+    {% include "includes/footer.html" %}
+    {% include "includes/panel_accesibilidad.html" %}
 
     <div id="bevToast" class="bev-toast-container"></div>
 
