@@ -106,11 +106,12 @@
   }
 }
 @media (min-width: 992px) {
-    .bev-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 100px; 
-        z-index: 1020;
-        align-self: flex-start; 
+    main .row > .bev-sticky.sticky-lg-top,
+    main .row > .libros-sidebar-right.sticky-lg-top {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 100px !important;
+        z-index: 1020 !important;
+        align-self: flex-start !important;
     }
 }
