@@ -291,9 +291,10 @@
 }
 .mb-4 {
     margin-bottom: 1.5rem !important;
-    font-size: xx-large;
-    font-family: var(--font-heading);
-    color: var(--pr-gray-1200);
+    font-size: large;
+    color: var(--text-primary);
+    font-weight: bold;
+    background-color: var(--bg-body);
 }
 
 
