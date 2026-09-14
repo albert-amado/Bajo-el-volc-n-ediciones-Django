@@ -38,18 +38,18 @@
 }
 
 .bev-btn-submit {
-  background-color: var(--bg-body);
-  color: var(--text-primary);
-  border: none;
-  padding: 0.8rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: opacity 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+    background-color: var(--pr-dark-700);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: x-large;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .bev-btn-submit:hover {
