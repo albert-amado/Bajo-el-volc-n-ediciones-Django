@@ -30,12 +30,3 @@
 .libros-seccion .bev-container > .mb-5 {
   margin-bottom: 6rem;
 }
-@media (min-width: 992px) {
-    .bev-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 100px; 
-        z-index: 1020;
-        align-self: flex-start; 
-    }
-}

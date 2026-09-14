@@ -106,7 +106,11 @@
   }
 }
 @media (min-width: 992px) {
-    .libros-sidebar-right.sticky-lg-top {
-        top: 90px !important; /* Ajusta los 90px a la altura exacta de tu navbar */
+    .bev-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 100px; 
+        z-index: 1020;
+        align-self: flex-start; 
     }
 }
