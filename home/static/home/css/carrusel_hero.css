@@ -25,38 +25,38 @@
     font-weight: lighter;
 }
 
-/* 1. ESCRITORIO NORMAL: Altura automática basada en la proporción */
+/* La imagen manda: contenedor sigue su alto natural */
 .bev-slide {
   position: relative;
   background-color: var(--bg-body);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  
-  aspect-ratio: 21 / 9; /* Formato panorámico ancho */
-  height: auto;
-  min-height: auto;
 }
 
 .carousel-item.bev-slide.active {
   background-color: var(--bg-body);
 }
 
+/* Ya no es fondo absoluto. Es la que empuja el alto. */
 .bev-slide-bg {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
+  height: auto;
+  display: block;
 }
 
 .bev-slide-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
+}
+
+/* Capa de texto flotante sobre la imagen */
+.bev-slide-content-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bev-slide-content {
@@ -77,6 +77,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 
 .bev-carousel-custom .carousel-control-prev:hover,
@@ -115,10 +116,6 @@
     width: min(100%, 1940px);
   }
 
-  .bev-slide {
-    aspect-ratio: 21 / 9; /* Mantiene la misma proporción */
-  }
-
   .bev-carousel-custom .carousel-control-prev { left: 1.5rem; }
   .bev-carousel-custom .carousel-control-next { right: 1.5rem; }
   .bev-hero-nav .bev-hero-arrow {
@@ -129,12 +126,8 @@
   }
 }
 
-/* 3. TABLETS: Ajuste intermedio */
+/* 3. TABLETS */
 @media (max-width: 768px) {
-  .bev-slide {
-    aspect-ratio: 16 / 9; /* Proporción estándar de pantalla (menos ancha que 21/9) */
-  }
-
   .bev-carousel-custom .carousel-control-prev,
   .bev-carousel-custom .carousel-control-next {
     width: 44px;
@@ -152,14 +145,20 @@
     border-top-width: 3px;
     border-right-width: 3px;
   }
-}
 
-/* 4. MÓVILES NORMALES: Evita el recorte horizontal */
-@media (max-width: 480px) {
-  .bev-slide {
-    aspect-ratio: 16 / 9; /* Mantiene formato panorámico en vertical para no recortar los lados */
+  .bev-hero-title {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    padding: 0.1rem 0.75rem;
   }
 
+  .bev-hero-description {
+    font-size: clamp(0.85rem, 3vw, 1.1rem);
+    padding: 0.1rem 0.75rem;
+  }
+}
+
+/* 4. MÓVILES NORMALES */
+@media (max-width: 480px) {
   .bev-carousel-custom .carousel-control-prev,
   .bev-carousel-custom .carousel-control-next {
     width: 38px;
@@ -183,15 +182,20 @@
     border-right-width: 2.5px;
   }
   .bev-carousel-custom .carousel-indicators { margin-bottom: 0.5rem; }
-}
 
-/* 5. MÓVILES PEQUEÑOS */
-@media (max-width: 360px) {
-  .bev-slide {
-    aspect-ratio: 16 / 10;
+  .bev-hero-title {
+    font-size: clamp(0.85rem, 5vw, 1.15rem);
+    padding: 0.1rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bev-hero-description {
+    font-size: clamp(0.75rem, 4vw, 0.95rem);
+    padding: 0.1rem 0.5rem;
   }
 }
 
+/* 5. MÓVILES PEQUEÑOS */
 @media (max-width: 420px) {
   .bev-carousel-custom {
     width: calc(100% - 1rem);
