@@ -85,5 +85,5 @@
   }
 }
 .text-footer.text-md-footer {
-    background-color: var(--bg-body);
+    background-color: var(--footer-bg);
 }

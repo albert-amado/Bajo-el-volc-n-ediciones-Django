@@ -114,8 +114,10 @@
   --navbar-text:      var(--pr-black);  /* #000000 */
   --navbar-accent:    var(--pr-black);  /* #000000 */
   --navbar-logo-glow: rgba(255, 255, 255, 0.3);
-}
 
+   /*---Footer --*/
+   --footer-bg: var(--pr-gray-1500);
+}
 /* ============================================
    5. VARIABLES SEMÁNTICAS — MODO OSCURO
    ============================================ */
