@@ -38,7 +38,7 @@
 }
 
 .bev-btn-submit {
-    background-color: var(--pr-dark-700);
+    background-color: var(--pr-gray-1000);
     color: var(--text-primary);
     border: none;
     padding: 0.8rem;
@@ -51,7 +51,10 @@
     justify-content: center;
     text-decoration: none;
 }
-
+.p-2 {
+    padding: .5rem !important;
+    background-color: var(--bg-surface-alt);
+}
 .bev-btn-submit:hover {
   opacity: 0.85;
 }
@@ -74,7 +77,10 @@
   border: 1px solid var(--border-soft);
   color: var(--text-primary);
 }
-
+.bi-send::before {
+    content: "\f6c0";
+    color: var(--pr-gray-1200);
+}
 .bev-contact-value {
     color: var(--pr-icono-whatsapp);
     font-weight: bolder;

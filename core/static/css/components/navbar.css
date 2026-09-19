@@ -1,10 +1,8 @@
 .bev-navbar {
-  background-color: var(--bg-body);
-  border-bottom: 3px solid var(--border-soft);
-  padding: 1.2rem 0;
-  backdrop-filter: blur(8px);
+    background-color: var(--bg-body);
+    padding: 1.2rem 0;
+    backdrop-filter: blur(8px);
 }
-
   .bev-navbar-inner {
     display: flex;
     align-items: center;
@@ -54,7 +52,7 @@
     position: relative;
     color: var(--navbar);
     font-size: 1rem;
-    font-family: var(--font-heading);
+    font-family: var(--font-family);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0.6rem 0.9rem;

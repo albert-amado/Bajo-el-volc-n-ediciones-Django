@@ -74,6 +74,7 @@
   --font-display: "Playfair Display", serif;
   --font-body:    "Lato", sans-serif;
   --font-heading: "Libre Baskerville", serif;
+  --font-family: 'Open Sans', Arial, sans-serif;
 
   --site-bg-repeat:   repeat;
   --site-bg-size:     950px;
@@ -91,7 +92,7 @@
   --bg-surface:       var(--pr-white);             /* #FFFFFF — superficie base */
   --bg-surface-alt:   var(--pr-gray-100);          /* #FAFAFA — separación sutil de secciones */
   --bg-surface-card:  var(--pr-white);             /* #FFFFFF — tarjetas */
-  --bg-elevated:      var(--pr-white);             /* #FFFFFF — modales/dropdowns */
+  --bg-elevated:      var(--pr-gray-400);             /* #FFFFFF — modales/dropdowns */
   --bg-hover:         var(--pr-gray-100);          /* #FAFAFA — hover elementos */
   --site-bg-image:    url("/static/assets/img/fondos/patron_claro.png");
   --bg-patron-volcan: url("/static/assets/img/fondos/patron_claro.png");

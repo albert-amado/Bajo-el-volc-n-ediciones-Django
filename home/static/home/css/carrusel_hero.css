@@ -7,7 +7,8 @@
 }
 
 .bev-hero-title, .bev-hero-description {
-    background-color: var(--bg-body);
+    font-weight: 400;
+    background-color: var(--bg-surface-alt);
     padding: 0.1rem 1rem;
     color: var(--text-primary);
     width: fit-content;
@@ -15,6 +16,7 @@
     display: grid;
     place-items: center;
     text-align: center;
+    font-size: x-large;
     font-family: var(--font-serif, Georgia, serif);
 }
 
@@ -64,20 +66,21 @@
 }
 
 /* Flechas */
-.bev-carousel-custom .carousel-control-prev,
+.bev-carousel-custom .carousel-control-prev, 
 .bev-carousel-custom .carousel-control-next {
-  width: 56px;
-  height: 56px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 1;
-  background: transparent;
-  border-radius: 0;
-  transition: transform 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
+    width: 56px;
+    height: 49px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    color: var(--bg-body);
+    background: transparent;
+    border-radius: 0;
+    transition: transform 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
 }
 
 .bev-carousel-custom .carousel-control-prev:hover,

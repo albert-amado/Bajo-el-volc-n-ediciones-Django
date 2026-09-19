@@ -81,8 +81,9 @@
     max-width: 2500px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    background-color: var(--bg-body);
+    background-color: var(--bg-elevated);
 }
+
 
 
 

@@ -3,18 +3,16 @@
 }
 
 .bev-section-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 1.2rem + 2.5vw, 2.5rem);
-  color: var(--text-primary);
-  letter-spacing: 0.2em;
-  text-align: center;
-  display: block;
-  width: fit-content;
-  padding: 0.1rem 1.4rem;
-  margin: 5rem auto 0;
-  background-color: var(--bg-surface-alt);
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 1.2rem + 2.5vw, 2.5rem);
+    color: var(--text-primary);
+    text-align: center;
+    display: block;
+    font-size: -webkit-xxx-large;
+    width: fit-content;
+    padding: 0.1rem 1.4rem;
+    margin: 5rem auto 0;
 }
-
 .bev-section-line {
   height: 3px;
   width: clamp(110px, 30vw, 342px);
@@ -29,4 +27,8 @@
 
 .libros-seccion .bev-container > .mb-5 {
   margin-bottom: 6rem;
+}
+.g-4, .gy-4 {
+    --bs-gutter-y: 1.5rem;
+    background-color: var(--bg-elevated);
 }
