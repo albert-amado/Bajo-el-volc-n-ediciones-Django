@@ -15,7 +15,7 @@
   /* Primitivos modo oscuro — escala de superficie */
   --pr-dark-900:      #141414; /* fondo general oscuro, más oscuro que el central */
   --pr-dark-800:      #19191A; /* tono central pedido — tarjetas/superficie alterna oscuro */
-  --pr-dark-700:      #313333; /* más claro — hover/elementos flotantes oscuro */
+  --pr-dark-700:      #171717; /* más claro — hover/elementos flotantes oscuro */
 
   /* Variables de prueba — libres para iterar diseño */
   --pr-test-red:      #F23545;
