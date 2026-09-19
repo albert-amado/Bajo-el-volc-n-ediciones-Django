@@ -54,11 +54,7 @@
 .texto-accesible {
   font-size: 120%;
 }
-.libros-sidebar-left {
-    position: static;
-    width: 100%;
-    background-color: var(--bg-surface-alt);
-}
+
 @media (max-width: 576px) {
   .btn-accesibilidad-float {
     bottom: 1rem;
