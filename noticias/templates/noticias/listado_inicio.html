@@ -1,0 +1,96 @@
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="bev-divider mx-auto mb-4"></div>
+        <p class="lead bev-lead">
+          Eventos, lanzamientos y todo lo que pasa en Bajo el Volcán.
+        </p>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2 mb-3">
+      <button type="button" class="btn btn-outline-dark rounded-circle" id="noticiasPrev" aria-label="Noticias anteriores">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button type="button" class="btn btn-outline-dark rounded-circle" id="noticiasNext" aria-label="Noticias siguientes">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="bev-carrusel-noticias" id="noticiasCarrusel">
+      {% for noticia in noticias %}
+        <div class="bev-noticia-item">
+          <a href="{% url 'noticias:detalle' noticia.slug %}?origen=index" class="text-decoration-none d-block h-100">
+            <div class="bev-noticia-card card h-100 shadow-sm overflow-hidden">
+              <div class="bev-noticia-img position-relative">
+                {% if noticia.imagen %}
+                  <img src="{{ noticia.imagen.url }}" alt="{{ noticia.titulo }}" class="w-100 object-fit-cover" loading="lazy" />
+                {% else %}
+                  <div class="bev-img-placeholder d-flex align-items-center justify-content-center bg-light">
+                    <i class="bi bi-newspaper fs-1 text-secondary"></i>
+                  </div>
+                {% endif %}
+                <span class="bev-categoria-badge bev-cat-{{ noticia.categoria|lower }} position-absolute top-0 start-0 m-3 badge">
+                  {{ noticia.get_categoria_display }}
+                </span>
+              </div>
+              <div class="bev-noticia-body card-body p-4 text-start">
+                <p class="bev-noticia-fecha mb-2 text-muted small">
+                  <i class="bi bi-calendar3 me-1"></i>{{ noticia.fecha }}
+                </p>
+                <h5 class="bev-noticia-titulo mb-2 fw-bold">
+                  {{ noticia.titulo|default:"Sin título" }}
+                </h5>
+                <p class="bev-noticia-resumen mb-0">
+                  {{ noticia.resumen|default:"Sin resumen disponible."|truncatechars:90 }}
+                </p>
+                <p class="bev-noticia-cta mb-0 mt-3 fw-bold">
+                  Conoce más <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .bev-carrusel-noticias {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+  .bev-carrusel-noticias .bev-noticia-item {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+  }
+  .bev-carrusel-noticias .bev-noticia-img img,
+  .bev-carrusel-noticias .bev-img-placeholder {
+    height: 220px;
+  }
+</style>
+
+<script>
+  (function () {
+    const carrusel = document.getElementById("noticiasCarrusel");
+    const btnPrev = document.getElementById("noticiasPrev");
+    const btnNext = document.getElementById("noticiasNext");
+    if (!carrusel || !btnPrev || !btnNext) return;
+
+    const distancia = 344; // 320px tarjeta + 24px gap
+
+    btnPrev.addEventListener("click", () =>
+      carrusel.scrollBy({ left: -distancia, behavior: "smooth" })
+    );
+    btnNext.addEventListener("click", () =>
+      carrusel.scrollBy({ left: distancia, behavior: "smooth" })
+    );
+  })();
+</script>
