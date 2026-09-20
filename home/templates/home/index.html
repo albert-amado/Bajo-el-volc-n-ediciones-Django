@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'home/css/carrusel_hero.css' %}" />
 <link rel="stylesheet" href="{% static 'home/css/panel_categorias.css' %}" />
 <link rel="stylesheet" href="{% static 'home/css/seccion_autores.css' %}" />
-<link rel="stylesheet" href="{% static 'noticias/css/premios_carrusel.css' %}" />
+<link rel="stylesheet" href="{% static 'noticias/css/listado_inicio.css' %}" />
 <link rel="stylesheet" href="{% static 'carrito/css/carrito.css' %}" />
 
 <!-- Estilos de Catálogo -->
@@ -21,8 +21,10 @@
 <main>
     {% include "includes/carrusel_hero.html" %}
     {% include "catalogo/includes/libros_seccion.html" %}
-    <!--{% include "noticias/premios_carrusel.html" %}-->
     {% include "noticias/listado_inicio.html" %}
     {% include "home/seccion_autores.html" %}
 </main>
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'noticias/js/listado_inicio.js' %}"></script>
 {% endblock %}

@@ -1,4 +1,4 @@
-<section class="py-5 bg-white">
+<section class="py-5">
   <div class="container">
     <div class="row mb-4">
       <div class="col-lg-8 mx-auto text-center">
@@ -11,10 +11,10 @@
     </div>
 
     <div class="d-flex justify-content-end gap-2 mb-3">
-      <button type="button" class="btn btn-outline-dark rounded-circle" id="noticiasPrev" aria-label="Noticias anteriores">
+      <button type="button" class="btn btn-outline-dark rounded-circle bev-carrusel-nav-btn" id="noticiasPrev" aria-label="Noticias anteriores">
         <i class="bi bi-chevron-left"></i>
       </button>
-      <button type="button" class="btn btn-outline-dark rounded-circle" id="noticiasNext" aria-label="Noticias siguientes">
+      <button type="button" class="btn btn-outline-dark rounded-circle bev-carrusel-nav-btn" id="noticiasNext" aria-label="Noticias siguientes">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
@@ -57,63 +57,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  .bev-carrusel-noticias {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 2.5rem;
-    padding-bottom: 1rem;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-}
-  .bev-carrusel-noticias .bev-noticia-item {
-    flex: 0 0 320px;
-    scroll-snap-align: start;
-  }
-  .bev-carrusel-noticias .bev-noticia-img img,
-  .bev-carrusel-noticias .bev-img-placeholder {
-    height: 220px;
-  }
-  .lead {
-    font-size: 1.25rem;
-    font-weight: 300;
-    font-family: var(--font-heading);
-    color: var(--text-primary);
-    font-size: -webkit-xxx-large;
-    font-weight: 700;
-}
-
-.bg-white {
-    --bs-bg-opacity: 1;
-    background-color: var(--bg-body) !important;
-}
-.m-3 {
-    margin: 1rem !important;
-    background-color: var(--bg-body);
-    font-size: smaller;
-    color: var(--text-primary);
-    font-family: 'Open Sans', Arial, sans-serif;
-}
-
-
-</style>
-
-<script>
-  (function () {
-    const carrusel = document.getElementById("noticiasCarrusel");
-    const btnPrev = document.getElementById("noticiasPrev");
-    const btnNext = document.getElementById("noticiasNext");
-    if (!carrusel || !btnPrev || !btnNext) return;
-
-    const distancia = 344; // 320px tarjeta + 24px gap
-
-    btnPrev.addEventListener("click", () =>
-      carrusel.scrollBy({ left: -distancia, behavior: "smooth" })
-    );
-    btnNext.addEventListener("click", () =>
-      carrusel.scrollBy({ left: distancia, behavior: "smooth" })
-    );
-  })();
-</script>

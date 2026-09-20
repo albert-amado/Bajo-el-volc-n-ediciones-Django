@@ -1,5 +1,4 @@
 .bev-book-detail {
-    /* background-image: var(--bg-patron-volcan); */
     min-height: 100vh;
     background-color: var(--bg-surface-alt);
     color: var(--text-primary);
@@ -90,15 +89,14 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    background: var(--bg-surface); /* <-- CAMBIO PRINCIPAL AQUÍ */
-    border: 1px solid var(--border-soft); /* Ajustado para que el borde también se adapte */
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
     border-radius: 12px;
     overflow: hidden;
 }
 
 .bev-tech-row {
-    display: grid
-;
+    display: grid;
     grid-template-columns: minmax(130px, 38%) minmax(0, 1fr);
     gap: 0.5rem;
     align-items: start;
@@ -113,7 +111,6 @@
 }
 
 .bev-tech-row span {
-    font-size: 0.64rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--pr-gray-700);
@@ -121,12 +118,10 @@
     font-size: inherit;
 }
 .bev-tech-link {
-  font-size: 0.76rem;
   color: var(--pr-gray-900);
   font-weight: 600;
 }
 .bev-tech-row strong, .bev-tech-link {
-    font-size: 0.96rem;
     color: var(--pr-gray-1200);
     font-weight: 600;
     background-color: var(--pr-gray-200);
@@ -186,8 +181,6 @@
     font-weight: normal;
 }
 
-
-
 .bev-author-box {
   border-top: 1px solid var(--pr-glass-dark-08);
   margin-top: 1rem;
@@ -211,8 +204,7 @@
 }
 
 .bev-author-instagram {
-    display: inline-flex
-;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     width: fit-content;
@@ -231,14 +223,10 @@
 }
 
 .bev-author-name {
-    /* font-family: var(--font-display); */
-    /* font-size: 1.15rem; */
     color: var(--text-primary);
-    /* line-height: 1.1; */
     font-weight: 400;
     font-size: x-large;
 }
-
 
 .bev-author-meta {
   font-size: 0.72rem;
@@ -254,8 +242,7 @@
     font-weight: normal;
 }
 
-
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
   .bev-book-detail-shell {
     grid-template-columns: 1fr;
   }
@@ -265,7 +252,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .bev-author-photo {
     width: 108px;
     height: 108px;
@@ -298,5 +285,36 @@
     justify-content: center;
     text-align: center;
     word-break: break-word;
+  }
+
+  /* Sin cobertura móvil previa: estos tamaños en palabra clave nunca se reducían y desbordaban en pantallas angostas */
+  .bev-book-kicker {
+    font-size: 0.85rem;
+  }
+
+  .bev-book-page-title {
+    font-size: 1.9rem;
+    max-width: none;
+  }
+
+  .bev-eyebrow {
+    font-size: 1rem;
+  }
+
+  .bev-back-link {
+    font-size: 0.95rem;
+  }
+
+  .bev-detail-quote {
+    font-size: 1.05rem;
+  }
+
+  .bev-author-name {
+    font-size: 1.15rem;
+  }
+
+  .bev-detail-actions .btn,
+  .bev-detail-actions .btn:first-child {
+    font-size: 1rem;
   }
 }

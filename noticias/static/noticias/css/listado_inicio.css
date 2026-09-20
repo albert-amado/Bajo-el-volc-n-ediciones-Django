@@ -1,0 +1,74 @@
+.bev-lead {
+  font-size: clamp(1.4rem, 1.1rem + 1.5vw, 1.9rem);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+}
+
+.bev-carrusel-noticias {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 2.5rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bev-carrusel-noticias .bev-noticia-item {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+}
+
+.bev-carrusel-noticias .bev-noticia-img img,
+.bev-carrusel-noticias .bev-img-placeholder {
+  height: 220px;
+}
+
+.bev-categoria-badge {
+  background-color: var(--bg-body);
+  font-size: smaller;
+  color: var(--text-primary);
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+/* Área táctil: 38px por defecto en Bootstrap, bajo el mínimo de 44px */
+.bev-carrusel-nav-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 575.98px) {
+  .bev-lead {
+    font-size: clamp(1.2rem, 1rem + 2vw, 1.5rem);
+  }
+
+  .bev-carrusel-noticias {
+    gap: 1.25rem;
+  }
+
+  /* Deja asomar el borde de la siguiente tarjeta como pista de scroll */
+  .bev-carrusel-noticias .bev-noticia-item {
+    flex: 0 0 min(280px, 82vw);
+  }
+
+  .bev-carrusel-noticias .bev-noticia-img img,
+  .bev-carrusel-noticias .bev-img-placeholder {
+    height: 170px;
+  }
+
+  .bev-noticia-body {
+    padding: 1rem !important;
+  }
+
+  .bev-noticia-titulo {
+    font-size: 1rem;
+  }
+
+  .bev-noticia-resumen {
+    font-size: 0.85rem;
+  }
+}

@@ -10,22 +10,22 @@
 }
 
 .bev-contact-form h5 {
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    font-size: x-large;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: x-large;
 }
 
 .bev-form-input {
-    width: 100%;
-    background-color: var(--bg-body);
-    border: 1px solid var(--border-soft);
-    border-radius: 8px;
-    color: var(--text-body);
-    padding: 0.75rem 1rem;
-    font-size: x-large;
-    outline: none;
-    resize: vertical;
-    transition: border-color 0.2s;
+  width: 100%;
+  background-color: var(--bg-body);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  color: var(--text-body);
+  padding: 0.75rem 1rem;
+  font-size: x-large;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
 }
 
 .bev-form-input::placeholder {
@@ -38,22 +38,19 @@
 }
 
 .bev-btn-submit {
-    color: var(--text-primary);
-    border: none;
-    padding: 0.8rem;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: x-large;
-    transition: opacity 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+  color: var(--text-primary);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: x-large;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
-.p-2 {
-    padding: .5rem !important;
-    background-color: var(--bg-surface-alt);
-}
+
 .bev-btn-submit:hover {
   opacity: 0.85;
 }
@@ -76,26 +73,28 @@
   border: 1px solid var(--border-soft);
   color: var(--text-primary);
 }
+
 .bi-send::before {
-    content: "\f6c0";
-    color: var(--pr-gray-1200);
+  content: "\f6c0";
+  color: var(--pr-gray-1200);
 }
+
 .bev-contact-value {
-    border-radius: 9px;
-    color: var(--pr-white);
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 0.2s;
-    font-size: x-large;
-    background-color: var(--pr-icono-whatsapp);
+  border-radius: 9px;
+  color: var(--pr-white);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: x-large;
+  background-color: var(--pr-icono-whatsapp);
 }
 
 .bev-contact-value:hover {
-  color: var(--text-primary); /* Enfatiza el valor al interactuar */
+  color: var(--text-primary);
   opacity: 0.75;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 575.98px) {
   .bev-contact-form {
     padding: 0;
   }
@@ -108,17 +107,25 @@
     font-size: 1rem;
   }
 
+  /* Reducción táctil: x-large en inputs/botón desborda en pantallas angostas */
+  .bev-form-input,
+  .bev-btn-submit,
+  .bev-contact-value {
+    font-size: 1rem;
+  }
+
   .bev-contact-value {
     word-break: break-word;
   }
 }
+
 @media (min-width: 992px) {
-    main .row > .bev-sticky.sticky-lg-top,
-    main .row > .libros-sidebar-right.sticky-lg-top {
-        position: -webkit-sticky !important;
-        position: sticky !important;
-        top: 100px !important;
-        z-index: 1020 !important;
-        align-self: flex-start !important;
-    }
+  /* Corregido: el HTML usa .bev-sticky, nunca existió .sticky-lg-top en el markup real */
+  main .row > .bev-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 100px !important;
+    z-index: 1020 !important;
+    align-self: flex-start !important;
+  }
 }

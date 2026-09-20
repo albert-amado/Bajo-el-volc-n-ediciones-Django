@@ -27,7 +27,7 @@
   display: block;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--text-primary); /* Variable semántica para contraste en ambos modos */
+  color: var(--text-primary);
   background: transparent;
   padding: 0.45rem 0;
   border-radius: 0;
@@ -40,18 +40,18 @@
 }
 
 .bev-categoria-item a:hover {
-  color: var(--text-primary); /* Enfatiza en hover */
+  color: var(--text-primary);
   opacity: 0.75;
 }
 
 .bev-categoria-item.activo a {
   background: transparent;
-  color: var(--text-primary); /* Estado activo destaca */
+  color: var(--text-primary);
   font-weight: 700;
   border: none;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
   .libros-sidebar-left {
     position: static;
     margin-top: 0;
@@ -63,11 +63,26 @@
   }
 
   .bev-categorias-lista {
-    gap: 0.25rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    scrollbar-width: none;
+  }
+
+  .bev-categorias-lista::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bev-categoria-item {
+    width: auto;
+    flex: 0 0 auto;
+    margin-bottom: 0 !important;
   }
 
   .bev-categoria-item a {
     font-size: 0.85rem;
-    padding: 0.35rem 0;
+    padding: 0.35rem 0.5rem;
+    white-space: nowrap;
   }
 }
