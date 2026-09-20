@@ -156,3 +156,11 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 #complemento para imagefield
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# --- CONFIGURACIÓN DE AUTENTICACIÓN ---
+
+# A dónde redirigir al usuario después de hacer Login
+LOGIN_REDIRECT_URL = 'index' # Cambia 'home' por el name='' de la URL de tu página de inicio
+
+# A dónde redirigir al usuario después de hacer Logout
+LOGOUT_REDIRECT_URL = 'index'

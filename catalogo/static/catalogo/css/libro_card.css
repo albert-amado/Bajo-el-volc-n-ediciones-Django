@@ -90,14 +90,13 @@
 
 .libro-card__etiqueta {
     position: absolute;
-    top: -19px;
+    top: -15px;
     left: 0px;
     z-index: 3;
-    display: flex
-;
+    display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.95rem;
+    gap: 0px;
+    font-size: xx-small;
     font-weight: 800;
     padding: 8px 83px 8px 1px;
     text-transform: uppercase;
