@@ -270,6 +270,7 @@
 .lead {
     font-size: xx-large;
     font-weight: 400;
+    color: var(--text-primary);
 }
 .p {
     margin-top: 0;
@@ -338,4 +339,11 @@
 .text-muted {
     color: var(--text-primary);
     font-size: x-large;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: xx-large;
+    font-family: var(--font-heading);
+    color: var(--res-font-3000);
 }

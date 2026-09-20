@@ -31,4 +31,5 @@
 .g-4, .gy-4 {
     --bs-gutter-y: 1.5rem;
     background-color: var(--bg-elevated);
+    background-color: var(--bg-surface-alt);
 }

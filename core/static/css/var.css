@@ -11,6 +11,7 @@
   --pr-gray-1500:     #182B3A; /* azul oscuro — usado en topbar claro */
   --pr-black:         #000000; /* unifica: pr-gray-700, pr-gray-900, pr-black (mismo hex) */
   --pr-black-1100:    #111111; /* negro suave */
+  --res-font-3000:    #abaeb6; /* gris azulado — usado en textos secundarios */
 
   /* Primitivos modo oscuro — escala de superficie */
   --pr-dark-900:      #141414; /* fondo general oscuro, más oscuro que el central */
