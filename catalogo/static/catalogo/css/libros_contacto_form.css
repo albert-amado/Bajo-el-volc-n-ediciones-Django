@@ -38,7 +38,6 @@
 }
 
 .bev-btn-submit {
-    background-color: var(--pr-gray-1000);
     color: var(--text-primary);
     border: none;
     padding: 0.8rem;
@@ -82,11 +81,13 @@
     color: var(--pr-gray-1200);
 }
 .bev-contact-value {
-    color: var(--pr-icono-whatsapp);
-    font-weight: bolder;
+    border-radius: 9px;
+    color: var(--pr-white);
+    font-weight: 400;
     text-decoration: none;
     transition: color 0.2s;
-    font-size: larger;
+    font-size: x-large;
+    background-color: var(--pr-icono-whatsapp);
 }
 
 .bev-contact-value:hover {

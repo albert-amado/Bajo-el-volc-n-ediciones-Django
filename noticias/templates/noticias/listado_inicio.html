@@ -4,7 +4,7 @@
       <div class="col-lg-8 mx-auto text-center">
         <div class="bev-divider mx-auto mb-4"></div>
         <p class="lead bev-lead">
-          Eventos, lanzamientos y todo lo que pasa en Bajo el Volcán.
+          Novedades y Eventos
         </p>
         <div class="bev-section-line"></div>
       </div>
@@ -63,11 +63,11 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 1.5rem;
+    gap: 2.5rem;
     padding-bottom: 1rem;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
-  }
+}
   .bev-carrusel-noticias .bev-noticia-item {
     flex: 0 0 320px;
     scroll-snap-align: start;
@@ -81,14 +81,23 @@
     font-weight: 300;
     font-family: var(--font-heading);
     color: var(--text-primary);
-    font-size: xx-large;
+    font-size: -webkit-xxx-large;
     font-weight: 700;
-    margin: 3rem;
 }
+
 .bg-white {
     --bs-bg-opacity: 1;
     background-color: var(--bg-body) !important;
 }
+.m-3 {
+    margin: 1rem !important;
+    background-color: var(--bg-body);
+    font-size: smaller;
+    color: var(--text-primary);
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+
 </style>
 
 <script>
